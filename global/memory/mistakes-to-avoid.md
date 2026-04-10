@@ -91,6 +91,52 @@ Tags: #auth #database #deployment #testing #scope-creep #performance
 
 ---
 
+## CATEGORY INDEX
+
+> **For Anti-Gravity:** Before starting any task, scan the relevant category below.
+> Only read the full entries if a category title matches your current work area.
+
+### Build / Compile Failures
+<!-- Entries tagged: #build #compile #dependency #import -->
+- [Jump to entries tagged #build]
+
+### Data Integrity
+<!-- Entries tagged: #data-integrity #timestamp #candles #database #migration -->
+- [2026-03-27] Candle Jump Bug From Epoch Format Mismatch — mixed seconds/milliseconds
+
+### UI / Frontend Bugs
+<!-- Entries tagged: #lwc #crash #split-view #rendering #css -->
+- [2026-04-05] Zombie Series Crash on Split-View Timeframe Switch — stale series references
+
+### Architecture / Design Decisions
+<!-- Entries tagged: #architecture #refactor #structure #module -->
+- (none yet)
+
+### Security / Auth
+<!-- Entries tagged: #auth #security #authorization #data-leakage -->
+- (none yet — see Example Entry for reference pattern)
+
+### API / Integration
+<!-- Entries tagged: #api #websocket #integration #deriv -->
+- (none yet)
+
+### Testing / Verification
+<!-- Entries tagged: #testing #regression #edge-case -->
+- (none yet)
+
+### Tooling / Process
+<!-- Entries tagged: #tooling #python #process #npm #config -->
+- [undated] NotebookLM MCP Server Module Name Mismatch — package≠module name
+
+### Performance
+<!-- Entries tagged: #performance #memory #cpu #bottleneck -->
+- (none yet)
+
+> **Rule:** When adding a new entry below, also add a one-line summary to the relevant category above.
+> This index should always be scannable in under 10 seconds.
+
+---
+
 ## QUALITY BAR FOR ENTRIES
 
 A strong entry:

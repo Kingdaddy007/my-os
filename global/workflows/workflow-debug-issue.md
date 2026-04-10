@@ -513,6 +513,92 @@ Before marking a bug fix as complete:
 
 ---
 
+## RECOVERY RECIPES
+
+> When debugging itself goes wrong, DO NOT spiral. Check this section first.
+
+### Can't Reproduce the Bug
+
+```
+1. Check if the bug is environment-specific (prod vs local vs staging)
+2. Check if it's timing-dependent (race condition, async order)
+3. Ask: "Under what conditions does this NEVER happen?" — the inverse helps isolate
+4. Add targeted logging at the suspect code path and wait for next occurrence
+5. If truly unreproducible after 3 attempts → classify as intermittent, add monitoring, document
+6. Do NOT guess-fix an unreproducible bug — you can't verify the fix
+```
+
+### All Hypotheses Eliminated
+
+```
+1. STOP — you're looking in the wrong area
+2. Widen the search: check infra, config, data, and external dependencies
+3. Check git log for recent changes in adjacent systems
+4. Ask: "What ELSE changed around the time this started?"
+5. Check memory/mistakes-to-avoid.md — a past pattern might match
+6. If still stuck → rubber-duck the problem statement aloud: restate symptom + evidence
+7. If still stuck after 30 min → take a break, come back fresh
+```
+
+### Fix Breaks Something Else
+
+```
+1. REVERT the fix immediately — don't layer fix-on-fix
+2. The fix addressed a symptom, not the root cause — go back to Step 4
+3. Check: who else calls the code you changed?
+4. Check: what assumptions did the adjacent code make about the old behavior?
+5. Design a fix that is compatible with ALL callers, not just the broken one
+6. If impossible → the fix requires a broader refactor, escalate scope
+```
+
+### Bug is Actually a Feature Misunderstanding
+
+```
+1. STOP debugging — this isn't a bug, it's a requirements gap
+2. Clarify: "Is this working as intended but not as expected?"
+3. If yes → switch to /workflow-build-feature to change the behavior
+4. If no → continue debugging with refined symptom definition
+5. Document the misunderstanding so it doesn't waste time again
+```
+
+### Session Interrupted Mid-Debug
+
+```
+1. Read .agents/workflow-state.json for current phase
+2. Announce: "Resuming debug workflow from Phase [N]"
+3. Re-read the symptom statement and evidence gathered so far from state notes
+4. Check if new evidence appeared since last session (logs, user reports)
+5. Resume from current phase — do NOT restart from symptom observation
+```
+
+### Pressure to Ship Incomplete Fix
+
+```
+1. If P1/P2: ship a MITIGATION (feature flag, rollback) immediately
+2. Label it clearly: "This is mitigation, not a fix"
+3. Keep the debug workflow OPEN — do not close the investigation
+4. Schedule the root-cause fix for the next available slot
+5. NEVER mark an incomplete fix as "done" — it will come back
+```
+
+---
+
+## WORKFLOW STATE TRACKING
+
+This workflow integrates with `core/workflow-state-tracker.md`.
+
+**On activation:** Check `.agents/workflow-state.json` for existing state.
+**After each step:** Update the state file with current phase, status, and notes.
+**On interruption:** State file preserves progress for next session.
+
+Phase map for state tracking:
+```
+1_understand_symptom → 2_gather_evidence → 3_form_hypotheses → 4_isolate_root_cause →
+5_fix → 6_verify → 7_regression_defense → 8_post_fix_memory
+```
+
+---
+
 ## FINAL RULE
 
 Do not debug by trying random fixes until the symptom disappears.
@@ -526,5 +612,7 @@ Debug by reducing uncertainty until the cause becomes explainable — then fix t
 | Version | Date | Changes |
 | :--- | :--- | :--- |
 | Gold v1.1 | Initial | Established the systematic sequence for diagnosing and fixing bugs |
+| Gold v1.2 | 2026-04-10 | Added Recovery Recipes and Workflow State Tracking integration |
+
 
 

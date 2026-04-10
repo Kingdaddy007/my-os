@@ -636,6 +636,95 @@ Before marking a feature complete:
 
 ---
 
+## RECOVERY RECIPES
+
+> When something goes wrong mid-workflow, DO NOT improvise. Check this section first.
+
+### Build Fails After Code Changes
+
+```
+1. Check the EXACT error message — read it fully, don't skim
+2. Check if the error is in YOUR changed files or in a dependency
+3. If syntax error → fix in place, do not restructure
+4. If import/require error → verify the module path exists and is spelled correctly
+5. If type error → check that function signatures match their callers
+6. Scan memory/mistakes-to-avoid.md for matching patterns
+7. If the error makes no sense → revert last change, rebuild, confirm clean state, re-apply incrementally
+```
+
+### Tests Fail After Implementation
+
+```
+1. Run the SINGLE failing test in isolation — is it the test or the code?
+2. Check if the test was written against OLD behavior that your feature intentionally changed
+3. If the test assumptions are stale → update the test to match new behavior
+4. If the test catches a real bug → fix the code, not the test
+5. Check for race conditions if tests pass sometimes and fail other times
+6. Never delete a failing test to "fix" the problem
+```
+
+### Session Interrupted Mid-Workflow
+
+```
+1. Read .agents/workflow-state.json for current phase
+2. Announce: "Resuming [workflow] from Phase [N] — [phase name]"
+3. Re-load the context and skill files listed in the workflow header
+4. Check the state file's "notes" and "key_decisions" fields
+5. Resume from the START of the interrupted phase (not the middle)
+6. Do NOT restart the entire workflow from Phase 1
+```
+
+### Feature Scope Keeps Growing
+
+```
+1. STOP coding immediately
+2. Return to Step 3 (Scope Definition)
+3. List the new items that appeared
+4. Ask: "These items appeared during implementation: [list]. Should I: (a) include now, (b) defer to Phase 2, or (c) skip?"
+5. Update the scope definition before continuing
+6. Do NOT silently absorb new requirements
+```
+
+### Architecture Doesn't Fit
+
+```
+1. STOP before forcing the code into the wrong place
+2. Return to Step 5 (Design Shape)
+3. Identify WHY it doesn't fit — wrong layer? wrong module? missing abstraction?
+4. Check architecture-context.md for guidance
+5. If the issue is structural → escalate to /workflow-plan-architecture
+6. If the issue is small → adjust placement, document the reason
+```
+
+### Context Files Are Empty
+
+```
+1. Announce: "Context file [filename] is empty — I'm working without project-specific guidance"
+2. Ask: "Do you want me to populate [filename] based on what I know about your project?"
+3. If yes → fill it now, then resume the workflow
+4. If no → proceed with explicit generic assumptions, state them clearly
+5. NEVER silently default to generic advice when a context file exists but is empty
+```
+
+---
+
+## WORKFLOW STATE TRACKING
+
+This workflow integrates with `core/workflow-state-tracker.md`.
+
+**On activation:** Check `.agents/workflow-state.json` for existing state.
+**After each step:** Update the state file with current phase, status, and notes.
+**On interruption:** State file preserves progress for next session.
+
+Phase map for state tracking:
+```
+1_define_objective → 2_ground_context → 3_define_scope → 4_identify_risks →
+5_design_shape → 6_verification_plan → 7_implement → 8_self_review →
+9_verify → 10_deliver → 11_post_ship
+```
+
+---
+
 ## SUCCESS STANDARD
 
 This workflow succeeds when:
@@ -655,5 +744,6 @@ This workflow succeeds when:
 Build the smallest correct feature in the right place, with clear behavior and visible verification — not the broadest or flashiest implementation.
 
 When in doubt, reduce scope before reducing quality.
+
 
 
