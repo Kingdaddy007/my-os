@@ -273,7 +273,7 @@ The repo is free. The system works on its own.
 - 🏗️ **Custom Configuration** — Pre-filled contexts and workflows tuned to your specific tech stack
 - 📦 **Skill Pack Creation** — Custom skill files for your niche domain
 
-**→ DM me on [Twitter/X](https://twitter.com/YOUR_HANDLE) or open an issue**
+**→ [Open an issue](https://github.com/Kingdaddy007/Antigravity-OS/issues) or DM me on [LinkedIn](https://linkedin.com/in/mrbeloved)**
 
 ---
 
