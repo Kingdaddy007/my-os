@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/IDE_Support-6+-orange?style=for-the-badge" alt="6+ IDEs" />
 </p>
 
-# 🚀 Anti-Gravity OS
+#  Anti-Gravity OS
 
 ### The operating system for AI-powered engineering.
 
