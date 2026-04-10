@@ -1,0 +1,39 @@
+# Anti-Gravity OS — Git Attributes
+# Normalize line endings across platforms
+
+# Default: auto-normalize all text files
+* text=auto
+
+# Markdown files — LF always
+*.md text eol=lf
+
+# Shell scripts — LF always
+*.sh text eol=lf
+
+# PowerShell scripts — CRLF on Windows checkout
+*.ps1 text eol=crlf
+
+# Python scripts — LF always
+*.py text eol=lf
+
+# JS/MJS — LF always
+*.js text eol=lf
+*.mjs text eol=lf
+*.ts text eol=lf
+
+# JSON — LF always
+*.json text eol=lf
+
+# YAML — LF always
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Binary — do not touch
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.tar.gz binary
