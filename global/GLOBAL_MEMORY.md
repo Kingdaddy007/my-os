@@ -58,7 +58,7 @@ Retained knowledge. Decisions, patterns, mistakes, results, postmortems, system 
 
 | Layer | Folder | Files | Loading Tier | Stability | Content Type |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | `core/` | 9 | Tier 1 — Always on | Very stable | Behavioral rules |
+| 1 | `core/` | 10 | Tier 1 — Always on | Very stable | Behavioral rules |
 | 2 | `skills/` | 14 | Tier 2 — By task | Stable | Domain instructions |
 | 3 | `contexts/` | 12 | Tier 2 — By task | Variable | Project facts |
 | 4 | `workflows/` | 11 | Tier 2 — By task | Stable | Execution sequences |
@@ -231,7 +231,7 @@ When a task arrives, Anti-Gravity assembles a **runtime bundle** — the specifi
 #### Step 1: Base Layer (Always Present)
 
 ALWAYS LOADED:
-└── core/ (all 9 files — via master system prompt)
+└── core/ (all 10 files — via master system prompt)
 
 #### Step 2: Task Classification
 
@@ -279,7 +279,7 @@ RULE: Don't pre-load these. Load at the moment of need.
 A typical task configuration looks like:
 RUNTIME BUNDLE (Example: Build a New Feature)
 │
-├── CORE (always) [9 files — via system prompt]
+├── CORE (always) [10 files — via system prompt]
 ├── PRIMARY SKILL: skill-coding [1 file]
 ├── SECONDARY SKILL: skill-testing [1 file]
 ├── WORKFLOW: workflow-build-feature [1 file]
@@ -303,7 +303,7 @@ RUNTIME BUNDLE (Example: Build a New Feature)
 
 | Layer | Files Loaded | When |
 | :--- | :--- | :--- |
-| Core | All 9 (via system prompt) | Always |
+| Core | All 10 (via system prompt) | Always |
 | Skills | `skill-coding`, `skill-testing` | Task start |
 | Contexts | `stack-context`, `architecture-context`, `coding-standards`, `database-context` | Task start |
 | Workflow | `workflow-build-feature` | Task start |
@@ -318,7 +318,7 @@ RUNTIME BUNDLE (Example: Build a New Feature)
 
 | Layer | Files Loaded | When |
 | :--- | :--- | :--- |
-| Core | All 9 | Always |
+| Core | All 10 | Always |
 | Skills | `skill-debugging`, `skill-security` | Task start |
 | Contexts | `stack-context`, `architecture-context`, `infra-context`, `security-baselines` | Task start |
 | Workflow | `workflow-debug-issue` | Task start |
@@ -403,7 +403,7 @@ A focused bundle of 3-5 relevant files produces better output than a bloated bun
 
 [.antigravity/](file:///C:/Users/Oviks/.gemini/antigravity/)
 
-├── [core/](file:///C:/Users/Oviks/.gemini/antigravity/core/) (9 files) ← Layer 1: Permanent Mind
+├── [core/](file:///C:/Users/Oviks/.gemini/antigravity/core/) (10 files) ← Layer 1: Permanent Mind
 ├── [skills/](file:///C:/Users/Oviks/.gemini/antigravity/skills/) (14 files) ← Layer 2: Domain Expertise
 ├── [contexts/](file:///C:/Users/Oviks/.gemini/antigravity/contexts/) (12 files) ← Layer 3: Ground Truth
 ├── [workflows/](file:///C:/Users/Oviks/.gemini/antigravity/workflows/) (11 files) ← Layer 4: Execution Patterns

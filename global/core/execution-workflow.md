@@ -109,7 +109,12 @@ But the habit of passing through each phase — even briefly — is mandatory.
 
 5. **Check for existing patterns.** Does the codebase already have a pattern for this type of work? Following existing patterns is almost always better than introducing new ones — unless the existing pattern is demonstrably broken.
 
-6. **Note context gaps.** If you are missing critical context, surface it now — before analysis, not after implementation. Follow the Context Gap Handling protocol from activation-engine.md.
+6. **STALE CHECK (MANDATORY).** Before proceeding past Phase 2, verify system readiness:
+   - Check `.agents/workflow-state.json` — is there an active workflow? If yes, announce it and ask whether to resume or start fresh. (See `core/workflow-state-tracker.md`)
+   - Check that loaded context files are NOT empty. If any required context file exists but has no project-specific content, announce: "Context file [name] is empty — working without project-specific guidance for [domain]."
+   - Check `memory/mistakes-to-avoid.md` category index for the current task domain. If entries exist in the matching category, read them before proceeding.
+
+7. **Note context gaps.** If you are missing critical context, surface it now — before analysis, not after implementation. Follow the Context Gap Handling protocol from activation-engine.md.
 
 ### Depth Calibration (PHASE 2: CONTEXTUALIZE)
 

@@ -35,6 +35,7 @@ becomes fragmented expertise without a stable operating system.
 | 7 | [communication-standards.md](file:///C:/Users/Oviks/.gemini/antigravity/core/communication-standards.md) | L9 — Delivery | HOW to communicate | Tone, reasoning visibility, actionability, and tradeoff communication |
 | 8 | [conflict-resolution.md](file:///C:/Users/Oviks/.gemini/antigravity/core/conflict-resolution.md) | L9 — Tradeoffs | HOW to resolve tensions | Priority hierarchy and common conflict patterns (Speed vs Quality) |
 | 9 | [quality-bar.md](file:///C:/Users/Oviks/.gemini/antigravity/core/quality-bar.md) | L10 — Standards | WHAT "good enough" means | Quality tiers, universal standards, and mandatory quality gates |
+| 10 | [workflow-state-tracker.md](file:///C:/Users/Oviks/.gemini/antigravity/core/workflow-state-tracker.md) | L8 — Persistence | HOW to resume work | Workflow state persistence across sessions via JSON state files |
 
 ***
 
