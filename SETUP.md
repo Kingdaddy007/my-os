@@ -37,11 +37,12 @@ Welcome to Anti-Gravity OS! I can see the setup guide. I have two questions befo
 
 2. What is the path to your IDE's global config folder?
    Common defaults:
-   - Gemini (Google AI Studio):  C:\Users\<YourName>\.gemini\
+   - Gemini (Google Antigravity): C:\Users\<YourName>\.gemini\
    - Cursor:                      C:\Users\<YourName>\.cursor\rules\
    - Windsurf:                    C:\Users\<YourName>\.codeium\windsurf\memories\
    - VS Code (Copilot):           Workspace .github/copilot-instructions.md
-   - Claude Dev / Cline:          Workspace .clinerules or .cursorrules
+   - Cline / Roo / Claude Code:   Workspace .clinerules or .cursorrules
+   - Codex:                       C:\Users\<YourName>\.codex\
    - OpenCode:                    C:\Users\<YourName>\.config\opencode\
 
    If unsure, just tell me your IDE name and I'll figure it out.
@@ -226,7 +227,7 @@ Fill these first. The AI will produce far better output once they are populated.
 
 ## IDE-SPECIFIC NOTES
 
-### Google AI Studio / Gemini
+### Google Antigravity / Gemini
 - Global config: `C:\Users\<Name>\.gemini\`
 - The `GEMINI.md` file at the root is automatically read as the system prompt
 - Skills in `~/.gemini/antigravity/skills/<name>/SKILL.md` are auto-discovered
@@ -243,6 +244,15 @@ Fill these first. The AI will produce far better output once they are populated.
 ### VS Code (GitHub Copilot)
 - Place `GEMINI.md` content in `.github/copilot-instructions.md`
 - Workflows go in `.github/` or use Copilot Chat slash commands
+
+### Cline / Roo Code / Claude Code
+- Config: usually workspace-level `.clinerules` or global MCP settings
+- Drop `GEMINI.md` content into your workspace `.clinerules` or `.roomodes`
+- Workflows available via MCP or direct CLI execution
+
+### Codex
+- Global config: `C:\Users\<Name>\.codex\`
+- Drop `GEMINI.md` content into your global rules
 
 ### OpenCode
 - Global config: `C:\Users\<Name>\.config\opencode\`
