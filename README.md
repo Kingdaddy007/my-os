@@ -7,8 +7,6 @@
 ![13 Workflows](https://img.shields.io/badge/Workflows-13-green?style=for-the-badge)
 ![6+ IDEs](https://img.shields.io/badge/IDE_Support-6+-orange?style=for-the-badge)
 
-
-
 ## The operating system for AI-powered engineering
 
 > Most people paste a prompt into their IDE and call it a day.
@@ -57,6 +55,7 @@ It's not a prompt. It's not a `.cursorrules` file. It's a complete system:
 You:  "Build me a login page"
 AI:   *generic React component with no error handling, 
        wrong framework version, no tests*
+
 ```
 
 ### After Anti-Gravity OS
@@ -68,6 +67,7 @@ AI:   *reads your stack-context → knows you use Next.js 15 App Router*
       *loads skill-coding + skill-security → handles auth properly*
       *follows /workflow-build-feature → plans before coding, tests after*
       *logs the decision to memory → remembers for next time*
+
 ```
 
 **Same AI. Same IDE. Completely different output.**
@@ -105,6 +105,7 @@ AI:   *reads your stack-context → knows you use Next.js 15 App Router*
 │  CONTEXTUAL  │  follows your patterns, and
 │  OUTPUT      │  handles edge cases.
 └─────────────┘
+
 ```
 
 ---
@@ -188,7 +189,6 @@ Most AI tools forget everything when you close the window. Anti-Gravity OS doesn
 | `mistakes-to-avoid.md` | Bugs and anti-patterns — never repeat them |
 | `postmortems.md` | Post-ship analysis — what went wrong and why |
 
-
 The AI writes to memory automatically after significant sessions. Next session, it reads before starting.
 
 ---
@@ -200,13 +200,16 @@ The AI writes to memory automatically after significant sessions. Next session, 
 ```bash
 git clone https://github.com/Kingdaddy007/Antigravity-OS.git
 cd Antigravity-OS
+
 ```
 
 ### 2. Tell your AI to read the setup guide
 
 ```text
 "Read SETUP.md and help me install Anti-Gravity OS"
+
 ```
+
 The AI will ask which IDE you use and walk you through everything.
 
 ### 3. Or run the installer directly
@@ -217,6 +220,7 @@ The AI will ask which IDE you use and walk you through everything.
 
 # Mac/Linux
 chmod +x install.sh && ./install.sh
+
 ```
 
 The installer handles:
@@ -231,7 +235,7 @@ The installer handles:
 ## 🖥️ IDE Support
 
 | IDE | Support | Config Location |
-|:---|:---:|:---|
+| :--- | :---: | :--- |
 | Google Gemini / AI Studio | ✅ Full | `~/.gemini/antigravity/` |
 | Cursor | ✅ Full | `~/.cursor/rules/` |
 | Windsurf | ✅ Full | `~/.codeium/windsurf/memories/` |
@@ -258,6 +262,7 @@ Antigravity-OS/
     ├── workflows/              ← Workflow reference files
     ├── global_workflows/       ← Global-only workflows
     └── scripts/                ← Maintenance & verification tools
+
 ```
 
 ---
@@ -325,6 +330,6 @@ MIT — use it, fork it, build on it, make it yours.
 
 ---
 
-**Anti-Gravity OS**
+### Anti-Gravity OS
 
 *Stop using your AI at 10%. Give it an operating system.*
