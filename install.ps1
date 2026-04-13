@@ -1,12 +1,7 @@
 # Anti-Gravity OS — Windows Installer
 # Run: .\install.ps1
-# Or:  .\install.ps1 -GlobalOnly  (skip workspace layer)
-# Or:  .\install.ps1 -WorkspaceOnly  (skip global layer)
 
 param(
-    [switch]$WorkspaceOnly,
-    [switch]$GlobalOnly,
-    [string]$TargetProject = $null,
     [string]$GlobalConfig = $null,
     [string]$IDE = $null
 )
@@ -19,68 +14,19 @@ function Write-Question($msg){ Write-Host "`n$msg" -ForegroundColor White }
 function Write-Header()      {
     Write-Host "`n" -NoNewline
     Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor DarkCyan
-    Write-Host "   Anti-Gravity OS — Installer v1.1"          -ForegroundColor Cyan
+    Write-Host "   Anti-Gravity OS — Installer v1.2"          -ForegroundColor Cyan
     Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor DarkCyan
 }
 
 Write-Header
 
 $ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$WorkspaceSource = Join-Path $ScriptRoot "workspace"
 $GlobalSource    = Join-Path $ScriptRoot "global"
 
-# ─── Step 1: Determine install mode ──────────────────────────────────────────
-Write-Step "Checking install mode..."
-
-if (-not $WorkspaceOnly -and -not $GlobalOnly) {
-    Write-Question @"
-What would you like to install?
-
-  [1] Workspace layer only  (rules + slash-command workflows for this project)
-  [2] Global layer only     (skills, contexts, rubrics — the full AI brain)
-  [3] Both layers           (recommended — full setup)
-
-Enter 1, 2, or 3:
-"@
-    $choice = Read-Host
-    switch ($choice) {
-        "1" { $WorkspaceOnly = $true }
-        "2" { $GlobalOnly    = $true }
-        "3" { }  # both, default
-        default { Write-Warn "Invalid choice. Installing both layers."; }
-    }
-}
-
-$installWorkspace = -not $GlobalOnly
-$installGlobal    = -not $WorkspaceOnly
-
-# ─── Step 2: Workspace target ─────────────────────────────────────────────────
-if ($installWorkspace) {
-    if (-not $TargetProject) {
+# ─── Step 1: Global config target ─────────────────────────────────────────────
+if (-not $GlobalConfig) {
+    if (-not $IDE) {
         Write-Question @"
-Where is the project you want to add Anti-Gravity OS to?
-(Press Enter to use the CURRENT directory: $(Get-Location))
-"@
-        $input = Read-Host
-        if ($input -eq "") {
-            $TargetProject = (Get-Location).Path
-        } else {
-            $TargetProject = $input.Trim('"')
-        }
-    }
-
-    if (-not (Test-Path $TargetProject)) {
-        Write-Warn "Project path not found: $TargetProject"
-        Write-Warn "Creating it..."
-        New-Item -ItemType Directory -Path $TargetProject -Force | Out-Null
-    }
-}
-
-# ─── Step 3: Global config target ─────────────────────────────────────────────
-if ($installGlobal) {
-    if (-not $GlobalConfig) {
-        if (-not $IDE) {
-            Write-Question @"
 Which IDE are you using?
 
   [1] Google AI Studio / Gemini   → ~/.gemini/antigravity/
@@ -92,152 +38,79 @@ Which IDE are you using?
 
 Enter 1–6:
 "@
-            $IDE = Read-Host
-        }
+        $IDE = Read-Host
+    }
 
-        switch ($IDE.Trim()) {
-            "1" { $GlobalConfig = Join-Path $env:USERPROFILE ".gemini\antigravity" }
-            "2" { $GlobalConfig = Join-Path $env:USERPROFILE ".cursor\rules" }
-            "3" { $GlobalConfig = Join-Path $env:USERPROFILE ".codeium\windsurf\memories" }
-            "4" {
-                if ($TargetProject) {
-                    $GlobalConfig = Join-Path $TargetProject ".github"
-                } else {
-                    $GlobalConfig = Join-Path (Get-Location) ".github"
-                }
-            }
-            "5" { $GlobalConfig = Join-Path $env:USERPROFILE ".config\opencode" }
-            "6" {
-                Write-Question "Enter the full path to your global config folder:"
-                $GlobalConfig = (Read-Host).Trim('"')
-            }
-            default {
-                Write-Warn "Unrecognised choice. Defaulting to ~/.gemini/antigravity/"
-                $GlobalConfig = Join-Path $env:USERPROFILE ".gemini\antigravity"
-            }
+    switch ($IDE.Trim()) {
+        "1" { $GlobalConfig = Join-Path $env:USERPROFILE ".gemini\antigravity" }
+        "2" { $GlobalConfig = Join-Path $env:USERPROFILE ".cursor\rules" }
+        "3" { $GlobalConfig = Join-Path $env:USERPROFILE ".codeium\windsurf\memories" }
+        "4" {
+            $GlobalConfig = Join-Path (Get-Location) ".github\antigravity"
+        }
+        "5" { $GlobalConfig = Join-Path $env:USERPROFILE ".config\opencode" }
+        "6" {
+            Write-Question "Enter the full path to your global config folder:"
+            $GlobalConfig = (Read-Host).Trim('"')
+        }
+        default {
+            Write-Warn "Unrecognised choice. Defaulting to ~/.gemini/antigravity/"
+            $GlobalConfig = Join-Path $env:USERPROFILE ".gemini\antigravity"
         }
     }
 }
 
-# ─── Step 4: Install Workspace Layer ─────────────────────────────────────────
-if ($installWorkspace) {
-    Write-Step "Installing Workspace Layer → $TargetProject"
+# ─── Step 2: Install Global Layer ────────────────────────────────────────────
+Write-Step "Installing OS → $GlobalConfig"
 
-    function Copy-WorkspaceDir($subPath) {
-        $src = Join-Path $WorkspaceSource $subPath
-        $dst = Join-Path $TargetProject   $subPath
-        if (Test-Path $src) {
-            if (-not (Test-Path $dst)) {
-                New-Item -ItemType Directory -Path $dst -Force | Out-Null
-            }
-            Copy-Item -Path "$src\*" -Destination $dst -Recurse -Force
-            Write-Success "Copied workspace/$subPath/ → $dst"
-        } else {
-            Write-Warn "Source not found: workspace/$subPath/ (skipping)"
-        }
-    }
-
-    # Core workspace folders
-    Copy-WorkspaceDir ".agents"
-    Copy-WorkspaceDir "contexts"
-    Copy-WorkspaceDir "memory"
-    Copy-WorkspaceDir "templates"
-    Copy-WorkspaceDir "scripts"
-
-    Write-Success "Workspace layer installed."
+if (-not (Test-Path $GlobalConfig)) {
+    New-Item -ItemType Directory -Path $GlobalConfig -Force | Out-Null
+    Write-Success "Created configuration directory: $GlobalConfig"
 }
 
-# ─── Step 5: Install Global Layer ────────────────────────────────────────────
-if ($installGlobal) {
-    Write-Step "Installing Global Layer → $GlobalConfig"
+# Clear any existing file in the directory to prevent ghost config files
+Write-Step "Cleaning target directory..."
+Get-ChildItem -Path $GlobalConfig -Recurse | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
 
-    if (-not (Test-Path $GlobalConfig)) {
-        New-Item -ItemType Directory -Path $GlobalConfig -Force | Out-Null
-        Write-Success "Created global config directory: $GlobalConfig"
+Copy-Item -Path "$GlobalSource\*" -Destination $GlobalConfig -Recurse -Force
+Write-Success "Copied OS files successfully."
+
+
+# ─── Step 3: Dynamic Path URI Configuration ────────────────────────────────────
+Write-Step "Configuring Absolute System Paths..."
+$TargetURI = "file:///" + $GlobalConfig.Replace("\", "/")
+Write-Success "Target system URI resolved: $TargetURI"
+
+# Find all markdown files and substitute {{GLOBAL_CONFIG_URI}} with $TargetURI
+$mdFiles = Get-ChildItem -Path $GlobalConfig -Filter "*.md" -Recurse
+$replaceCount = 0
+
+foreach ($file in $mdFiles) {
+    $content = Get-Content $file.FullName -Raw
+    if ($content -match "\{\{GLOBAL_CONFIG_URI\}\}") {
+        $content = $content -replace "\{\{GLOBAL_CONFIG_URI\}\}", $TargetURI
+        Set-Content -Path $file.FullName -Value $content -NoNewline
+        $replaceCount++
     }
-
-    function Copy-GlobalDir($subPath) {
-        $src = Join-Path $GlobalSource $subPath
-        $dst = Join-Path $GlobalConfig $subPath
-        if (Test-Path $src) {
-            if (-not (Test-Path $dst)) {
-                New-Item -ItemType Directory -Path $dst -Force | Out-Null
-            }
-            Copy-Item -Path "$src\*" -Destination $dst -Recurse -Force
-            Write-Success "Copied global/$subPath/ → $dst"
-        } else {
-            Write-Warn "Source not found: global/$subPath/ (skipping)"
-        }
-    }
-
-    function Copy-GlobalFile($fileName) {
-        $src = Join-Path $GlobalSource $fileName
-        $dst = Join-Path $GlobalConfig $fileName
-        if (Test-Path $src) {
-            Copy-Item -Path $src -Destination $dst -Force
-            Write-Success "Copied global/$fileName → $dst"
-        } else {
-            Write-Warn "Source not found: global/$fileName (skipping)"
-        }
-    }
-
-    # Root global files
-    Copy-GlobalFile "GEMINI.md"
-    Copy-GlobalFile "GLOBAL_MEMORY.md"
-
-    # Global folders
-    Copy-GlobalDir "core"
-    Copy-GlobalDir "skills"
-    Copy-GlobalDir "contexts"
-    Copy-GlobalDir "workflows"
-    Copy-GlobalDir "global_workflows"
-    Copy-GlobalDir "templates"
-    Copy-GlobalDir "memory"
-    Copy-GlobalDir "rubric"
-    Copy-GlobalDir "benchmark"
-    Copy-GlobalDir "scripts"
-
-    Write-Success "Global layer installed."
 }
 
-# ─── Step 6: Summary ─────────────────────────────────────────────────────────
+Write-Success "Re-wrote system URIs in $replaceCount configuration files."
+
+# ─── Step 4: Summary ─────────────────────────────────────────────────────────
 Write-Host "`n"
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor DarkGreen
 Write-Host "   Anti-Gravity OS — Installation Complete" -ForegroundColor Green
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor DarkGreen
 
-if ($installWorkspace) {
-    Write-Host @"
-
-  WORKSPACE installed at:
-    $TargetProject
-
-  Your IDE can now use slash commands. Type / to see:
-    /workflow-build-feature
-    /workflow-debug-issue
-    /workflow-design-ui
-    ... and 8 more workflows
-
-"@ -ForegroundColor White
-}
-
-if ($installGlobal) {
-    Write-Host @"
-  GLOBAL BRAIN installed at:
+Write-Host @"
+  GLOBAL SYSTEM installed at:
     $GlobalConfig
 
   Next steps:
-    1. Fill in your context files (stack, architecture, coding standards)
-    2. Restart your IDE
-    3. Tell your AI: "Read SETUP.md — I want to verify the installation"
+    1. Fill in your context files (contexts/stack-context.md, etc.)
+    2. Tell your AI: `"Read GEMINI.md`" or configure it as your master prompt.
 
 "@ -ForegroundColor White
-}
 
-Write-Host "  Context files to fill first:" -ForegroundColor Yellow
-Write-Host "    → contexts/stack-context.md" -ForegroundColor Gray
-Write-Host "    → contexts/coding-standards.md" -ForegroundColor Gray
-Write-Host "    → contexts/project-context.md" -ForegroundColor Gray
-Write-Host ""
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor DarkGreen
 Write-Host ""

@@ -4,7 +4,12 @@ description: The systematic pre-deployment and deployment sequence for shipping 
 
 # WORKFLOW: SHIP TO PRODUCTION (MASTER UI)
 
-> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 18,000-character logic, deployment checklists, and staged rollout protocols, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-ship-to-production.md).
+> **[CONTEXT AMNESIA FAILSAFE]**
+> YOU MUST USE TOOL CALLS TO READ THE FULL SOURCE FILE AND THE REQUIRED SKILLS/CONTEXTS BEFORE EXECUTING THIS.
+> PROVE YOU HAVE DONE THIS IN A `<thought_process>` BLOCK.
+
+
+> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 18,000-character logic, deployment checklists, and staged rollout protocols, the Agent MUST load and follow the [SOURCE FILE]({{GLOBAL_CONFIG_URI}}/workflows/workflow-ship-to-production.md).
 
 ## WHAT THIS WORKFLOW DOES
 
@@ -16,7 +21,7 @@ Acts as the final safety gate between staging and production. It ensures code re
 
 ### 1. Load Full Instructions
 
-- [ ] **Load Source [REQUIRED]:** [workflow-ship-to-production.md](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-ship-to-production.md) (Follow all 9 steps).
+- [ ] **Load Source [REQUIRED]:** [workflow-ship-to-production.md]({{GLOBAL_CONFIG_URI}}/workflows/workflow-ship-to-production.md) (Follow all 9 steps).
 
 ### 2. Load Core Contexts & Skills (Always)
 

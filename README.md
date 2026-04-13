@@ -245,19 +245,6 @@ Antigravity-OS/
 ├── install.ps1                 ← Windows installer
 ├── install.sh                  ← Mac/Linux installer
 │
-├── workspace/                  ← Goes inside YOUR project
-│   ├── .agents/
-│   │   ├── rules.md            ← Project rules (auto-loaded by IDE)
-│   │   └── workflows/          ← Slash-command triggers
-│   ├── core/                   ← AI identity (9 principle files)
-│   ├── skills/                 ← Domain expertise (flat files)
-│   ├── contexts/               ← YOUR project context (fill these!)
-│   ├── workflows/              ← Full workflow source files  
-│   ├── templates/              ← Document scaffolds
-│   ├── memory/                 ← Living knowledge base
-│   ├── rubric/                 ← Quality scorecards
-│   └── benchmark/              ← Performance trackers
-│
 └── global/                     ← Goes in your IDE's global config
     ├── GEMINI.md               ← Master system prompt
     ├── GLOBAL_MEMORY.md        ← System map

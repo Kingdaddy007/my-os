@@ -45,33 +45,33 @@ generate the content — you provide your project's actual details.
 
 | # | File | What It Grounds | Key Contents |
 | :--- | :--- | :--- | :--- |
-| 1 | [project-context.md](file:///c:/Users/Oviks/antigravitygold/contexts/project-context.md) | What the product IS | Users, Jobs-to-be-Done, business stage, constraints |
-| 2 | [stack-context.md](file:///c:/Users/Oviks/antigravitygold/contexts/stack-context.md) | What technologies are used | Languages, frameworks, libraries, versions, tools |
-| 3 | [architecture-context.md](file:///c:/Users/Oviks/antigravitygold/contexts/architecture-context.md) | How the code is organized | Folder structure, patterns, data flow, module boundaries, ADRs |
-| 4 | [coding-standards.md](file:///c:/Users/Oviks/antigravitygold/contexts/coding-standards.md) | How code is written | Naming, imports, exports, TypeScript, components, git conventions |
-| 5 | [testing-standards.md](file:///c:/Users/Oviks/antigravitygold/contexts/testing-standards.md) | How testing is done | Strategy, stack, what to test, mock boundaries, CI requirements |
+| 1 | [project-context.md]({{GLOBAL_CONFIG_URI}}/contexts/project-context.md) | What the product IS | Users, Jobs-to-be-Done, business stage, constraints |
+| 2 | [stack-context.md]({{GLOBAL_CONFIG_URI}}/contexts/stack-context.md) | What technologies are used | Languages, frameworks, libraries, versions, tools |
+| 3 | [architecture-context.md]({{GLOBAL_CONFIG_URI}}/contexts/architecture-context.md) | How the code is organized | Folder structure, patterns, data flow, module boundaries, ADRs |
+| 4 | [coding-standards.md]({{GLOBAL_CONFIG_URI}}/contexts/coding-standards.md) | How code is written | Naming, imports, exports, TypeScript, components, git conventions |
+| 5 | [testing-standards.md]({{GLOBAL_CONFIG_URI}}/contexts/testing-standards.md) | How testing is done | Strategy, stack, what to test, mock boundaries, CI requirements |
 
 ### Security and Design Context
 
 | # | File | What It Grounds | Key Contents |
 | :--- | :--- | :--- | :--- |
-| 6 | [security-baselines.md](file:///c:/Users/Oviks/antigravitygold/contexts/security-baselines.md) | How security is enforced | Auth, authz, validation, secrets, headers, CORS, compliance |
-| 7 | [design-system.md](file:///c:/Users/Oviks/antigravitygold/contexts/design-system.md) | How UI looks and behaves | Tokens, components, interactions, responsive, accessibility |
+| 6 | [security-baselines.md]({{GLOBAL_CONFIG_URI}}/contexts/security-baselines.md) | How security is enforced | Auth, authz, validation, secrets, headers, CORS, compliance |
+| 7 | [design-system.md]({{GLOBAL_CONFIG_URI}}/contexts/design-system.md) | How UI looks and behaves | Tokens, components, interactions, responsive, accessibility |
 
 ### Data and API Context
 
 | # | File | What It Grounds | Key Contents |
 | :--- | :--- | :--- | :--- |
-| 8 | [database-context.md](file:///c:/Users/Oviks/antigravitygold/contexts/database-context.md) | How data is stored and accessed | Schema conventions, tables, access patterns, indexing, migrations |
-| 9 | [api-conventions.md](file:///c:/Users/Oviks/antigravitygold/contexts/api-conventions.md) | How APIs are designed | URL structure, methods, request and response format, auth, pagination |
+| 8 | [database-context.md]({{GLOBAL_CONFIG_URI}}/contexts/database-context.md) | How data is stored and accessed | Schema conventions, tables, access patterns, indexing, migrations |
+| 9 | [api-conventions.md]({{GLOBAL_CONFIG_URI}}/contexts/api-conventions.md) | How APIs are designed | URL structure, methods, request and response format, auth, pagination |
 
 ### Business and Operations Context
 
 | # | File | What It Grounds | Key Contents |
 | :--- | :--- | :--- | :--- |
-| 10 | [domain-rules.md](file:///c:/Users/Oviks/antigravitygold/contexts/domain-rules.md) | What business rules the product enforces | Invariants, state machines, validation, calculations, terminology |
-| 11 | [business-priorities.md](file:///c:/Users/Oviks/antigravitygold/contexts/business-priorities.md) | What matters most RIGHT NOW | Ranked priorities, tradeoff overrides, what we are NOT doing |
-| 12 | [infra-context.md](file:///c:/Users/Oviks/antigravitygold/contexts/infra-context.md) | How the product runs operationally | Hosting, CI/CD, monitoring, incidents, scaling, DR, costs |
+| 10 | [domain-rules.md]({{GLOBAL_CONFIG_URI}}/contexts/domain-rules.md) | What business rules the product enforces | Invariants, state machines, validation, calculations, terminology |
+| 11 | [business-priorities.md]({{GLOBAL_CONFIG_URI}}/contexts/business-priorities.md) | What matters most RIGHT NOW | Ranked priorities, tradeoff overrides, what we are NOT doing |
+| 12 | [infra-context.md]({{GLOBAL_CONFIG_URI}}/contexts/infra-context.md) | How the product runs operationally | Hosting, CI/CD, monitoring, incidents, scaling, DR, costs |
 
 ***
 

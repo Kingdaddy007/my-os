@@ -52,12 +52,12 @@ cumulative — and more experienced — over time.
 
 | # | File | What It Captures | Updated When |
 | :--- | :--- | :--- | :--- |
-| 1 | [decisions-log.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/decisions-log.md) | Significant technical decisions and their reasoning | After any Type 1 or Type 1.5 decision |
-| 2 | [common-patterns.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/common-patterns.md) | Reusable patterns that work well in this project | When a pattern proves valuable across three or more uses |
-| 3 | [mistakes-to-avoid.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/mistakes-to-avoid.md) | Mistakes that have been made and their root causes | After any bug, incident, or architectural mistake |
-| 4 | [benchmark-results.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/benchmark-results.md) | Anti-Gravity performance scores over time | After running benchmark tests |
-| 5 | [postmortems.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/postmortems.md) | Post-incident analysis and lessons learned | After P1 or P2 incidents |
-| 6 | [version-notes.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/version-notes.md) | Changes to the Anti-Gravity system itself | When core, skills, or workflows are updated |
+| 1 | [decisions-log.md]({{GLOBAL_CONFIG_URI}}/memory/decisions-log.md) | Significant technical decisions and their reasoning | After any Type 1 or Type 1.5 decision |
+| 2 | [common-patterns.md]({{GLOBAL_CONFIG_URI}}/memory/common-patterns.md) | Reusable patterns that work well in this project | When a pattern proves valuable across three or more uses |
+| 3 | [mistakes-to-avoid.md]({{GLOBAL_CONFIG_URI}}/memory/mistakes-to-avoid.md) | Mistakes that have been made and their root causes | After any bug, incident, or architectural mistake |
+| 4 | [benchmark-results.md]({{GLOBAL_CONFIG_URI}}/memory/benchmark-results.md) | Anti-Gravity performance scores over time | After running benchmark tests |
+| 5 | [postmortems.md]({{GLOBAL_CONFIG_URI}}/memory/postmortems.md) | Post-incident analysis and lessons learned | After P1 or P2 incidents |
+| 6 | [version-notes.md]({{GLOBAL_CONFIG_URI}}/memory/version-notes.md) | Changes to the Anti-Gravity system itself | When core, skills, or workflows are updated |
 
 ***
 

@@ -4,7 +4,12 @@ description: The systematic sequence for generating visual design previews and G
 
 # WORKFLOW: VISUAL BRAINSTORMING (MASTER)
 
-> **IMPORTANT [REQUIRED]:** This is the Trigger. For the full detailed logic, dual-path execution (HTML Preview vs Google Stitch Brief), and design token export process, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-visual-brainstorm.md).
+> **[CONTEXT AMNESIA FAILSAFE]**
+> YOU MUST USE TOOL CALLS TO READ THE FULL SOURCE FILE AND THE REQUIRED SKILLS/CONTEXTS BEFORE EXECUTING THIS.
+> PROVE YOU HAVE DONE THIS IN A `<thought_process>` BLOCK.
+
+
+> **IMPORTANT [REQUIRED]:** This is the Trigger. For the full detailed logic, dual-path execution (HTML Preview vs Google Stitch Brief), and design token export process, the Agent MUST load and follow the [SOURCE FILE]({{GLOBAL_CONFIG_URI}}/workflows/workflow-visual-brainstorm.md).
 
 ## WHAT THIS WORKFLOW DOES
 
@@ -16,7 +21,7 @@ Produces visual artifacts (live HTML previews or Google Stitch design briefs) th
 
 ### 1. Load Full Instructions
 
-- [ ] **Load Source [REQUIRED]:** [workflow-visual-brainstorm.md](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-visual-brainstorm.md) (Follow all 5 phases).
+- [ ] **Load Source [REQUIRED]:** [workflow-visual-brainstorm.md]({{GLOBAL_CONFIG_URI}}/workflows/workflow-visual-brainstorm.md) (Follow all 5 phases).
 
 ### 2. Load Core Contexts & Skills (Always)
 

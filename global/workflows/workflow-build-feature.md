@@ -124,13 +124,17 @@ Do NOT stop automatically. Instead:
 
 ---
 
+### MANDATORY STOP-AND-VERIFY GATE
+> **[CONTEXT AMNESIA FAILSAFE]**
+> Do NOT proceed to Step 1 until you have verified in your `<thought_process>` that all required context files and skill files have been read using tool calls. You must state: "I have read X, Y, Z files and I am ready to begin."
+
 ### STEP 1 — DEFINE THE FEATURE OBJECTIVE
 
 **Goal:** Understand what is actually being built and why before building anything.
 
 #### Load Template (Step 1)
 
-- [REQUIRED] Load [feature-plan.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/feature-plan.md)
+- [REQUIRED] Load [feature-plan.md]({{GLOBAL_CONFIG_URI}}/global_templates/feature-plan.md)
 - Follow the structure and guidance in the template to scope and plan the feature before implementation.
 
 #### Action: Define Objective (Step 1)
@@ -666,10 +670,10 @@ Before marking a feature complete:
 ### Session Interrupted Mid-Workflow
 
 ```
-1. Read .agents/workflow-state.json for current phase
+1. Read task.md for current phase and completed steps
 2. Announce: "Resuming [workflow] from Phase [N] — [phase name]"
 3. Re-load the context and skill files listed in the workflow header
-4. Check the state file's "notes" and "key_decisions" fields
+4. Check the task.md notes and key pending items
 5. Resume from the START of the interrupted phase (not the middle)
 6. Do NOT restart the entire workflow from Phase 1
 ```
@@ -710,10 +714,10 @@ Before marking a feature complete:
 
 ## WORKFLOW STATE TRACKING
 
-This workflow integrates with `core/workflow-state-tracker.md`.
+This workflow integrates with `task.md`.
 
-**On activation:** Check `.agents/workflow-state.json` for existing state.
-**After each step:** Update the state file with current phase, status, and notes.
+**On activation:** Check `task.md` for existing state or create a new checklist.
+**After each step:** Update `task.md` with current phase, status, and notes.
 **On interruption:** State file preserves progress for next session.
 
 Phase map for state tracking:

@@ -125,6 +125,10 @@ Do NOT jump straight to a fix. Instead:
 
 ---
 
+### MANDATORY STOP-AND-VERIFY GATE
+> **[CONTEXT AMNESIA FAILSAFE]**
+> Do NOT proceed to Step 1 until you have verified in your `<thought_process>` that all required context files and skill files have been read using tool calls. You must state: "I have read X, Y, Z files and I am ready to begin."
+
 ### STEP 1 — UNDERSTAND THE SYMPTOM
 
 **Mode:** Debugger
@@ -430,7 +434,7 @@ Do not treat "it stopped happening once" as sufficient proof for meaningful issu
 
 #### Load Template (Step 7)
 
-- [REQUIRED] Load [debug-report.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/debug-report.md)
+- [REQUIRED] Load [debug-report.md]({{GLOBAL_CONFIG_URI}}/global_templates/debug-report.md)
 - Follow the structure and guidance in the template exactly to record the bug investigation.
 
 ---
@@ -564,9 +568,9 @@ Before marking a bug fix as complete:
 ### Session Interrupted Mid-Debug
 
 ```
-1. Read .agents/workflow-state.json for current phase
+1. Read task.md for current phase and completed steps
 2. Announce: "Resuming debug workflow from Phase [N]"
-3. Re-read the symptom statement and evidence gathered so far from state notes
+3. Re-read the symptom statement and evidence gathered so far from task.md notes
 4. Check if new evidence appeared since last session (logs, user reports)
 5. Resume from current phase — do NOT restart from symptom observation
 ```
@@ -585,11 +589,11 @@ Before marking a bug fix as complete:
 
 ## WORKFLOW STATE TRACKING
 
-This workflow integrates with `core/workflow-state-tracker.md`.
+This workflow integrates with `task.md`.
 
-**On activation:** Check `.agents/workflow-state.json` for existing state.
-**After each step:** Update the state file with current phase, status, and notes.
-**On interruption:** State file preserves progress for next session.
+**On activation:** Check `task.md` for existing state or create a new checklist.
+**After each step:** Update `task.md` with current phase, status, and notes.
+**On interruption:** task.md preserves progress for next session.
 
 Phase map for state tracking:
 ```
