@@ -330,6 +330,6 @@ MIT — use it, fork it, build on it, make it yours.
 
 ---
 
-### Anti-Gravity OS
+**Anti-Gravity OS**
 
 *Stop using your AI at 10%. Give it an operating system.*

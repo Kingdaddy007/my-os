@@ -89,24 +89,20 @@ Fill these first. The AI will produce far better output once they are populated.
 
 ## IDE-SPECIFIC DEFAULTS
 
-
 ### Google Antigravity / Gemini
 
 - Global config: `C:\Users\<Name>\.gemini\`
 - The `GEMINI.md` file at the root is automatically read as the system prompt
 - Workflows are dynamically loaded from `~/.gemini/antigravity/global_workflows/`
 
-
 ### Cursor
 
 - Global rules: `C:\Users\<Name>\.cursor\rules\`
 - Point Cursor's system rules to the `GEMINI.md` file.
 
-
 ### Windsurf
 
 - Global memories: `C:\Users\<Name>\.codeium\windsurf\memories\`
-
 
 ### OpenCode
 
