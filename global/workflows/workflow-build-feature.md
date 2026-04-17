@@ -126,7 +126,7 @@ Do NOT stop automatically. Instead:
 
 ### MANDATORY STOP-AND-VERIFY GATE
 > **[CONTEXT AMNESIA FAILSAFE]**
-> Do NOT proceed to Step 1 until you have verified in your `<thought_process>` that all required context files and skill files have been read using tool calls. You must state: "I have read X, Y, Z files and I am ready to begin."
+> Do NOT proceed to Step 1 until you have SILENTLY verified that all required context files and skill files have been read using tool calls.
 
 ### STEP 0 — WORKSPACE ISOLATION (MANDATORY)
 

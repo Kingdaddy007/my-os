@@ -6,7 +6,7 @@ description: The systematic sequence for running automated project verification 
 
 > **[CONTEXT AMNESIA FAILSAFE]**
 > YOU MUST USE TOOL CALLS TO READ THE FULL SOURCE FILE AND THE REQUIRED SKILLS/CONTEXTS BEFORE EXECUTING THIS.
-> PROVE YOU HAVE DONE THIS IN A `<thought_process>` BLOCK.
+> Verify silently in your internal reasoning that you have done this.
 
 
 > **IMPORTANT [REQUIRED]:** This workflow runs the Antigravity Gold verification scripts against the current project. The scripts are located in `C:\Users\Oviks\.gemini\antigravity\scripts\`.
