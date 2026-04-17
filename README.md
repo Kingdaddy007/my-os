@@ -39,8 +39,8 @@ It's not a prompt. It's not a `.cursorrules` file. It's a complete system:
 | 🧠 **Core** | Defines how the AI thinks, reasons, and communicates | 9 |
 | ⚡ **Skills** | Domain expertise loaded before each task type | 15 |
 | 🔄 **Workflows** | Step-by-step execution triggered by `/` slash commands | 13 |
-| 📍 **Contexts** | Your stack, architecture, standards — no more generic advice | 12 |
-| 🧾 **Templates** | Scaffolds for PRDs, ADRs, debug reports, feature plans | 8 |
+| 📍 **Contexts** | Live project truth about your stack, architecture, and standards | 12 |
+| 🧾 **Templates** | Output scaffolds plus authoring templates for context/setup work | 8 |
 | 📊 **Rubrics** | Self-assessment scorecards the AI uses to check its own work | 11 |
 | 🧪 **Benchmarks** | Performance trackers across task categories | 7 |
 | 💾 **Memory** | Living record of decisions, patterns, and mistakes | 6 |
@@ -258,12 +258,54 @@ Antigravity-OS/
     ├── GLOBAL_MEMORY.md        ← System map
     ├── core/                   ← AI identity (deep reference)
     ├── skills/                 ← Folder-based skills (SKILL.md)
-    ├── contexts/               ← Context templates
-    ├── workflows/              ← Workflow reference files
-    ├── global_workflows/       ← Global-only workflows
+    ├── contexts/               ← Live project truth
+    ├── workflows/              ← Canonical workflow source files
+    ├── global_workflows/       ← Trigger/exposure layer for workflow commands
+    ├── global_templates/       ← Output scaffolds + context authoring templates
+    ├── memory/                 ← Retained learning across sessions
+    ├── rubric/                 ← Critique and evaluation support
+    ├── benchmark/              ← Advanced OS evaluation infrastructure
     └── scripts/                ← Maintenance & verification tools
 
 ```
+
+---
+
+## Recent Update: Runtime vs Authoring Restructure
+
+> This architecture update was introduced in commit `6e5c582` (`Restructure Anti-Gravity runtime and authoring docs`). If you're reviewing the new shape, start with `global/GEMINI.md`, then `global/GLOBAL_MEMORY.md`, then `global/contexts/README.md`, then `global/global_templates/README.md`.
+
+### What changed
+
+- `GEMINI.md` now acts as the constitution and runtime kernel.
+- `GLOBAL_MEMORY.md` now acts as the routing and system-map file.
+- `contexts/` now represents live project truth, not hybrid template docs.
+- `global_templates/` now owns authoring scaffolds and context templates in addition to output templates.
+- `workflow-project-inception` now creates runtime-ready context files from templates.
+- `memory/` remains first-class.
+- `rubric/` and `benchmark/` are now positioned as support layers, not day-one startup context.
+
+### Why this changed
+
+- Reduce mixed responsibilities across files.
+- Make runtime files easier for agents and IDEs to scan and use.
+- Preserve system richness while improving role clarity.
+- Separate execution-time truth from setup and authoring guidance.
+
+### What this does NOT mean
+
+- This is not a rewrite of the whole OS.
+- This does not remove memory or personal intelligence.
+- This does not yet make Anti-Gravity a full plugin runtime.
+- This is a structure and clarity upgrade, not the final executor/plugin phase.
+
+Anti-Gravity now has a cleaner runtime-vs-authoring architecture, but it is still primarily a structured OS/content system rather than a fully packaged cross-harness execution plugin.
+
+### How to verify it
+
+- Inspect commit `6e5c582`.
+- Compare the roles of `global/GEMINI.md`, `global/GLOBAL_MEMORY.md`, `global/contexts/README.md`, and `global/global_templates/README.md`.
+- Review the new templates: `project-context-template.md`, `stack-context-template.md`, and `coding-standards-template.md`.
 
 ---
 
