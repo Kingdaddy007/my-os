@@ -495,39 +495,6 @@ STEP 10: DEPLOY
 └── Verify: live and working
 ```
 
-#### For time-constrained projects (hackathon)
-
-Map the steps to available time:
-
-```
-DAY 1:
-  Morning: Steps 1-2 (Setup + Database)
-  Afternoon: Step 3 (Auth)
-  Evening: Step 4 (Core Feature 1 — Backend)
-
-DAY 2:
-  Morning: Step 5 (Core Feature 1 — Frontend)
-  Afternoon: Step 6 (Core Feature 2)
-  Evening: Step 7 (Core Feature 3)
-
-DAY 3:
-  Morning: Step 8 (Integration + Polish)
-  Afternoon: Step 9 (Testing + Hardening)
-  Evening: Bug fixes and final polish
-
-DAY 4:
-  Morning: Step 10 (Deploy)
-  Afternoon: Final testing on production
-  Evening: Submit + Documentation
-```
-
-#### Risk mitigation for time-constrained projects
-
-- Deploy early (Day 2). Do not wait until the last day. Deploy a skeleton early so deployment issues are discovered early.
-- Commit to GitHub frequently. Every completed step equals a commit.
-- Cut scope, not quality. If behind schedule, move features to Nice-to-Have — do not ship broken features.
-- One feature at a time. Complete Feature 1 fully before starting Feature 2. Half-built features are worthless.
-
 Output:
 
 - sequenced implementation plan
