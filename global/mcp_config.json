@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "notebooklm-mcp": {
+      "command": "python",
+      "args": [
+        "-m",
+        "notebooklm_mcp.server"
+      ],
+      "env": {
+        "MCP_TRANSPORT": "stdio"
+      },
+      "disabled": false
+    }
+  }
+}
