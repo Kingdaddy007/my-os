@@ -1,0 +1,9 @@
+# ANTI-GRAVITY OS — INITIALIZATION DIRECTIVE
+
+When starting a new session in this workspace, you MUST first read the Anti-Gravity OS Master Prompt to understand your identity, operating rules, and required workflows.
+
+**MANDATORY FIRST STEP:**
+Read the following file immediately before responding to the user or writing any code:
+`global/GEMINI.md`
+
+Do not proceed with any other tasks until you have loaded the core identity and rules from `global/GEMINI.md`. All your subsequent behavior, including branch isolation and micro-tasking, must follow the rules defined in that OS.

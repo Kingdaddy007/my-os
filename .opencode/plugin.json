@@ -1,0 +1,21 @@
+{
+  "name": "antigravity-os",
+  "displayName": "Anti-Gravity OS",
+  "description": "The operating system for AI-powered engineering — skills, workflows, memory, and execution discipline",
+  "version": "1.2.0",
+  "author": {
+    "name": "Beloved",
+    "url": "https://github.com/Kingdaddy007"
+  },
+  "repository": "https://github.com/Kingdaddy007/my-os",
+  "activationEvents": [
+    "onWorkspaceLoad"
+  ],
+  "instructions": "global/GEMINI.md",
+  "keywords": [
+    "skills",
+    "workflows",
+    "memory",
+    "execution-discipline"
+  ]
+}
