@@ -1,6 +1,6 @@
 # WORKFLOW: PROJECT INCEPTION
 
-**Version:** Gold v1.1
+**Version:** Gold v1.2
 **Layer:** Execution workflow
 **Tier:** 2 - loaded by task
 **Purpose:** Turn a raw idea into a buildable plan, initialize runtime context, and set up local project memory before implementation begins.
@@ -90,14 +90,52 @@ Do not use it when:
 
 ### PHASE 1: DISCOVER THE PROBLEM
 
-Goal:
+Do not let the user skip this phase. The number one cause of failed projects is building a solution before understanding the problem.
 
-- understand the real problem
-- identify the user
-- define the job-to-be-done
-- agree on what success means
+#### Step 1: Extract the idea
 
-Output:
+Ask the user to explain their idea in plain language. Listen for:
+
+- What does it do?
+- Who is it for?
+- Why does it matter?
+- What triggered this idea? (pain point, opportunity, competition requirement)
+
+#### Step 2: Define the problem
+
+Restate the idea as a problem statement:
+
+```
+[Target user] struggles with [specific problem] because [root cause].
+Currently they [current workaround], which is [why it's inadequate].
+```
+
+#### Step 3: Define the user
+
+Create a brief user profile:
+
+```
+PRIMARY USER: [Who]
+CONTEXT: [When/where they encounter the problem]
+CURRENT BEHAVIOR: [What they do today]
+DESIRED OUTCOME: [What they wish they could do]
+TECHNICAL COMFORT: [Low / Medium / High]
+```
+
+#### Step 4: Define the job-to-be-done
+
+```
+When [situation], [user] wants to [motivation] so that they can [outcome].
+```
+
+#### Step 5: Define success
+
+```
+This project succeeds when [measurable outcome].
+MVP is "done" when [specific criteria].
+```
+
+#### Phase 1 output
 
 - problem statement
 - user profile
@@ -112,14 +150,49 @@ Gate:
 
 ### PHASE 2: DEFINE THE MVP
 
-Goal:
+#### Step 1: Brainstorm features
 
-- list candidate features
-- separate must-have from nice-to-have
-- define the smallest version that delivers the core value
-- define what "done" means for version 1
+List everything the product could do. Do not filter yet. Generate 10-20 capabilities.
 
-Output:
+#### Step 2: Categorize and prioritize
+
+Sort every feature into:
+
+| Category | Rule | Features |
+| :--- | :--- | :--- |
+| **🔴 Core (Must Have)** | Without this, the product does not solve the problem | [list] |
+| **🟡 Important (Should Have)** | Makes the product significantly better but not essential for v1 | [list] |
+| **🟢 Nice-to-Have (Could Have)** | Would be great but can wait for v2 | [list] |
+| **⚫ Out of Scope (Won't Have)** | Deliberately excluded | [list] |
+
+#### Step 3: Define the MVP
+
+The MVP is ONLY the 🔴 Core features. Nothing else.
+
+Ask the "20% question": "If we could only build 20% of this, which 20% delivers the core value?" That is the MVP.
+
+```
+MVP SCOPE:
+- [Core feature 1]
+- [Core feature 2]
+- [Core feature 3]
+
+EXPLICITLY NOT IN MVP:
+- [Everything else — listed to prevent scope creep]
+```
+
+#### Step 4: Define what "shipped" looks like
+
+```
+VERSION 1 IS DONE WHEN:
+- [ ] [Core feature 1] works end to end
+- [ ] [Core feature 2] works end to end
+- [ ] [Core feature 3] works end to end
+- [ ] User can [complete the primary job] without assistance
+- [ ] Deployed to [target environment]
+```
+
+#### Phase 2 output
 
 - prioritized feature list
 - MVP scope
@@ -129,6 +202,7 @@ Output:
 Gate:
 
 - do not proceed with an unbounded feature list
+- user confirms: "Yes, this MVP scope is what I want to build first."
 
 ---
 
@@ -138,11 +212,22 @@ Use when:
 
 - the product has users, screens, states, routes, or task flows
 
-Goal:
+Skip only if the product has no user journeys (e.g., a pure background script).
 
-- map the main user journeys
-- define key transitions and failure paths
-- establish navigation logic before architecture or UI polish
+#### Step 1: Define the primary user journeys
+
+For each main user type, map their "golden path" — the main thing they do. List every step from entry point to job completion.
+
+#### Step 2: Define secondary and error flows
+
+- Map secondary tasks (profile management, settings, etc.)
+- Define how global errors (network failure, auth expiry) are handled
+- Define flow-specific error recoveries
+
+#### Step 3: Map navigation and transitions
+
+- Define the global navigation
+- Ensure every transition between screens is explicit (including loading states and redirects)
 
 Output:
 
@@ -152,23 +237,70 @@ Authoring rule:
 
 - use scaffolding if needed, but save `app-flow.md` as a live context file, not as a template exercise
 
+Gate:
+
+- before designing architecture or visual UI, confirm the user journey makes sense — are there dead ends? Are error states handled?
+
 ---
 
 ### PHASE 3: DEFINE THE TECHNICAL DIRECTION
 
-Goal:
+#### Step 1: Choose the tech stack
 
-- choose the practical stack
-- define the main architecture shape
-- identify the riskiest technical decision
-- determine what should be validated early
+Based on the user's existing skills, project requirements, timeline constraints, and deployment target.
 
-Output:
+```
+TECH STACK:
+- Frontend: [framework]
+- Backend: [framework/approach]
+- Database: [engine]
+- Auth: [approach]
+- Hosting: [provider]
+- Deployment: [approach]
+```
+
+#### Step 2: Design the data model
+
+- What entities exist?
+- What are the relationships?
+
+```
+ENTITIES:
+- [Entity 1]: [key fields]
+- [Entity 2]: [key fields]
+- [Entity 3]: [key fields]
+
+RELATIONSHIPS:
+- [Entity 1] has many [Entity 2]
+- [Entity 2] belongs to [Entity 1]
+```
+
+#### Step 3: Define the API shape (if applicable)
+
+- What endpoints are needed?
+- What are the primary CRUD operations?
+
+#### Step 4: Define the folder structure
+
+Based on the stack and patterns:
+
+```
+project/
+├── [folder structure]
+```
+
+#### Step 5: Identify the riskiest technical decision
+
+- What is the one technical choice that, if wrong, would cost the most to fix?
+- How can we validate it early?
+
+#### Phase 3 output
 
 - stack decision
-- architecture direction
-- initial data model
-- integration and deployment assumptions
+- data model
+- API shape
+- folder structure
+- riskiest technical decision and validation plan
 
 Gate:
 
@@ -182,11 +314,46 @@ Use when:
 
 - the product has a meaningful user interface
 
-Goal:
+> **Recommended:** Before defining the visual identity in text, consider using `workflow-visual-brainstorm.md` to generate a visual preview. Making the design direction visible before writing it down prevents "that's not what I imagined" moments.
 
-- define the intended look and feel
-- choose a visual direction that fits the users and product type
-- avoid generic UI drift
+#### Step 1: Define the visual vibe
+
+- What should users FEEL when they first see this product? (e.g., "premium", "calm", "powerful", "playful")
+- Name 3-5 reference products or websites that capture the aesthetic. For each, note WHAT specifically to borrow.
+- List what this product should NOT look like (prevents aesthetic drift).
+
+#### Step 2: Choose the color direction
+
+Define the core color roles:
+
+- Background family (primary canvas + elevated surfaces)
+- Primary text colors (headline, body, muted)
+- Accent / brand color (CTAs, highlights, active states)
+- Feedback colors (success, warning, error)
+- Any special effects (gradients, glassmorphism, etc.)
+
+Translate into CSS custom properties (hex values).
+
+#### Step 3: Choose the typography
+
+- Select a display font for headlines (and explain why — what feeling it creates)
+- Select a body font for all readable content
+- Define a basic type scale: display, heading 1-3, body, caption, label
+- Define mobile adjustments for the largest sizes
+
+#### Step 4: Define spacing, radius, and motion
+
+- Choose a base spacing unit (4px or 8px) and list the key spacing tokens
+- Define border radius tokens (sm, md, lg, xl, full)
+- Define a motion scale: micro (hover), standard (state change), entrance (scroll reveals), page (transitions)
+
+#### Step 5: Document key component patterns
+
+- Primary button + hover state
+- Secondary / ghost button
+- Card base (background, radius, border, shadow)
+- Input field + focus state
+- Any signature visual technique (glassmorphism, gradient overlay, etc.)
 
 Output:
 
@@ -195,6 +362,10 @@ Output:
 Authoring rule:
 
 - use brainstorming or reference material if needed, but save the final file as current truth
+
+Gate:
+
+- before moving to architecture, confirm the visual direction feels right for the target user and business context. A trading tool should not look like a social app. A luxury marketplace should not look like a SaaS dashboard.
 
 ---
 
@@ -236,14 +407,12 @@ Required writes:
 - create `.agents/memory/mistakes-to-avoid.md`
 - create `.agents/memory/postmortems.md`
 
+> [!CAUTION]
+> Failure to create these files will lead to global memory contamination. Project-specific lessons MUST go local first. Global memory is reserved for cross-project or Anti-Gravity-level lessons.
+
 First entry:
 
 - log the initial stack and architecture choice in local `decisions-log.md`
-
-Memory rule:
-
-- project-specific lessons go local first
-- global memory is reserved for cross-project or Anti-Gravity-level lessons
 
 ---
 
@@ -255,17 +424,109 @@ Goal:
 - expose dependencies and critical path
 - make the first execution workflow obvious
 
-Typical build sequence:
+#### Universal build order
 
-1. project setup
-2. data model and persistence
-3. authentication or trust boundary
-4. core feature 1 backend
-5. core feature 1 frontend
-6. additional core features
-7. integration and polish
-8. testing and hardening
-9. deployment
+For most web applications, the build order is:
+
+```
+STEP 1: PROJECT SETUP (Foundation)
+├── Initialize project with chosen stack
+├── Set up folder structure
+├── Configure dev environment (database, env vars)
+├── Set up linting, formatting, git
+└── Verify: project runs locally with blank page
+
+STEP 2: DATABASE + DATA MODEL (Skeleton)
+├── Define schema (Prisma, SQL, etc.)
+├── Create migrations
+├── Seed with test data
+└── Verify: can read/write data from CLI/script
+
+STEP 3: AUTHENTICATION (Security Foundation)
+├── Implement auth (login, register, session)
+├── Protect routes
+├── Set up basic role model (if needed)
+└── Verify: can log in, protected pages redirect
+
+STEP 4: CORE FEATURE 1 — Backend (Most Important Feature)
+├── API endpoints or Server Actions
+├── Database queries
+├── Input validation
+├── Error handling
+└── Verify: feature works via API/action (no UI yet)
+
+STEP 5: CORE FEATURE 1 — Frontend
+├── Pages and components
+├── Data fetching
+├── All states: loading, empty, error, success
+├── Forms and interactions
+└── Verify: feature works end-to-end in browser
+
+STEP 6: CORE FEATURE 2 — Full Stack
+├── Backend (API + DB)
+├── Frontend (pages + components)
+├── All states
+└── Verify: works end-to-end
+
+STEP 7: CORE FEATURE 3 — Full Stack
+├── [Same pattern]
+└── Verify: works end-to-end
+
+STEP 8: INTEGRATION + POLISH
+├── Connect features together
+├── Navigation and routing
+├── Error handling across all flows
+├── Responsive design check
+├── Basic accessibility check
+└── Verify: user can complete the full primary job
+
+STEP 9: TESTING + HARDENING
+├── Test critical paths
+├── Fix edge cases discovered during testing
+├── Security review (auth, input validation)
+├── Performance check (any obvious bottlenecks?)
+└── Verify: no broken flows, no obvious security holes
+
+STEP 10: DEPLOY
+├── Set up hosting
+├── Configure environment variables
+├── Deploy
+├── Smoke test on production
+└── Verify: live and working
+```
+
+#### For time-constrained projects (hackathon)
+
+Map the steps to available time:
+
+```
+DAY 1:
+  Morning: Steps 1-2 (Setup + Database)
+  Afternoon: Step 3 (Auth)
+  Evening: Step 4 (Core Feature 1 — Backend)
+
+DAY 2:
+  Morning: Step 5 (Core Feature 1 — Frontend)
+  Afternoon: Step 6 (Core Feature 2)
+  Evening: Step 7 (Core Feature 3)
+
+DAY 3:
+  Morning: Step 8 (Integration + Polish)
+  Afternoon: Step 9 (Testing + Hardening)
+  Evening: Bug fixes and final polish
+
+DAY 4:
+  Morning: Step 10 (Deploy)
+  Afternoon: Final testing on production
+  Evening: Submit + Documentation
+```
+
+#### Risk mitigation for time-constrained projects
+
+- Deploy early (Day 2). Do not wait until the last day. Deploy a skeleton early so deployment issues are discovered early.
+- Commit to GitHub frequently. Every completed step equals a commit.
+- Cut scope, not quality. If behind schedule, move features to Nice-to-Have — do not ship broken features.
+- One feature at a time. Complete Feature 1 fully before starting Feature 2. Half-built features are worthless.
 
 Output:
 
@@ -293,18 +554,39 @@ Optional:
 - load `project-brief.md` if a formal brief is useful
 - apply the project planning rubric during critique if the project is high-stakes or especially fuzzy
 
+#### Execution handoff
+
+Hand off to the engineering workflows:
+
+1. Start Step 1 from the build sequence
+2. Use `workflow-build-feature.md` for each feature
+3. Use the relevant skill files for each step
+4. Commit after each completed step
+5. Check off items in the Definition of Done as they are completed
+6. When 80% done: shift to finishing mode — resist scope creep, push to ship
+
 ---
 
 ## QUALITY GATES
 
 Before calling project inception complete, verify:
 
-- the problem is clearly defined
-- the MVP is smaller than the full idea
-- runtime context files exist for the core project truth
-- workspace memory is initialized
-- the first build steps are explicit
-- the next execution workflow is obvious
+- [ ] Problem clearly defined (user confirmed)
+- [ ] Target user identified
+- [ ] Features brainstormed and prioritized (Core / Important / Nice-to-Have / Out of Scope)
+- [ ] MVP scope is ONLY Core features
+- [ ] Definition of done is specific and checkable
+- [ ] App flow mapped (user journeys, error states, transitions) — `app-flow.md` created
+- [ ] Visual identity defined (vibe, colors, typography, motion) — `visual-identity.md` created (if UI project)
+- [ ] Tech stack chosen
+- [ ] Data model designed
+- [ ] Build sequence numbered and ordered
+- [ ] Time mapped (if deadline exists)
+- [ ] Risk identified
+- [ ] Context files created or updated
+- [ ] Workspace memory initialized
+- [ ] Project brief document compiled
+- [ ] The next execution workflow is obvious
 
 ---
 
