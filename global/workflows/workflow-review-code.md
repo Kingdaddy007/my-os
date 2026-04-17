@@ -386,7 +386,7 @@ State the minimum changes needed for approval when not ready. Do not leave the a
 
 #### Load Template (Step 8)
 
-- [REQUIRED] Load [code-review-report.md]({{GLOBAL_CONFIG_URI}}/global_templates/code-review-report.md)
+- [REQUIRED] Load [code-review-report.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/code-review-report.md)
 - Follow the structure and guidance in the template exactly to deliver the code review findings.
 
 #### Tone Rules (Step 8)

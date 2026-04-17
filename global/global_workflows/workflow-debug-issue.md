@@ -9,7 +9,7 @@ description: The systematic sequence for diagnosing and fixing bugs — from sym
 > PROVE YOU HAVE DONE THIS IN A `<thought_process>` BLOCK.
 
 
-> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 12,000-character logic, evidence-gathering steps, and regression prevention strategies, the Agent MUST load and follow the [SOURCE FILE]({{GLOBAL_CONFIG_URI}}/workflows/workflow-debug-issue.md).
+> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 12,000-character logic, evidence-gathering steps, and regression prevention strategies, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-debug-issue.md).
 
 ## WHAT THIS WORKFLOW DOES
 
@@ -21,7 +21,7 @@ Prevents "shotgun debugging" by enforcing evidence-based diagnosis. It ensures t
 
 ### 1. Load Full Instructions
 
-- [ ] **Load Source [REQUIRED]:** [workflow-debug-issue.md]({{GLOBAL_CONFIG_URI}}/workflows/workflow-debug-issue.md) (Follow all 8 steps).
+- [ ] **Load Source [REQUIRED]:** [workflow-debug-issue.md](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-debug-issue.md) (Follow all 8 steps).
 
 ### 2. Load Core Contexts & Skills (Always)
 

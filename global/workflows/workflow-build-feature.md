@@ -134,7 +134,7 @@ Do NOT stop automatically. Instead:
 
 #### Load Template (Step 1)
 
-- [REQUIRED] Load [feature-plan.md]({{GLOBAL_CONFIG_URI}}/global_templates/feature-plan.md)
+- [REQUIRED] Load [feature-plan.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/feature-plan.md)
 - Follow the structure and guidance in the template to scope and plan the feature before implementation.
 
 #### Action: Define Objective (Step 1)

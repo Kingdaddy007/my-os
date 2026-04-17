@@ -41,15 +41,15 @@ This folder answers one hard question honestly:
 
 | # | File | Tests | Rubric Used |
 | :--- | :--- | :--- | :--- |
-| 1 | [feature-build-benchmarks.md]({{GLOBAL_CONFIG_URI}}/benchmark/feature-build-benchmarks.md) | Feature implementation scenarios | `rubric-code-quality.md` |
-| 2 | [debugging-benchmarks.md]({{GLOBAL_CONFIG_URI}}/benchmark/debugging-benchmarks.md) | Bug diagnosis and investigation scenarios | `rubric-debugging.md` |
-| 3 | [architecture-benchmarks.md]({{GLOBAL_CONFIG_URI}}/benchmark/architecture-benchmarks.md) | System design and structure scenarios | `rubric-architecture.md` |
-| 4 | [review-audit-benchmarks.md]({{GLOBAL_CONFIG_URI}}/benchmark/review-audit-benchmarks.md) | Code review and audit scenarios | `rubric-communication.md` |
-| 5 | [ui-ux-benchmarks.md]({{GLOBAL_CONFIG_URI}}/benchmark/ui-ux-benchmarks.md) | Interface design scenarios | `rubric-ux.md` |
-| 6 | [api-data-benchmarks.md]({{GLOBAL_CONFIG_URI}}/benchmark/api-data-benchmarks.md) | API and database design scenarios | `rubric-api.md` |
-| 7 | [devops-runtime-benchmarks.md]({{GLOBAL_CONFIG_URI}}/benchmark/devops-runtime-benchmarks.md) | DevOps and operational scenarios | `rubric-performance.md` |
-| 8 | [security-benchmarks.md]({{GLOBAL_CONFIG_URI}}/benchmark/security-benchmarks.md) | Security review and hardening scenarios | `rubric-security.md` |
-| 9 | [decision-quality-benchmarks.md]({{GLOBAL_CONFIG_URI}}/benchmark/decision-quality-benchmarks.md) | Technical decisions under uncertainty | `rubric-architecture.md` + `rubric-communication.md` |
+| 1 | [feature-build-benchmarks.md](file:///c:/Users/Oviks/antigravitygold/benchmark/feature-build-benchmarks.md) | Feature implementation scenarios | `rubric-code-quality.md` |
+| 2 | [debugging-benchmarks.md](file:///c:/Users/Oviks/antigravitygold/benchmark/debugging-benchmarks.md) | Bug diagnosis and investigation scenarios | `rubric-debugging.md` |
+| 3 | [architecture-benchmarks.md](file:///c:/Users/Oviks/antigravitygold/benchmark/architecture-benchmarks.md) | System design and structure scenarios | `rubric-architecture.md` |
+| 4 | [review-audit-benchmarks.md](file:///c:/Users/Oviks/antigravitygold/benchmark/review-audit-benchmarks.md) | Code review and audit scenarios | `rubric-communication.md` |
+| 5 | [ui-ux-benchmarks.md](file:///c:/Users/Oviks/antigravitygold/benchmark/ui-ux-benchmarks.md) | Interface design scenarios | `rubric-ux.md` |
+| 6 | [api-data-benchmarks.md](file:///c:/Users/Oviks/antigravitygold/benchmark/api-data-benchmarks.md) | API and database design scenarios | `rubric-api.md` |
+| 7 | [devops-runtime-benchmarks.md](file:///c:/Users/Oviks/antigravitygold/benchmark/devops-runtime-benchmarks.md) | DevOps and operational scenarios | `rubric-performance.md` |
+| 8 | [security-benchmarks.md](file:///c:/Users/Oviks/antigravitygold/benchmark/security-benchmarks.md) | Security review and hardening scenarios | `rubric-security.md` |
+| 9 | [decision-quality-benchmarks.md](file:///c:/Users/Oviks/antigravitygold/benchmark/decision-quality-benchmarks.md) | Technical decisions under uncertainty | `rubric-architecture.md` + `rubric-communication.md` |
 
 ***
 

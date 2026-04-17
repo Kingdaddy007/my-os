@@ -9,7 +9,7 @@ description: The complete step-by-step sequence for transforming feature request
 > PROVE YOU HAVE DONE THIS IN A `<thought_process>` BLOCK.
 
 
-> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 21,000-character logic, instructions, and implementation stages, the Agent MUST load and follow the [SOURCE FILE]({{GLOBAL_CONFIG_URI}}/workflows/workflow-build-feature.md).
+> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 21,000-character logic, instructions, and implementation stages, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-build-feature.md).
 
 ## WHAT THIS WORKFLOW DOES
 
@@ -21,7 +21,7 @@ Chains Architect, Developer, and Reviewer modes to prevent coding before underst
 
 ### 1. Load Full Instructions
 
-- [ ] **Load Source [REQUIRED]:** [workflow-build-feature.md]({{GLOBAL_CONFIG_URI}}/workflows/workflow-build-feature.md) (Follow all 11 steps).
+- [ ] **Load Source [REQUIRED]:** [workflow-build-feature.md](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-build-feature.md) (Follow all 11 steps).
 
 ### 2. Load Core Contexts & Skills (Always)
 

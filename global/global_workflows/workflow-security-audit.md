@@ -9,7 +9,7 @@ description: The systematic sequence for evaluating the security posture of code
 > PROVE YOU HAVE DONE THIS IN A `<thought_process>` BLOCK.
 
 
-> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 18,000-character logic, STRIDE framework analysis, and trust boundary mapping protocols, the Agent MUST load and follow the [SOURCE FILE]({{GLOBAL_CONFIG_URI}}/workflows/workflow-security-audit.md).
+> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 18,000-character logic, STRIDE framework analysis, and trust boundary mapping protocols, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-security-audit.md).
 
 ## WHAT THIS WORKFLOW DOES
 
@@ -21,7 +21,7 @@ Applies structured threat analysis (STRIDE) to code and architecture. It forces 
 
 ### 1. Load Full Instructions
 
-- [ ] **Load Source [REQUIRED]:** [workflow-security-audit.md]({{GLOBAL_CONFIG_URI}}/workflows/workflow-security-audit.md) (Follow all 6 steps).
+- [ ] **Load Source [REQUIRED]:** [workflow-security-audit.md](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-security-audit.md) (Follow all 6 steps).
 
 ### 2. Load Core Contexts & Skills (Always)
 

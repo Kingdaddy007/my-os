@@ -9,7 +9,7 @@ description: The systematic sequence for improving code structure without changi
 > PROVE YOU HAVE DONE THIS IN A `<thought_process>` BLOCK.
 
 
-> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 15,000-character logic, characterization test protocols, and scope creep prevention rules, the Agent MUST load and follow the [SOURCE FILE]({{GLOBAL_CONFIG_URI}}/workflows/workflow-refactor-module.md).
+> **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 15,000-character logic, characterization test protocols, and scope creep prevention rules, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-refactor-module.md).
 
 ## WHAT THIS WORKFLOW DOES
 
@@ -21,7 +21,7 @@ Ensures refactoring is safe, scoped, and valuable. It enforces the discipline of
 
 ### 1. Load Full Instructions
 
-- [ ] **Load Source [REQUIRED]:** [workflow-refactor-module.md]({{GLOBAL_CONFIG_URI}}/workflows/workflow-refactor-module.md) (Follow all 6 steps).
+- [ ] **Load Source [REQUIRED]:** [workflow-refactor-module.md](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-refactor-module.md) (Follow all 6 steps).
 
 ### 2. Load Core Contexts & Skills (Always)
 

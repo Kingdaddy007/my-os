@@ -14,8 +14,8 @@ comparison, tradeoff reasoning, and recommendation quality.
 
 **Evaluate With:**
 
-- [rubric-architecture.md]({{GLOBAL_CONFIG_URI}}/rubric/rubric-architecture.md)
-- [rubric-communication.md]({{GLOBAL_CONFIG_URI}}/rubric/rubric-communication.md)
+- [rubric-architecture.md](file:///c:/Users/Oviks/antigravitygold/rubric/rubric-architecture.md)
+- [rubric-communication.md](file:///c:/Users/Oviks/antigravitygold/rubric/rubric-communication.md)
 
 **Tests:**
 

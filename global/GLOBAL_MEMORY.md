@@ -1,7 +1,7 @@
 # INTEGRATION STRATEGY
 
 **Version:** Gold v1.0
-**Location:** [GLOBAL_MEMORY.md]({{GLOBAL_CONFIG_URI}}/GLOBAL_MEMORY.md)
+**Location:** [GLOBAL_MEMORY.md](file:///C:/Users/Oviks/.gemini/GLOBAL_MEMORY.md)
 **Purpose:** The architectural integration map of the entire Anti-Gravity operating system. Explains how all folders, files, and layers work together as one coordinated system.
 
 > [!NOTE]
@@ -21,44 +21,44 @@ The system becomes powerful not when all files are loaded, but when the **right 
 
 ## THE 8 SYSTEM LAYERS
 
-Each folder in [antigravity/]({{GLOBAL_CONFIG_URI}}/antigravity/) represents a functional layer. These layers are numbered by their role in the cognitive pipeline, not by their folder position.
+Each folder in [.antigravity/](file:///C:/Users/Oviks/.gemini/antigravity/) represents a functional layer. These layers are numbered by their role in the cognitive pipeline, not by their folder position.
 
-**LAYER 1 — PERMANENT MIND ([core/]({{GLOBAL_CONFIG_URI}}/antigravity/core/))**
+**LAYER 1 — PERMANENT MIND ([core/](file:///C:/Users/Oviks/.gemini/antigravity/core/))**
 The stable operating kernel. Identity, cognition, modes, process, standards. Always active. Never unloaded.
 │
 ▼
-**LAYER 2 — SPECIALIZED EXPERTISE ([skills/]({{GLOBAL_CONFIG_URI}}/antigravity/skills/))**
+**LAYER 2 — SPECIALIZED EXPERTISE ([skills/](file:///C:/Users/Oviks/.gemini/antigravity/skills/))**
 Domain-specific behavioral instructions. Activated by task. Changes HOW Anti-Gravity thinks in a specific domain.
 │
 ▼
-**LAYER 3 — GROUND TRUTH ([contexts/]({{GLOBAL_CONFIG_URI}}/antigravity/contexts/))**
+**LAYER 3 — GROUND TRUTH ([contexts/](file:///C:/Users/Oviks/.gemini/antigravity/contexts/))**
 Project-specific facts. Stack, architecture, conventions, business rules. Prevents generic advice.
 │
 ▼
-**LAYER 4 — TASK EXECUTION ([workflows/]({{GLOBAL_CONFIG_URI}}/antigravity/workflows/))**
+**LAYER 4 — TASK EXECUTION ([workflows/](file:///C:/Users/Oviks/.gemini/antigravity/workflows/))**
 Step-by-step execution sequences. Chains skills together. Defines WHAT to do first, next, and last.
 │
 ▼
-**LAYER 5 — OUTPUT FORMALIZATION ([templates/]({{GLOBAL_CONFIG_URI}}/antigravity/global_templates/))**
+**LAYER 5 — OUTPUT FORMALIZATION ([templates/](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/))**
 Reusable output scaffolds. Ensures consistent, complete deliverables for formal artifacts.
 │
 ▼
-**LAYER 6 — QUALITY JUDGMENT ([rubrics/]({{GLOBAL_CONFIG_URI}}/antigravity/rubric/))**
+**LAYER 6 — QUALITY JUDGMENT ([rubrics/](file:///C:/Users/Oviks/.gemini/antigravity/rubric/))**
 Self-assessment matrices. Evaluates whether output is strong enough BEFORE delivery.
 │
 ▼
-**LAYER 7 — IMPROVEMENT MEASUREMENT ([benchmarks/]({{GLOBAL_CONFIG_URI}}/antigravity/benchmarks/))**
+**LAYER 7 — IMPROVEMENT MEASUREMENT ([benchmarks/](file:///C:/Users/Oviks/.gemini/antigravity/benchmarks/))**
 Repeatable test scenarios. Measures whether the system is getting better over time.
 │
 ▼
-**LAYER 8 — INSTITUTIONAL LEARNING ([memory/]({{GLOBAL_CONFIG_URI}}/antigravity/memory/))**
+**LAYER 8 — INSTITUTIONAL LEARNING ([memory/](file:///C:/Users/Oviks/.gemini/antigravity/memory/))**
 Retained knowledge. Decisions, patterns, mistakes, results, postmortems, system evolution. Compounds over time.
 
 ### Layer Characteristics
 
 | Layer | Folder | Files | Loading Tier | Stability | Content Type |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | `core/` | 9 | Tier 1 — Always on | Very stable | Behavioral rules |
+| 1 | `core/` | 10 | Tier 1 — Always on | Very stable | Behavioral rules |
 | 2 | `skills/` | 14 | Tier 2 — By task | Stable | Domain instructions |
 | 3 | `contexts/` | 12 | Tier 2 — By task | Variable | Project facts |
 | 4 | `workflows/` | 11 | Tier 2 — By task | Stable | Execution sequences |
@@ -77,11 +77,11 @@ A TASK ARRIVES
 │
 ▼
 CORE (Layer 1) identifies:
-├── Which MODE to activate ([operating-modes.md]({{GLOBAL_CONFIG_URI}}/antigravity/core/operating-modes.md))
-├── Which SKILLS to load ([activation-engine.md]({{GLOBAL_CONFIG_URI}}/antigravity/core/activation-engine.md))
-├── Which WORKFLOW to follow ([activation-engine.md]({{GLOBAL_CONFIG_URI}}/antigravity/core/activation-engine.md))
-├── The PROCESS to follow ([execution-workflow.md]({{GLOBAL_CONFIG_URI}}/antigravity/core/execution-workflow.md))
-└── The QUALITY BAR to meet ([quality-bar.md]({{GLOBAL_CONFIG_URI}}/antigravity/core/quality-bar.md))
+├── Which MODE to activate ([operating-modes.md](file:///C:/Users/Oviks/.gemini/antigravity/core/operating-modes.md))
+├── Which SKILLS to load ([activation-engine.md](file:///C:/Users/Oviks/.gemini/antigravity/core/activation-engine.md))
+├── Which WORKFLOW to follow ([activation-engine.md](file:///C:/Users/Oviks/.gemini/antigravity/core/activation-engine.md))
+├── The PROCESS to follow ([execution-workflow.md](file:///C:/Users/Oviks/.gemini/antigravity/core/execution-workflow.md))
+└── The QUALITY BAR to meet ([quality-bar.md](file:///C:/Users/Oviks/.gemini/antigravity/core/quality-bar.md))
 │
 ▼
 SKILLS (Layer 2) add domain expertise:
@@ -116,12 +116,12 @@ RUBRICS (Layer 6) evaluate quality:
 └── Determines: ship, fix, or revisit
 │
 ▼
-MEMORY (Layer 8) stores learning: (NOTE: Project-specific knowledge MUST go to the workspace's LOCAL memory folder, e.g. .agents/memory/, instead of this global path)
-├── Significant decisions → [decisions-log.md]({{GLOBAL_CONFIG_URI}}/antigravity/memory/decisions-log.md)
-├── Useful patterns → [common-patterns.md]({{GLOBAL_CONFIG_URI}}/antigravity/memory/common-patterns.md)
-├── Mistakes made → [mistakes-to-avoid.md]({{GLOBAL_CONFIG_URI}}/antigravity/memory/mistakes-to-avoid.md)
-├── If incident → [postmortems.md]({{GLOBAL_CONFIG_URI}}/antigravity/memory/postmortems.md)
-└── If system changed → [version-notes.md]({{GLOBAL_CONFIG_URI}}/antigravity/memory/version-notes.md)
+MEMORY (Layer 8) stores learning:
+├── Significant decisions → [decisions-log.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/decisions-log.md)
+├── Useful patterns → [common-patterns.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/common-patterns.md)
+├── Mistakes made → [mistakes-to-avoid.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/mistakes-to-avoid.md)
+├── If incident → [postmortems.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/postmortems.md)
+└── If system changed → [version-notes.md](file:///C:/Users/Oviks/.gemini/antigravity/memory/version-notes.md)
 
 ### The Feedback Loop
 
@@ -145,42 +145,42 @@ Without memory, every task starts from zero. With memory, every task builds on e
 
 ### Primary Interactions
 
-[{{GLOBAL_CONFIG_URI}}/antigravity/core/]({{GLOBAL_CONFIG_URI}}/antigravity/core/) ─────────────────────────────────────────────┐
+[.antigravity/core/](file:///C:/Users/Oviks/.gemini/antigravity/core/) ─────────────────────────────────────────────┐
 │ governs everything │
-├──▶ [skills/]({{GLOBAL_CONFIG_URI}}/antigravity/skills/) (skills inherit from core) │
-├──▶ [workflows/]({{GLOBAL_CONFIG_URI}}/antigravity/workflows/) (workflows implement core process)
-├──▶ [templates/]({{GLOBAL_CONFIG_URI}}/antigravity/global_templates/) (templates implement core output contracts)
-├──▶ [rubrics/]({{GLOBAL_CONFIG_URI}}/antigravity/rubric/) (rubrics implement core quality bar)
+├──▶ [skills/](file:///C:/Users/Oviks/.gemini/antigravity/skills/) (skills inherit from core) │
+├──▶ [workflows/](file:///C:/Users/Oviks/.gemini/antigravity/workflows/) (workflows implement core process)
+├──▶ [templates/](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/) (templates implement core output contracts)
+├──▶ [rubrics/](file:///C:/Users/Oviks/.gemini/antigravity/rubric/) (rubrics implement core quality bar)
 └──▶ ALL (core is the highest authority) │
 │
-[skills/]({{GLOBAL_CONFIG_URI}}/antigravity/skills/) ◀──▶ [workflows/]({{GLOBAL_CONFIG_URI}}/antigravity/workflows/) │
+[skills/](file:///C:/Users/Oviks/.gemini/antigravity/skills/) ◀──▶ [workflows/](file:///C:/Users/Oviks/.gemini/antigravity/workflows/) │
 │ workflows activate skills │
 │ skills define domain behavior │
 │ │
-[skills/]({{GLOBAL_CONFIG_URI}}/antigravity/skills/) ◀──▶ [contexts/]({{GLOBAL_CONFIG_URI}}/antigravity/contexts/) │
+[skills/](file:///C:/Users/Oviks/.gemini/antigravity/skills/) ◀──▶ [contexts/](file:///C:/Users/Oviks/.gemini/antigravity/contexts/) │
 │ skills provide universal HOW │
 │ contexts provide specific WHAT │
 │ together = grounded expertise │
 │ │
-[skills/]({{GLOBAL_CONFIG_URI}}/antigravity/skills/) ──▶ [rubrics/]({{GLOBAL_CONFIG_URI}}/antigravity/rubric/) │
+[skills/](file:///C:/Users/Oviks/.gemini/antigravity/skills/) ──▶ [rubrics/](file:///C:/Users/Oviks/.gemini/antigravity/rubric/) │
 │ each skill has a corresponding rubric │
 │ skill = how to do it │
 │ rubric = how to judge it │
 │ │
-[workflows/]({{GLOBAL_CONFIG_URI}}/antigravity/workflows/) ──▶ [templates/]({{GLOBAL_CONFIG_URI}}/antigravity/global_templates/) │
+[workflows/](file:///C:/Users/Oviks/.gemini/antigravity/workflows/) ──▶ [templates/](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/) │
 │ workflows specify output templates │
 │ templates are used during delivery phase │
 │ │
-[workflows/]({{GLOBAL_CONFIG_URI}}/antigravity/workflows/) ──▶ [rubrics/]({{GLOBAL_CONFIG_URI}}/antigravity/rubric/) │
+[workflows/](file:///C:/Users/Oviks/.gemini/antigravity/workflows/) ──▶ [rubrics/](file:///C:/Users/Oviks/.gemini/antigravity/rubric/) │
 │ workflows invoke rubrics at critique phase │
 │ │
-[benchmarks/]({{GLOBAL_CONFIG_URI}}/antigravity/benchmarks/) ──▶ [rubrics/]({{GLOBAL_CONFIG_URI}}/antigravity/rubric/) │
+[benchmarks/](file:///C:/Users/Oviks/.gemini/antigravity/benchmarks/) ──▶ [rubrics/](file:///C:/Users/Oviks/.gemini/antigravity/rubric/) │
 │ benchmarks are scored using rubrics │
 │ │
-[benchmarks/]({{GLOBAL_CONFIG_URI}}/antigravity/benchmarks/) ──▶ [memory/]({{GLOBAL_CONFIG_URI}}/antigravity/memory/) │
+[benchmarks/](file:///C:/Users/Oviks/.gemini/antigravity/benchmarks/) ──▶ [memory/](file:///C:/Users/Oviks/.gemini/antigravity/memory/) │
 │ benchmark results stored in memory │
 │ │
-everything ──▶ [memory/]({{GLOBAL_CONFIG_URI}}/antigravity/memory/) │
+everything ──▶ [memory/](file:///C:/Users/Oviks/.gemini/antigravity/memory/) │
 learning from any layer feeds memory │
 ───────────────────────────────────────────────────┘
 
@@ -231,7 +231,7 @@ When a task arrives, Anti-Gravity assembles a **runtime bundle** — the specifi
 #### Step 1: Base Layer (Always Present)
 
 ALWAYS LOADED:
-└── core/ (all 9 files — via master system prompt)
+└── core/ (all 10 files — via master system prompt)
 
 #### Step 2: Task Classification
 
@@ -279,7 +279,7 @@ RULE: Don't pre-load these. Load at the moment of need.
 A typical task configuration looks like:
 RUNTIME BUNDLE (Example: Build a New Feature)
 │
-├── CORE (always) [9 files — via system prompt]
+├── CORE (always) [10 files — via system prompt]
 ├── PRIMARY SKILL: skill-coding [1 file]
 ├── SECONDARY SKILL: skill-testing [1 file]
 ├── WORKFLOW: workflow-build-feature [1 file]
@@ -303,7 +303,7 @@ RUNTIME BUNDLE (Example: Build a New Feature)
 
 | Layer | Files Loaded | When |
 | :--- | :--- | :--- |
-| Core | All 9 (via system prompt) | Always |
+| Core | All 10 (via system prompt) | Always |
 | Skills | `skill-coding`, `skill-testing` | Task start |
 | Contexts | `stack-context`, `architecture-context`, `coding-standards`, `database-context` | Task start |
 | Workflow | `workflow-build-feature` | Task start |
@@ -318,7 +318,7 @@ RUNTIME BUNDLE (Example: Build a New Feature)
 
 | Layer | Files Loaded | When |
 | :--- | :--- | :--- |
-| Core | All 9 | Always |
+| Core | All 10 | Always |
 | Skills | `skill-debugging`, `skill-security` | Task start |
 | Contexts | `stack-context`, `architecture-context`, `infra-context`, `security-baselines` | Task start |
 | Workflow | `workflow-debug-issue` | Task start |
@@ -401,16 +401,16 @@ A focused bundle of 3-5 relevant files produces better output than a bloated bun
 
 ## THE FULL SYSTEM AT A GLANCE
 
-[antigravity/]({{GLOBAL_CONFIG_URI}}/antigravity/)
+[.antigravity/](file:///C:/Users/Oviks/.gemini/antigravity/)
 
-├── [core/]({{GLOBAL_CONFIG_URI}}/antigravity/core/) (9 files) ← Layer 1: Permanent Mind
-├── [skills/]({{GLOBAL_CONFIG_URI}}/antigravity/skills/) (14 files) ← Layer 2: Domain Expertise
-├── [contexts/]({{GLOBAL_CONFIG_URI}}/antigravity/contexts/) (12 files) ← Layer 3: Ground Truth
-├── [workflows/]({{GLOBAL_CONFIG_URI}}/antigravity/workflows/) (11 files) ← Layer 4: Execution Patterns
-├── [templates/]({{GLOBAL_CONFIG_URI}}/antigravity/global_templates/) (7 files) ← Layer 5: Output Scaffolds
-├── [rubrics/]({{GLOBAL_CONFIG_URI}}/antigravity/rubric/) (11 files) ← Layer 6: Quality Judges
-├── [benchmarks/]({{GLOBAL_CONFIG_URI}}/antigravity/benchmarks/) (7 files) ← Layer 7: Improvement Tests
-└── [memory/]({{GLOBAL_CONFIG_URI}}/antigravity/memory/) (6 files) ← Layer 8: Institutional Learning
+├── [core/](file:///C:/Users/Oviks/.gemini/antigravity/core/) (10 files) ← Layer 1: Permanent Mind
+├── [skills/](file:///C:/Users/Oviks/.gemini/antigravity/skills/) (14 files) ← Layer 2: Domain Expertise
+├── [contexts/](file:///C:/Users/Oviks/.gemini/antigravity/contexts/) (12 files) ← Layer 3: Ground Truth
+├── [workflows/](file:///C:/Users/Oviks/.gemini/antigravity/workflows/) (11 files) ← Layer 4: Execution Patterns
+├── [templates/](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/) (7 files) ← Layer 5: Output Scaffolds
+├── [rubrics/](file:///C:/Users/Oviks/.gemini/antigravity/rubric/) (11 files) ← Layer 6: Quality Judges
+├── [benchmarks/](file:///C:/Users/Oviks/.gemini/antigravity/benchmarks/) (7 files) ← Layer 7: Improvement Tests
+└── [memory/](file:///C:/Users/Oviks/.gemini/antigravity/memory/) (6 files) ← Layer 8: Institutional Learning
 
 ---
 

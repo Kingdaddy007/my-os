@@ -43,13 +43,13 @@ reusable form — not the reasoning itself.
 
 | # | File | When to Use | Referenced By |
 | :--- | :--- | :--- | :--- |
-| 1 | [architecture-decision-record.md]({{GLOBAL_CONFIG_URI}}/global_templates/architecture-decision-record.md) | Documenting Type 1 or 1.5 architectural decisions | `workflow-plan-architecture.md` |
-| 2 | [debug-report.md]({{GLOBAL_CONFIG_URI}}/global_templates/debug-report.md) | Documenting significant bug investigations — P1, P2, or recurring | `workflow-debug-issue.md` |
-| 3 | [code-review-report.md]({{GLOBAL_CONFIG_URI}}/global_templates/code-review-report.md) | Delivering formal code review findings | `workflow-review-code.md` |
-| 4 | [feature-plan.md]({{GLOBAL_CONFIG_URI}}/global_templates/feature-plan.md) | Scoping a new feature — single-sprint scope | `workflow-build-feature.md`, `skill-product-thinking` |
-| 5 | [prd-template.md]({{GLOBAL_CONFIG_URI}}/global_templates/prd-template.md) | Comprehensive requirements for multi-sprint initiatives | Major initiative planning |
-| 6 | [risk-assessment.md]({{GLOBAL_CONFIG_URI}}/global_templates/risk-assessment.md) | Evaluating risks for major decisions or changes | Type 1 decisions, major deployments |
-| 7 | [project-brief.md]({{GLOBAL_CONFIG_URI}}/global_templates/project-brief.md) | Standardized output for project inception / north star | Project inception, hackathons |
+| 1 | [architecture-decision-record.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/architecture-decision-record.md) | Documenting Type 1 or 1.5 architectural decisions | `workflow-plan-architecture.md` |
+| 2 | [debug-report.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/debug-report.md) | Documenting significant bug investigations — P1, P2, or recurring | `workflow-debug-issue.md` |
+| 3 | [code-review-report.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/code-review-report.md) | Delivering formal code review findings | `workflow-review-code.md` |
+| 4 | [feature-plan.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/feature-plan.md) | Scoping a new feature — single-sprint scope | `workflow-build-feature.md`, `skill-product-thinking` |
+| 5 | [prd-template.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/prd-template.md) | Comprehensive requirements for multi-sprint initiatives | Major initiative planning |
+| 6 | [risk-assessment.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/risk-assessment.md) | Evaluating risks for major decisions or changes | Type 1 decisions, major deployments |
+| 7 | [project-brief.md](file:///C:/Users/Oviks/.gemini/antigravity/global_templates/project-brief.md) | Standardized output for project inception / north star | Project inception, hackathons |
 
 ***
 

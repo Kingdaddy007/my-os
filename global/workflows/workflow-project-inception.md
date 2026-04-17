@@ -262,7 +262,7 @@ Do not design the architecture or visual identity before you know how the user a
 
 **Write these into the context file:**
 
-- Create `contexts/app-flow.md` using the Gold v1.0 template from `{{GLOBAL_CONFIG_URI}}/antigravity/contexts/app-flow.md`
+- Create `contexts/app-flow.md` using the Gold v1.0 template from `C:\Users\Oviks\.gemini\antigravity\contexts\app-flow.md`
 
 **Gate:** Before designing the architecture or visual UI, confirm the user journey makes sense. Are there any dead ends? Are error states handled?
 
@@ -334,7 +334,7 @@ Translate into CSS custom properties (hex values).
 
 **Write these into the context file:**
 
-- Create `contexts/visual-identity.md` using the Gold v1.0 template from `{{GLOBAL_CONFIG_URI}}/antigravity/contexts/visual-identity.md`
+- Create `contexts/visual-identity.md` using the Gold v1.0 template from `C:\Users\Oviks\.gemini\antigravity\contexts\visual-identity.md`
 
 **Gate:** Before moving to architecture — confirm the visual direction feels right for the target user and business context. A trading tool should not look like a social app. A luxury marketplace should not look like a SaaS dashboard.
 
