@@ -427,14 +427,29 @@ Load `skill-coding` and follow its behavioral workflow.
 4. Handle all error paths — never just the happy path
 5. Follow `coding-standards.md` conventions
 
-#### Stage: 7c — Client Layer
+#### Stage: 7c — Client Layer (Impeccable Design Authority)
 
-1. Build components in `features/[feature]/components/`
-2. Create React Query hooks in `features/[feature]/hooks/`
-3. Follow `design-system.md` for component usage
-4. Handle ALL states: loading, empty, error, success
-5. Implement optimistic updates where appropriate
-6. **IMPECCABLE EXECUTION:** For high-end UI/UX, refer to the **Impeccable Workflow Dispatcher** in `skill-ui-ux`. Consider triggering `/workflow-impeccable-craft` for new UI or `/workflow-impeccable-delight` for micro-animations once basic structure is stable.
+> [!IMPORTANT]
+> **All UI work goes through Impeccable.** Studio-grade quality is the default standard, not an upgrade. Load `skill-ui-ux` and follow the Impeccable lifecycle.
+
+1. **Load design context:** Read `PRODUCT.md` (strategic) and `DESIGN.md` (visual tokens) from the project root. These are the design truth files created during Project Inception Phase 3A.
+2. **Run `/impeccable-craft`** for the full UI build loop:
+   - **Shape:** Creates a task-specific design brief (discovery, visual probes, confirmed scope)
+   - **Mock:** Generates visual direction for confirmation
+   - **Build:** Implements production-quality components
+   - **Verify:** Browser inspection and critique-and-fix loop
+3. Build components in `features/[feature]/components/`
+4. Create data hooks in `features/[feature]/hooks/`
+5. Follow `DESIGN.md` tokens for all color, typography, spacing, and component styling
+6. Handle ALL states: loading, empty, error, success, partial, disabled
+7. Implement optimistic updates where appropriate
+8. Apply `motion` (Framer Motion) for all Type B animations per the animation mapping
+
+**After the craft build loop completes,** evaluate whether a refinement pass is needed:
+- Feels weak or generic? → `/impeccable-bolder`
+- Feels static or lifeless? → `/impeccable-animate`
+- Too cluttered? → `/impeccable-distill`
+- Final production polish? → `/impeccable-polish`
 
 #### Stage: 7d — Testing
 

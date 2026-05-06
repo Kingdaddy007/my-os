@@ -1,6 +1,6 @@
 # WORKFLOW: VISUAL BRAINSTORMING
 
-**Version:** Gold v1.0
+**Version:** Gold v1.1 (Impeccable Integration)
 **Layer:** 8 — Execution Workflow
 **Tier:** 2 — Loaded by task
 **File:** workflows/workflow-visual-brainstorm.md
@@ -13,6 +13,9 @@
 **Note:** This workflow bridges the gap between text-based design decisions
        and actual visual output. It uses two paths: direct HTML previews
        (fast, built-in) and Google Stitch briefs (high-fidelity, external).
+
+> [!IMPORTANT]
+> **Impeccable now handles primary visual direction.** Use `/impeccable-teach` + `/impeccable-document` to establish design context, and `/impeccable-shape` for task-specific visual direction probes. This workflow remains useful as a **supplementary brainstorming tool** for quick HTML previews (Path A) and Stitch briefs (Path B) when exploring visual options before committing to the Impeccable design system.
 
 ---
 

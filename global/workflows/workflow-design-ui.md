@@ -1,6 +1,6 @@
 # WORKFLOW: DESIGN UI (FULL SOURCE)
 
-**Version:** Gold v1.1 (Master Merge)
+**Version:** Gold v1.2 (Impeccable Integration)
 **Layer:** 8 — Execution Workflow
 **Tier:** 2 — Loaded by task
 **File:** workflows/workflow-design-ui-SOURCE.md
@@ -9,6 +9,9 @@
 **Purpose:** The systematic sequence for designing and implementing user interfaces — from user goal identification through component implementation with full state coverage and accessibility. Ensures UI work starts with the USER, not with the component.
 **Loaded When:** Building frontend components, designing user flows, creating new pages or views, improving existing UI, improving usability, or designing interaction states.
 **Inherits From:** execution-workflow.md (universal process)
+
+> [!IMPORTANT]
+> **Primary path: Use `/impeccable-craft` instead.** Impeccable is the design authority for all visual UI work. This workflow remains valuable for **UX-specific tasks** like: user flow mapping, state coverage planning, information architecture, accessibility audits, and interaction design without visual implementation. For building actual UI with visual craft, route to `/impeccable-craft` which handles shape → mock → build → verify with studio-grade quality.
 
 ---
 

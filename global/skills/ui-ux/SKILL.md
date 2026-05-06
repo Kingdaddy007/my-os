@@ -18,29 +18,146 @@ description: >
 
 # UI/UX & DESIGN THINKING
 
-Unified design intelligence. Covers UX foundations, visual craft, motion, accessibility, and execution standards. This skill activates automatically on every frontend task — you do not need to invoke it explicitly.
+Unified design intelligence for Anti-Gravity. This skill combines passive design knowledge (Layers 1-4 below) with the **Impeccable design OS** — the authoritative system for all visual design, UI craft, and motion work.
 
-For structured deep-dives (formal audits, critiques, polish passes), use the `/workflow-impeccable-*` workflows. This skill provides the passive intelligence that runs underneath.
+**Design Authority:** Impeccable owns all visual design execution. Every UI task — from landing pages to dashboards to forms — goes through Impeccable's workflows, not just "studio-grade" or "visually critical" features. Studio-grade quality is the default standard, not an upgrade.
+
+**This Skill's Role:** Provides the passive intelligence layer that runs underneath every Impeccable workflow. The craft laws, register system, anti-patterns, and execution standards in this file inform every design decision whether or not a specific Impeccable workflow is explicitly invoked.
 
 ---
 
-## LAYER 0: IMPECCABLE WORKFLOW DISPATCHER
+## THE IMPECCABLE DESIGN LIFECYCLE
 
-Use this map to determine which specialized workflow to trigger based on the current project phase or issue:
+All design work follows this lifecycle. Impeccable workflows are not optional add-ons — they are the execution system.
 
-| Phase / Trigger | Recommended Workflow | Purpose |
+### TIER 1: CONTEXT CREATION — "Who are we designing for?"
+
+Run once per project, during **Project Inception** (Phase 3A).
+
+| Workflow | What It Creates | When |
 | :--- | :--- | :--- |
-| **New Feature / Greenfield** | `/workflow-impeccable-craft` | The "Golden Path" — Shape → Mock → Build → Verify. |
-| **Boring / Generic UI** | `/workflow-impeccable-delight` | Adds micro-animations, "signature moves", and premium feel. |
-| **Cluttered / Confusing** | `/workflow-impeccable-distill` | Simplifies the interface, reduces cognitive load, sharpens hierarchy. |
-| **Visual Fragmented** | `/workflow-impeccable-harden` | Enforces the design system, aligns spacing, fonts, and colors. |
-| **Static / Dead UI** | `/workflow-impeccable-animate` | Adds Framer Motion choreography and transition logic. |
-| **Unprofessional Feel** | `/workflow-impeccable-bolder` | Sharpens contrast, hierarchy, and atmospheric treatment. |
-| **Post-Build Audit** | `/workflow-impeccable-audit` | A high-fidelity review of the implementation against the brief. |
-| **Complex Logic** | `/workflow-impeccable-clarify` | Fixes confusing wording, labels, and state communication. |
-| **Interactive Polish** | `/workflow-impeccable-polish` | Fine-tunes transitions, hover states, and feedback timing. |
+| `/impeccable-teach` | **PRODUCT.md** — strategic design context (register, users, brand personality, anti-references, design principles) | Start of any new project with UI |
+| `/impeccable-document` | **DESIGN.md** + **DESIGN.json** — visual system (tokens, typography, colors, components, do's/don'ts) | After PRODUCT.md exists, or when the design system needs capturing |
 
-**Integration Rule:** During `workflow-project-inception`, if a feature is visually critical, flag it for `impeccable-craft`. During `workflow-build-feature`, the final "Polish" phase should evaluate whether to trigger a specialized Impeccable pass.
+**Relationship to Anti-Gravity contexts:** PRODUCT.md and DESIGN.md are the design-specific truth files. They live alongside `contexts/project-context.md` and `contexts/stack-context.md`, not replacing them. Anti-Gravity contexts handle engineering and product truth; Impeccable contexts handle design truth.
+
+### TIER 2: BUILD — "How do we make this feature look and work?"
+
+Run during **Build Feature** (Step 7c — Client Layer) for every UI task.
+
+| Workflow | What It Does | When |
+| :--- | :--- | :--- |
+| `/impeccable-shape` | Creates a **task-specific design brief** — discovery interview, visual direction probes, confirmed brief with scope, states, hierarchy, interaction model | Before coding any UI. Produces the blueprint. |
+| `/impeccable-craft` | **Full build loop** — runs shape internally → generates visual mock → builds production code → browser verification → critique-and-fix loop | The "golden path" for building any UI feature end-to-end |
+| `/impeccable-live` | **Real-time browser editing** — select elements, pick a design action, get AI-generated variants hot-swapped via HMR | When a dev server is running and you want interactive variant exploration |
+
+**Craft is the default.** When building a new UI feature, run `/impeccable-craft`. It handles everything: shape (planning), mock (visual direction), build (implementation), and verify (browser inspection). You only run `/impeccable-shape` separately when you want the design brief without the build.
+
+### TIER 3: REFINEMENT — "How do we make it better?"
+
+Run **post-build**, any time an existing UI needs improvement. These are refinement passes — like studio filters applied to finished work.
+
+#### Review & Scoring
+
+| Workflow | What It Does | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-audit` | Technical quality scorecard (a11y, perf, responsive, theming, anti-patterns). Scores 0-20. Documents issues, does not fix them. | Post-build technical review |
+| `/impeccable-critique` | Design director review — Nielsen heuristics, AI slop detection, cognitive load assessment, persona red flags. Scores 0-40. | Post-build design review |
+
+#### Targeted Refinement
+
+| Workflow | What It Adjusts | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-polish` | Final detail pass — spacing, states, transitions, alignment, design system drift, code quality | "Make it production-ready" |
+| `/impeccable-bolder` | Amplifies contrast, hierarchy, atmospheric treatment, visual confidence | "It feels weak / generic / timid" |
+| `/impeccable-quieter` | Reduces visual noise, softens palette, calms motion, increases whitespace | "It feels noisy / aggressive / overwhelming" |
+| `/impeccable-distill` | Simplifies the interface — removes excess, sharpens hierarchy, reduces cognitive load | "It's cluttered / confusing / too much" |
+| `/impeccable-clarify` | Fixes confusing wording, labels, error messages, state communication | "Users don't understand what's happening" |
+
+#### Specific Dimension Rework
+
+| Workflow | Dimension | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-colorize` | Color strategy — reworks palette, contrast, tonal relationships | "The colors aren't working" |
+| `/impeccable-typeset` | Typography — reworks type pairing, scale, hierarchy, weight strategy | "The typography feels off / flat / generic" |
+| `/impeccable-layout` | Spatial structure — reworks grid, composition, information density | "The layout doesn't feel right" |
+| `/impeccable-adapt` | Responsiveness — reworks behavior across viewports and contexts | "It breaks on mobile / tablet" |
+| `/impeccable-animate` | Motion choreography — adds Motion (Framer Motion) transitions, scroll-driven effects, entrance sequences | "It feels static / dead / lifeless" |
+| `/impeccable-delight` | Personality — adds micro-interactions, easter eggs, celebration moments, loading personality | "It works but it has no soul" |
+| `/impeccable-overdrive` | Convention breaking — pushes past safe design into unexpected territory | "It's correct but boring — take risks" |
+
+#### Special Purpose
+
+| Workflow | Purpose | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-onboard` | Onboarding experience design — empty states, tours, progressive disclosure, first-time flows | Building onboarding or first-run experiences |
+| `/impeccable-extract` | Extracts design tokens from existing code into structured format | Capturing an existing design system |
+| `/impeccable-optimize` | Performance optimization of UI assets and rendering | UI is slow, images too large, animations janky |
+
+---
+
+## MOTION STANDARD
+
+**`motion` (Modern Framer Motion) is the mandatory animation library.** Install it in every project workspace before writing motion code: `npm install motion`.
+
+Motion is not decoration. Premium motion is the difference between "functional" and "feels alive." Every project ships with motion by default.
+
+**Motion hierarchy for any page:**
+- **Type A (Static):** Standard layout, no major animation. Text, forms, data tables.
+- **Type B (Code Animation):** Scroll reveals, parallax, hover effects, transition choreography. Built with `motion` library.
+- **Type C (Cinematic Video):** Full cinematic AI-generated video backgrounds or hero sections. Route to `seedance-20` skill for asset generation.
+
+Every major page section should be mapped to a motion type during design. Map this during `/impeccable-shape` or during Project Inception Phase 3A.
+
+**Motion principles (from reference/motion-design.md):**
+- Default easing: `cubic-bezier(0.16, 1, 0.3, 1)` (expo out)
+- No bounce. No elastic. They feel amateurish.
+- Don't animate layout properties (width, height, top, left, margins)
+- Exit animations ~75% of enter duration
+- `prefers-reduced-motion` is mandatory — provide crossfade alternatives, not `animation: none`
+
+---
+
+## HOW IMPECCABLE CONNECTS TO ANTI-GRAVITY WORKFLOWS
+
+### During Project Inception
+
+```
+Phase 1-3: Problem, MVP, Stack (Anti-Gravity owns this)
+    │
+Phase 3A: Visual Identity (Impeccable takes over)
+    ├── Step 1: /impeccable-teach → PRODUCT.md
+    ├── Step 2: /impeccable-document → DESIGN.md + DESIGN.json
+    ├── Step 3: Animation mapping (Type A/B/C per section)
+    └── Step 4: External prototyping (Figma AI, Stitch, Lovable)
+    │
+Phase 4-7: Contexts, Memory, Build Sequence (Anti-Gravity owns this)
+```
+
+### During Build Feature
+
+```
+Steps 1-6: Define, Context, Scope, Risks, Shape, Verify (Anti-Gravity owns this)
+    │
+Step 7c — Client Layer (Impeccable takes over)
+    ├── /impeccable-craft (full loop: shape → mock → build → verify)
+    │   OR
+    ├── /impeccable-shape → then manual build using craft laws below
+    │
+Steps 8-11: Review, Verify, Deliver, Memory (Anti-Gravity owns this)
+    └── During Step 8 self-review: consider running /impeccable-audit or /impeccable-critique
+```
+
+### Post-Build (any time)
+
+```
+UI exists → identify the issue → pick the right refinement workflow:
+    Weak?     → /impeccable-bolder
+    Noisy?    → /impeccable-quieter or /impeccable-distill
+    Static?   → /impeccable-animate
+    Generic?  → /impeccable-delight
+    Broken?   → /impeccable-audit → fix → /impeccable-polish
+```
 
 ---
 
@@ -217,7 +334,7 @@ When design IS the product: brand sites, landing pages, marketing surfaces, port
 - **Typography:** Distinctive + refined. Display serif + sans body, or rule-breaking mono-only. Two families minimum only when voice needs it. Modular scale, fluid `clamp()`, ≥1.25 ratio.
 - **Color:** Committed, Full Palette, and Drenched strategies are encouraged. Palette IS voice. Don't hedge with neutrals.
 - **Layout:** Asymmetric compositions or rigorously-gridded. The failure is splitting the difference into a generic centered stack. Don't default to centering everything.
-- **Motion:** Ambitious first-load motion permitted. Scroll-triggered transitions, typographic choreography.
+- **Motion:** Ambitious first-load motion permitted. Scroll-triggered transitions, typographic choreography. Use `motion` library for all Type B animations.
 - **Imagery:** Brand surfaces that imply imagery (fashion, food, travel, hotels) MUST ship imagery. Zero images is a bug.
 - **Permissions:** Single-purpose viewports, typographic risk, unexpected color strategies, art direction per section.
 - **Font selection:** Follow the 4-step procedure in [reference/brand.md](reference/brand.md). Check against the reflex-reject list.
@@ -237,7 +354,7 @@ When design SERVES the product: app UIs, dashboards, settings, data tables, tool
 
 ### Register Detection
 
-Priority order: (1) Cue in the task ("landing page" = brand, "dashboard" = product), (2) the surface in focus, (3) PRODUCT.md if it exists. First match wins.
+Priority order: (1) PRODUCT.md register field if it exists, (2) Cue in the task ("landing page" = brand, "dashboard" = product), (3) the surface in focus. First match wins.
 
 ---
 
@@ -269,22 +386,19 @@ Priority order: (1) Cue in the task ("landing page" = brand, "dashboard" = produ
 
 ### For New Screens/Flows
 
-1. Write the user goal in plain language
-2. Determine register (brand or product)
-3. Map the flow as a sequence of states
-4. Define content hierarchy (primary, secondary, deferrable)
-5. Design all 6 UI states explicitly
-6. Apply visual craft laws (color, type, spacing, motion)
-7. Run the AI slop test
-8. Check accessibility and responsive behavior
-9. Verify against anti-patterns and absolute bans
+1. Determine register (brand or product) — check PRODUCT.md first
+2. Run `/impeccable-craft` (which includes shape → mock → build → verify)
+3. During build, apply all visual craft laws from Layer 2
+4. Run the AI slop test before presenting
+5. Check accessibility and responsive behavior
+6. Consider refinement passes (audit, critique, polish) before delivery
 
 ### For Improving Existing UI
 
-1. Identify where users hesitate, misclick, or become confused
-2. Determine whether the issue is hierarchy, wording, states, flow, or craft
-3. Fix the most important friction first
-4. Re-check state coverage, accessibility, and anti-patterns
+1. Run `/impeccable-audit` or `/impeccable-critique` to identify issues
+2. Pick the right refinement workflow based on the diagnosis
+3. Apply the fix using the targeted Impeccable workflow
+4. Re-run audit/critique to verify improvement
 
 ---
 

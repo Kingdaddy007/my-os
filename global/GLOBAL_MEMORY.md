@@ -54,7 +54,9 @@ This file routes. `GEMINI.md` governs. Neither overrides the other's job.
 
 **Trigger words:** "design", "UI", "UX", "user flow", "layout", "dashboard", "landing page", "accessibility", "how should this look/feel"
 
-| **Load:** `skills/skills/ui-ux/SKILL.md` | workflow: `workflow-design-ui.md` | contexts: `design-system.md`, `visual-identity.md`, `stack-context.md` |
+| **Load:** `skills/ui-ux/SKILL.md` | workflow: `/impeccable-craft` (build) or `/impeccable-audit` (review) | contexts: `PRODUCT.md`, `DESIGN.md`, `stack-context.md` |
+
+**Impeccable is the design authority.** All visual design, UI craft, and motion work routes through the Impeccable workflow system. See `skills/ui-ux/SKILL.md` for the full 3-tier lifecycle (Context → Build → Refine).
 
 ### Security Mode
 
@@ -134,7 +136,9 @@ Context files in `contexts/` are **project-specific fill-in templates.** They ar
 | `stack-context.md` | Any coding, building, or debugging task |
 | `architecture-context.md` | Architecture, debugging complex issues |
 | `coding-standards.md` | Building, reviewing, refactoring |
-| `design-system.md` + `visual-identity.md` | UI/UX work |
+| `PRODUCT.md` (project root) | All UI/UX work — strategic design context (register, brand, anti-references) |
+| `DESIGN.md` (project root) | All UI/UX work — visual system (tokens, typography, colors, components) |
+| `design-system.md` + `visual-identity.md` | UI/UX work — lightweight summaries referencing PRODUCT.md/DESIGN.md |
 | `security-baselines.md` | Security, auth, review |
 | `infra-context.md` | DevOps, performance, deployment |
 | `project-context.md` | Project inception, new feature scoping |

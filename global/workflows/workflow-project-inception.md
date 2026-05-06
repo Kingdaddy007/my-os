@@ -369,73 +369,61 @@ Gate:
 
 ---
 
-### PHASE 3A: DEFINE THE VISUAL IDENTITY
+### PHASE 3A: DESIGN IDENTITY & VISUAL SYSTEM
 
-Use when:
-
-- the product has a meaningful user interface
+This phase is **mandatory** for any product with a user interface. Impeccable is the design authority — all visual identity work goes through its workflows.
 
 > [!IMPORTANT]
-> **Recommended:** For production-grade UI/UX execution, refer to the **Impeccable Workflow Dispatcher** in `skill-ui-ux`. It maps project phases to specialized workflows like `/workflow-impeccable-craft`, `/workflow-impeccable-delight`, and more. Before defining the visual identity in text, consider using `workflow-visual-brainstorm.md` to generate a visual preview. 
+> **Impeccable owns this phase.** Do not manually define colors, typography, or spacing in text. Use the Impeccable workflows below to create structured, machine-readable design context that all subsequent build work draws from.
 
-#### Step 1: Define the visual vibe
+#### Step 1: Run `/impeccable-teach` → PRODUCT.md
 
-- What should users FEEL when they first see this product? (e.g., "premium", "calm", "powerful", "playful")
-- Name 3-5 reference products or websites that capture the aesthetic. For each, note WHAT specifically to borrow.
-- List what this product should NOT look like (prevents aesthetic drift).
+This creates the **strategic design context** at the project root:
 
-#### Step 2: Choose the color direction
+- **Register** — Is this a brand surface (design IS the product) or a product surface (design SERVES the product)?
+- **Users & Purpose** — Who uses this, what's the job-to-be-done, what emotions should the UI evoke?
+- **Brand Personality** — 3-word personality, tone, voice
+- **Anti-references** — What this should explicitly NOT look like
+- **Design Principles** — 3-5 strategic principles derived from the conversation
+- **Accessibility & Inclusion** — WCAG level, known user needs
 
-Define the core color roles:
+The `teach` workflow interviews the user, scans the codebase for existing signals, and writes `PRODUCT.md`.
 
-- Background family (primary canvas + elevated surfaces)
-- Primary text colors (headline, body, muted)
-- Accent / brand color (CTAs, highlights, active states)
-- Feedback colors (success, warning, error)
-- Any special effects (gradients, glassmorphism, etc.)
+#### Step 2: Run `/impeccable-document` → DESIGN.md + DESIGN.json
 
-Translate into CSS custom properties (hex values).
+This creates the **visual design system** at the project root:
 
-#### Step 3: Choose the typography
+- **DESIGN.md** — YAML frontmatter with machine-readable tokens (colors, typography, spacing, rounded, components) + markdown body with 6 sections (Overview, Colors, Typography, Elevation, Components, Do's and Don'ts). Follows the Google Stitch DESIGN.md format.
+- **DESIGN.json** — Sidecar with extensions (tonal ramps, shadows, motion tokens, component HTML/CSS snippets, narrative).
 
-- Select a display font for headlines (and explain why — what feeling it creates)
-- Select a body font for all readable content
-- Define a basic type scale: display, heading 1-3, body, caption, label
-- Define mobile adjustments for the largest sizes
+The `document` workflow has two modes:
+- **Scan mode** (default): Extracts real tokens from existing code
+- **Seed mode** (new projects): Interviews for 5 high-level design answers, creates a minimal scaffold marked `<!-- SEED -->`
 
-#### Step 4: Define spacing, radius, and motion
+#### Step 3: Animation Mapping
 
-- Choose a base spacing unit (4px or 8px) and list the key spacing tokens
-- Define border radius tokens (sm, md, lg, xl, full)
-- Define a motion scale: micro (hover), standard (state change), entrance (scroll reveals), page (transitions)
-
-#### Step 5: Document key component patterns
-
-- Primary button + hover state
-- Secondary / ghost button
-- Card base (background, radius, border, shadow)
-- Input field + focus state
-- Any signature visual technique (glassmorphism, gradient overlay, etc.)
-
-#### Step 6: The Animation Decision & Media Assets
 Map every major page section to an animation type:
-- **Type A (Static):** Standard layout, no major animation.
-- **Type B (Code Animation):** Scroll reveals, parallax, hover effects (using Motion or GSAP).
-- **Type C (Seedance Video):** Requires an AI-generated cinematic video asset.
-*(If Type C is needed, route to the `seedance-20` skill for asset generation before build).*
+- **Type A (Static):** Standard layout, no major animation. Text, forms, data tables.
+- **Type B (Code Animation):** Scroll reveals, parallax, hover effects. Built with `motion` (Framer Motion).
+- **Type C (Cinematic Video):** Requires an AI-generated cinematic video asset. Route to the `seedance-20` skill for generation.
 
-#### Step 7: External Prototyping (Mockup)
-- Bring the `prototyping-spec.md` and visual vibe into Figma AI, Lovable, or Google Stitch.
+Document this mapping in the project's design context so builders know what motion work each section requires.
+
+#### Step 4: External Prototyping (Mockup)
+
+- Bring the `DESIGN.md` tokens and `prototyping-spec.md` structure into Figma AI, Lovable, or Google Stitch.
 - Generate page mockups to SEE the structure and vibe before coding.
-- Extract final design decisions and tokens from the approved mockup.
+- Extract any final adjustments back into DESIGN.md.
 
 Output:
 
-- `contexts/visual-identity.md` as the live runtime truth for the product's visual identity (tokens locked).
+- `PRODUCT.md` at project root (strategic design context)
+- `DESIGN.md` + `DESIGN.json` at project root (visual system and tokens)
+- `contexts/visual-identity.md` — optional lightweight summary pointing to PRODUCT.md and DESIGN.md, with any project-specific overrides
 
 Authoring rule:
 
-- use brainstorming or reference material if needed, but save the final file as current truth
+- PRODUCT.md and DESIGN.md are the canonical design truth. `contexts/visual-identity.md` may exist as a pointer/summary but must not contradict them.
 
 Gate:
 
@@ -461,13 +449,16 @@ Required writes:
 - initialize `contexts/coding-standards.md` if concrete conventions are already known, using `global_templates/coding-standards-template.md`
 - verify that `contexts/app-flow.md` exists if Phase 2A applied
 - verify that `contexts/prototyping-spec.md` exists if Phase 2B applied
-- verify that `contexts/visual-identity.md` exists if Phase 3A applied
-- initialize `contexts/design-system.md` using design principles and the locked tokens from Phase 3A
+- verify that `PRODUCT.md` exists at project root if Phase 3A applied (created by `/impeccable-teach`)
+- verify that `DESIGN.md` + `DESIGN.json` exist at project root if Phase 3A applied (created by `/impeccable-document`)
+- optionally create `contexts/visual-identity.md` as a lightweight summary pointing to PRODUCT.md and DESIGN.md
+- initialize `contexts/design-system.md` using the locked tokens from DESIGN.md
 
 Context-writing rule:
 
 - runtime contexts should be concise, factual, and updateable
 - longer fill guidance belongs in `global_templates/`
+- PRODUCT.md and DESIGN.md are design truth — `contexts/visual-identity.md` and `contexts/design-system.md` should reference them, not duplicate them
 
 ---
 
@@ -624,7 +615,9 @@ Before calling project inception complete, verify:
 - [ ] MVP scope is ONLY Core features
 - [ ] Definition of done is specific and checkable
 - [ ] App flow mapped (user journeys, error states, transitions) — `app-flow.md` created
-- [ ] Visual identity defined (vibe, colors, typography, motion) — `visual-identity.md` created (if UI project)
+- [ ] Design identity established via Impeccable — `PRODUCT.md` created (if UI project)
+- [ ] Visual system documented — `DESIGN.md` + `DESIGN.json` created (if UI project)
+- [ ] Animation types mapped per section (Type A/B/C)
 - [ ] Tech stack chosen
 - [ ] Data model designed
 - [ ] Build sequence numbered and ordered
