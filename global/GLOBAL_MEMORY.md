@@ -239,7 +239,7 @@ Every active workflow must maintain a state file at `.agents/workflow-state.json
 
 ---
 
-## BELOVED'S TECH STACK PREFERENCES
+## USER'S TECH STACK PREFERENCES
 
 - **Logic:** TypeScript 7.0 (Native) via `tsgo`
 - **Motion:** `motion` (Modern rebranded Framer Motion)

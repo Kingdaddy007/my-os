@@ -30,7 +30,7 @@ Recommend the user open a new chat window when:
 
 ## How to Execute a Handoff (The Zero-Friction Method)
 
-Never ask Beloved to manually copy-paste a "Handoff Brief." Instead, perform these two steps automatically:
+Never ask the user to manually copy-paste a "Handoff Brief." Instead, perform these two steps automatically:
 
 ### Step 1: Secure Long-Term Knowledge (Memory)
 Before suggesting a split, ensure all permanent knowledge from this session is written to disk:
@@ -55,7 +55,7 @@ Ensure the `notes`, `key_decisions`, and `phases` fields are perfectly up to dat
 ```
 
 ### Step 3: Inform the User
-Once the files are updated, tell Beloved:
+Once the files are updated, tell the user:
 > *"I've secured our progress in `workflow-state.json` and logged our decisions to Memory. This chat is getting long — I recommend opening a new chat window to continue. The new session will automatically read the state file and pick up exactly where we left off."*
 
 ## When NOT to Split

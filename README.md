@@ -2,9 +2,9 @@
 
 ![Anti-Gravity OS — The Operating System for AI-Powered Engineering](assets/social-preview.png)
 
-![77+ Files](https://img.shields.io/badge/Files-77+-blueviolet?style=for-the-badge)
-![15 Skills](https://img.shields.io/badge/Skills-15-blue?style=for-the-badge)
-![13 Workflows](https://img.shields.io/badge/Workflows-13-green?style=for-the-badge)
+![150+ Files](https://img.shields.io/badge/Files-150+-blueviolet?style=for-the-badge)
+![25+ Skills](https://img.shields.io/badge/Skills-25+-blue?style=for-the-badge)
+![35+ Workflows](https://img.shields.io/badge/Workflows-35+-green?style=for-the-badge)
 ![6+ IDEs](https://img.shields.io/badge/IDE_Support-6+-orange?style=for-the-badge)
 
 ## The operating system for AI-powered engineering
@@ -30,15 +30,15 @@ Here's what most developers do:
 
 ## ✅ The Solution
 
-Anti-Gravity OS is a **77-file intelligence architecture** that transforms any AI coding assistant into a disciplined engineering partner.
+Anti-Gravity OS is a **150+ file intelligence architecture** that transforms any AI coding assistant into a disciplined engineering partner.
 
 It's not a prompt. It's not a `.cursorrules` file. It's a complete system:
 
 | Layer | What It Does | Files |
 | :--- | :--- | :---: |
 | 🧠 **Core** | Defines how the AI thinks, reasons, and communicates | 9 |
-| ⚡ **Skills** | Domain expertise loaded before each task type | 15 |
-| 🔄 **Workflows** | Step-by-step execution triggered by `/` slash commands | 13 |
+| ⚡ **Skills** | Domain expertise loaded before each task type | 25+ |
+| 🔄 **Workflows** | Step-by-step execution triggered by `/` slash commands | 35+ |
 | 📍 **Contexts** | Live project truth about your stack, architecture, and standards | 12 |
 | 🧾 **Templates** | Output scaffolds plus authoring templates for context/setup work | 8 |
 | 📊 **Rubrics** | Self-assessment scorecards the AI uses to check its own work | 11 |
@@ -129,6 +129,7 @@ After installation, type `/` in your IDE to trigger structured workflows:
 | `/workflow-ship-to-production` | Pre-deploy checklist → staged rollout → monitoring |
 | `/workflow-verify-project` | Security + quality + accessibility + performance scan |
 | `/workflow-visual-brainstorm` | Generate design previews before writing code |
+| `/workflow-impeccable-*` | (e.g., `-craft`, `-animate`, `-polish`) High-end, award-winning UI/UX generation based on the viral Impeccable design framework |
 
 > **No more "just figure it out."** Each workflow enforces planning before execution, testing before shipping, and documentation before moving on.
 
@@ -155,6 +156,9 @@ The AI loads **domain-specific expertise** before each task — not all 15 at on
 | Research | `skill-research-analysis` — comparison, evaluation, recommendations |
 | Scoping | `skill-product-thinking` — prioritization, MVP, tradeoffs |
 | Frontend polish | `skill-advanced-frontend` — animations, layout, visual quality |
+| UI/UX Masterclass | `skill-ui-ux` — Now supercharged with the **Impeccable Design Framework** for state-of-the-art visual standards, layout, and motion |
+| AI Directing | `skill-seedance` — Prompting and pipeline logic for AI video generation |
+| Session Management | `skill-context-hygiene` — Automatically prevents context bloat and saves state |
 
 ---
 
@@ -188,6 +192,7 @@ Most AI tools forget everything when you close the window. Anti-Gravity OS doesn
 | `common-patterns.md` | Patterns that worked well — reuse instead of reinvent |
 | `mistakes-to-avoid.md` | Bugs and anti-patterns — never repeat them |
 | `postmortems.md` | Post-ship analysis — what went wrong and why |
+| `workflow-state.json` | Real-time tracking of workflow progress so you can resume exactly where you left off |
 
 The AI writes to memory automatically after significant sessions. Next session, it reads before starting.
 
