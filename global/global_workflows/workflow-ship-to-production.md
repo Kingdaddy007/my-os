@@ -8,7 +8,6 @@ description: The systematic pre-deployment and deployment sequence for shipping 
 > YOU MUST USE TOOL CALLS TO READ THE FULL SOURCE FILE AND THE REQUIRED SKILLS/CONTEXTS BEFORE EXECUTING THIS.
 > Verify silently in your internal reasoning that you have done this.
 
-
 > **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 18,000-character logic, deployment checklists, and staged rollout protocols, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-ship-to-production.md).
 
 ## WHAT THIS WORKFLOW DOES
@@ -60,5 +59,3 @@ Acts as the final safety gate between staging and production. It ensures code re
 - **G4 (Monitor):** Rollback immediately if smoke tests fail post-deploy.
 
 > **Final Instruction:** Every deploy is a bet. Make it informed. Read the Source file now.
-
-

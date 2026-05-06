@@ -8,7 +8,6 @@ description: The systematic sequence for evaluating the security posture of code
 > YOU MUST USE TOOL CALLS TO READ THE FULL SOURCE FILE AND THE REQUIRED SKILLS/CONTEXTS BEFORE EXECUTING THIS.
 > Verify silently in your internal reasoning that you have done this.
 
-
 > **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 18,000-character logic, STRIDE framework analysis, and trust boundary mapping protocols, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-security-audit.md).
 
 ## WHAT THIS WORKFLOW DOES
@@ -60,5 +59,3 @@ Applies structured threat analysis (STRIDE) to code and architecture. It forces 
 - **G4 (Status):** Report must explicitly state blocking vs. advisory findings.
 
 > **Final Instruction:** The Gold v1.1 security audit process requires deep analysis defined in the Source file. Read it now.
-
-

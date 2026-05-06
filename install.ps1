@@ -68,12 +68,31 @@ if (-not (Test-Path $GlobalConfig)) {
     Write-Success "Created configuration directory: $GlobalConfig"
 }
 
-# Clear any existing file in the directory to prevent ghost config files
-Write-Step "Cleaning target directory..."
-Get-ChildItem -Path $GlobalConfig -Recurse | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+# Clear only the OS payload files to prevent ghost config files without harming AI state
+Write-Step "Cleaning and syncing OS payload..."
 
-Copy-Item -Path "$GlobalSource\*" -Destination $GlobalConfig -Recurse -Force
-Write-Success "Copied OS files successfully."
+$OSPayload = @(
+    "skills", "workflows", "global_workflows", "core", "contexts", 
+    "global_templates", "rubric", "memory", "benchmark", "scripts",
+    "GEMINI.md", "GLOBAL_MEMORY.md"
+)
+
+foreach ($item in $OSPayload) {
+    $sourceItem = Join-Path $GlobalSource $item
+    $targetItem = Join-Path $GlobalConfig $item
+
+    if (Test-Path $sourceItem) {
+        # Delete the old OS item if it exists
+        if (Test-Path $targetItem) {
+            Remove-Item -Path $targetItem -Recurse -Force -ErrorAction SilentlyContinue
+        }
+        
+        # Copy the new OS item
+        Copy-Item -Path $sourceItem -Destination $GlobalConfig -Recurse -Force
+    }
+}
+
+Write-Success "Safely synchronized OS payload."
 
 
 # ─── Step 3: Dynamic Path URI Configuration ────────────────────────────────────

@@ -72,10 +72,11 @@
 
 <!-- List 3–6 reference products, websites, or works that capture the look and feel.
      For each: name it AND say specifically what to study.
-     Example | SSENSE.com | Dark editorial grid, generous whitespace, product as hero -->
+
+| Example | SSENSE.com | Dark editorial grid, generous whitespace, product as hero --> |
 
 | Reference | What to Study |
-|-----------|--------------|
+| ----------- | -------------- |
 | [Reference 1] | [Specifically: layout? color use? typography? motion?] |
 | [Reference 2] | [What to look at] |
 | [Reference 3] | [What to look at] |
@@ -88,6 +89,7 @@
      Define 3–4 concrete emotional reactions the design must produce. -->
 
 When a user opens [Product Name], they should feel:
+
 - "[Fill in — a specific emotional reaction, in quotes]"
 - "[Fill in]"
 - "[Fill in]"
@@ -166,7 +168,7 @@ When a user opens [Product Name], they should feel:
 ### Color Reference Table
 
 | Role | Name | Value | Usage |
-|------|------|-------|-------|
+| ------ | ------ | ------- | ------- |
 | Background (primary) | [Name] | `[hex]` | [where it's used] |
 | Background (surface) | [Name] | `[hex]` | [where it's used] |
 | Background (elevated) | [Name] | `[hex]` | [where it's used] |
@@ -199,7 +201,7 @@ When a user opens [Product Name], they should feel:
 ### Type Scale
 
 | Token | Size | Line Height | Weight | Font | Usage |
-|-------|------|-------------|--------|------|-------|
+| ------- | ------ | ------------- | -------- | ------ | ------- |
 | `display-xl` | [px/rem] | [ratio] | [weight] | Display | [usage — hero headline] |
 | `display-lg` | [px/rem] | [ratio] | [weight] | Display | [usage — major sections] |
 | `heading-1` | [px/rem] | [ratio] | [weight] | Display | [usage — page titles] |
@@ -219,7 +221,6 @@ When a user opens [Product Name], they should feel:
 - `display-lg` → [mobile size]
 - `heading-1` → [mobile size]
 
-
 ---
 
 ## PART 4: SPACING, RADIUS & SHADOWS
@@ -229,7 +230,7 @@ When a user opens [Product Name], they should feel:
 Base unit: **[4px / 8px]**
 
 | Token | Value | Usage |
-|-------|-------|-------|
+| ------- | ------- | ------- |
 | `space-1` | [px] | [tight gaps — icon + label] |
 | `space-2` | [px] | [inline spacing] |
 | `space-3` | [px] | [compact padding] |
@@ -243,7 +244,7 @@ Base unit: **[4px / 8px]**
 ### Border Radius
 
 | Token | Value | Usage |
-|-------|-------|-------|
+| ------- | ------- | ------- |
 | `radius-sm` | [px] | [buttons, inputs, pills] |
 | `radius-md` | [px] | [small cards, chips] |
 | `radius-lg` | [px] | [standard cards] |
@@ -264,7 +265,7 @@ Base unit: **[4px / 8px]**
 ## PART 5: BREAKPOINTS
 
 | Token | Value | Target |
-|-------|-------|--------|
+| ------- | ------- | -------- |
 | `sm` | [px] | [Large phones] |
 | `md` | [px] | [Tablets] |
 | `lg` | [px] | [Small laptops] |
@@ -363,7 +364,7 @@ Base unit: **[4px / 8px]**
 ### Motion Scale
 
 | Type | Duration | Easing | Usage |
-|------|----------|--------|-------|
+| ------ | ---------- | -------- | ------- |
 | **Micro** | [ms] | [easing] | [button hover, toggle, icon swap] |
 | **Standard** | [ms] | [easing] | [card hover, input focus, state change] |
 | **Entrance** | [ms] | [easing] | [scroll reveals, card entrance] |
@@ -388,7 +389,6 @@ const fadeInUp = {
 - [Rule 2 — e.g., "Hover states use spring physics, not linear easing."]
 - **Always:** respect `prefers-reduced-motion` — disable or reduce all animations when true
 
-
 ---
 
 ## PART 8: VISUAL TECHNIQUES (SIGNATURE DETAILS)
@@ -407,7 +407,7 @@ const fadeInUp = {
 ## PART 9: IMAGE STANDARDS
 
 | Context | Aspect Ratio | Quality | Format | Placeholder Strategy |
-|---------|-------------|---------|--------|---------------------|
+| --------- | ------------- | --------- | -------- | --------------------- |
 | [context — e.g., card image] | [e.g., 3:4] | [%] | [WebP/AVIF] | [blur/solid color/gradient] |
 | [context — hero background] | [16:9] | [%] | [format] | [gradient fallback] |
 | [context — avatar] | 1:1 | [%] | [format] | [solid bg-surface] |
@@ -433,7 +433,7 @@ These rules apply to every component, every screen, without exception:
 ## CROSS-REFERENCES
 
 | Related File | Relationship |
-|---|---|
+| --- | --- |
 | `design-system.md` | Companion file — defines principles, interaction rules, state design, and behavioral standards |
 | `project-context.md` | User environment (device types, network) shapes responsive and performance decisions |
 | `stack-context.md` | Determines how tokens are implemented (CSS variables, Tailwind utilities, CSS-in-JS, etc.) |
@@ -454,5 +454,5 @@ When in doubt: reduce decoration, increase clarity, let content breathe.
 ## VERSION HISTORY
 
 | Version | Date | Changes |
-|---------|------|---------|
+| --------- | ------ | --------- |
 | Gold v1.0 | [Date] | Initial visual identity established at project inception |

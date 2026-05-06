@@ -237,7 +237,7 @@ Correctness uncertainty takes priority over all other review concerns. Do not al
 **Mode:** Security
 **Goal:** Identify security vulnerabilities.
 
-**This step is NEVER skipped — not even for small changes.**
+### This step is NEVER skipped — not even for small changes
 
 #### Input Validation (Step 4)
 
@@ -509,5 +509,3 @@ Do not review to demonstrate thoroughness. Review to make the codebase better.
 | Version | Date | Changes |
 | :--- | :--- | :--- |
 | Gold v1.1 | Initial | Established the systematic sequence for reviewing code |
-
-

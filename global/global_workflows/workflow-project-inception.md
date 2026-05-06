@@ -8,7 +8,6 @@ description: The systematic sequence for taking a raw idea and turning it into a
 > YOU MUST USE TOOL CALLS TO READ THE FULL SOURCE FILE AND THE REQUIRED SKILLS/CONTEXTS BEFORE EXECUTING THIS.
 > Verify silently in your internal reasoning that you have done this.
 
-
 > **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full detailed logic, instructions, and implementation phases, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-project-inception.md).
 
 ## WHAT THIS WORKFLOW DOES

@@ -8,7 +8,6 @@ description: The systematic sequence for designing API endpoints and contracts â
 > YOU MUST USE TOOL CALLS TO READ THE FULL SOURCE FILE AND THE REQUIRED SKILLS/CONTEXTS BEFORE EXECUTING THIS.
 > Verify silently in your internal reasoning that you have done this.
 
-
 > **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 15,000-character logic, Error Taxonomy tables, and Server Action vs API Route decision matrices, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-design-api.md).
 
 ## WHAT THIS WORKFLOW DOES
@@ -63,5 +62,3 @@ Enforces a **Contract-First** discipline. It ensures APIs are designed for the c
 - **G4 (Implementation Leak):** Does the API shape expose private database IDs?
 
 > **Final Instruction:** Every detail of the Gold v1.1 API design process is preserved in the Source file. Read it now.
-
-

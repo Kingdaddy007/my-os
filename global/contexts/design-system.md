@@ -118,7 +118,7 @@ These principles guide all UI/UX work until a fully detailed design system exist
 
 **Rule:** Every screen or surface must make its primary task more visually and structurally obvious than any secondary action.
 
-**Expected implications:**
+### Expected implications
 
 - Clear primary button or action
 - Secondary actions visually subordinate
@@ -131,7 +131,7 @@ These principles guide all UI/UX work until a fully detailed design system exist
 
 **Rule:** A designed surface is not complete unless its meaningful states are considered.
 
-**Common states to account for:**
+### Common states to account for
 
 - Loading
 - Empty
@@ -149,14 +149,14 @@ These principles guide all UI/UX work until a fully detailed design system exist
 
 **Rule:** A component should not silently shift between unrelated interaction jobs.
 
-**Prefer:**
+### Prefer
 
 - Focused responsibilities
 - Predictable behavior
 - Consistent naming and placement
 - Composability that improves clarity
 
-**Avoid:**
+### Avoid
 
 - Giant “smart” components hiding mixed behaviors
 - Components whose meaning changes drastically per usage without strong cues
@@ -167,14 +167,14 @@ These principles guide all UI/UX work until a fully detailed design system exist
 
 **Rule:** Reusable components and patterns should make the product easier to reason about.
 
-**Good reuse:**
+### Good reuse
 
 - Repeated button behavior across flows
 - Standard form field patterns
 - Consistent status messaging
 - Stable empty/loading/error treatments
 
-**Bad reuse:**
+### Bad reuse
 
 - Over-generic wrappers that obscure purpose
 - “Shared” components that need many exceptions to work
@@ -186,7 +186,7 @@ These principles guide all UI/UX work until a fully detailed design system exist
 
 **Rule:** Labels, CTA text, helper text, empty states, validation copy, and status messages are part of the design system, not an afterthought.
 
-**Meaning:**
+### Meaning
 
 - Wording consistency is part of interaction consistency
 - Avoid unclear CTAs, inconsistent naming for similar actions, and error messages that explain nothing
@@ -533,65 +533,80 @@ UI text should:
 
 ### Visual Inconsistency by Local Convenience
 
-**What it looks like:**
+### What it looks like
+
 Similar actions, states, or layouts are implemented differently in different areas without a strong reason.
 
-**Why it is harmful:**
+### Why it is harmful
+
 Increases cognitive load and makes the product feel unreliable or patched together.
 
-**What to do instead:**
+### What to do instead
+
 Reuse stable patterns and adjust them carefully as needed, instead of reinventing each time.
 
 ---
 
 ### Component Over-Abstraction
 
-**What it looks like:**
+### What it looks like
+
 A “shared” component that tries to cover many unrelated use cases and needs numerous flags and exceptions.
 
-**Why it is harmful:**
+### Why it is harmful
+
 Makes code and UX harder to understand; the abstraction becomes more complex than specific solutions.
 
-**What to do instead:**
+### What to do instead
+
 Standardize only when reuse clearly reduces variation and cognitive cost; keep components focused.
 
 ---
 
 ### State Blindness
 
-**What it looks like:**
+### What it looks like
+
 Designs only for the ideal, loaded, success state; loading, empty, and error states are left to be guessed by implementers.
 
-**Why it is harmful:**
+### Why it is harmful
+
 Leads to inconsistent UX and poor user guidance exactly when things go wrong.
 
-**What to do instead:**
+### What to do instead
+
 Treat state coverage as part of design completion for any meaningful screen or component.
 
 ---
 
 ### Accessibility as Afterthought
 
-**What it looks like:**
+### What it looks like
+
 Declaring a screen “done” because it looks good visually, despite weak keyboard support, semantics, or contrast.
 
-**Why it is harmful:**
+### Why it is harmful
+
 Builds exclusion into the product and is expensive to fix later.
 
-**What to do instead:**
+### What to do instead
+
 Consider accessibility requirements during design; ensure patterns and components support them by default.
 
 ---
 
 ### Copy Treated as Decoration
 
-**What it looks like:**
+### What it looks like
+
 Labels, CTAs, and error messages added last-minute without following any consistent style or terminology.
 
-**Why it is harmful:**
+### Why it is harmful
+
 Creates confusion, breaks trust, and makes interactions harder to understand.
 
-**What to do instead:**
+### What to do instead
+
 Design words and interactions together, keeping tone and terminology consistent.
 
 ---

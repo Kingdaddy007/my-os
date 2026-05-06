@@ -1,5 +1,5 @@
 ---
-description: The systematic sequence for identifying and resolving performance bottlenecks — always measurement-first, never premature optimization. 
+description: The systematic sequence for identifying and resolving performance bottlenecks — always measurement-first, never premature optimization.
 ---
 
 # WORKFLOW: OPTIMIZE PERFORMANCE (MASTER UI)
@@ -7,7 +7,6 @@ description: The systematic sequence for identifying and resolving performance b
 > **[CONTEXT AMNESIA FAILSAFE]**
 > YOU MUST USE TOOL CALLS TO READ THE FULL SOURCE FILE AND THE REQUIRED SKILLS/CONTEXTS BEFORE EXECUTING THIS.
 > Verify silently in your internal reasoning that you have done this.
-
 
 > **IMPORTANT [REQUIRED]:** This is the UI Trigger. For the full 15,000-character logic, profiling protocols, and optimization decision matrices, the Agent MUST load and follow the [SOURCE FILE](file:///C:/Users/Oviks/.gemini/antigravity/workflows/workflow-optimize-performance.md).
 
@@ -56,5 +55,3 @@ This workflow ensures performance work starts with measurement, not intuition. I
 | Version | Date | Changes |
 | :--- | :--- | :--- |
 | Gold v1.1 | Initial | Systematic sequence for identifying and resolving bottlenecks |
-
-

@@ -73,7 +73,7 @@ the last thing dropped.
 
 Core files define stable, reusable, cross-domain behavior.
 
-**Belongs in `core/`:**
+### Belongs in `core/`
 
 - Universal reasoning rules
 - General operating modes and posture discipline
@@ -82,7 +82,7 @@ Core files define stable, reusable, cross-domain behavior.
 - Communication standards that apply across all work
 - The minimum quality bar for any result
 
-**Does not belong in `core/`:**
+### Does not belong in `core/`
 
 - Project-specific assumptions
 - Runtime stack specifics

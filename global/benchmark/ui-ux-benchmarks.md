@@ -12,12 +12,12 @@ This file contains repeatable test scenarios for evaluating Anti-Gravity's
 UI/UX design and implementation capability — user goal clarity, state
 completeness, accessibility, interaction quality, and implementation readiness.
 
-**Evaluate With:**
+### Evaluate With
 
 - [rubric-ux.md](file:///C:/Users/Oviks/.gemini/antigravity/rubric/rubric-ux.md)
 - [rubric-communication.md](file:///C:/Users/Oviks/.gemini/antigravity/rubric/rubric-communication.md)
 
-**Tests:**
+### Tests
 
 - `skill-ui-ux.md`
 - `workflow-design-ui.md`

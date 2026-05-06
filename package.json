@@ -1,0 +1,34 @@
+{
+  "name": "my-os",
+  "version": "1.0.0",
+  "description": "![Anti-Gravity OS — The Operating System for AI-Powered Engineering](assets/social-preview.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kingdaddy007/my-os.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Kingdaddy007/my-os/issues"
+  },
+  "homepage": "https://github.com/Kingdaddy007/my-os#readme",
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript/native-preview": "^7.0.0-dev.20260423.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.10"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "motion": "^12.38.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}

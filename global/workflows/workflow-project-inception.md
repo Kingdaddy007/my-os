@@ -59,6 +59,7 @@ Do not use it when:
 ### Templates this workflow should use
 
 - `global_templates/project-context-template.md`
+- `global_templates/product-marketing-context-template.md`
 - `global_templates/stack-context-template.md`
 - `global_templates/coding-standards-template.md` when conventions are already clear
 - `project-brief.md` when producing a formal project brief
@@ -66,6 +67,7 @@ Do not use it when:
 ### Runtime context files this workflow creates or initializes
 
 - `contexts/project-context.md`
+- `contexts/product-marketing-context.md`
 - `contexts/stack-context.md`
 - `contexts/architecture-context.md`
 - `contexts/database-context.md` if relevant
@@ -148,6 +150,33 @@ Gate:
 
 ---
 
+### PHASE 1A: MARKET POSITIONING
+
+Use when:
+- the product will be marketed or sold to users
+- the product has a landing page, marketing site, or direct sales motion
+
+#### Step 1: Clarify the Objections
+- Why would the user say "no"?
+- What are they currently paying for that this replaces?
+
+#### Step 2: Define the Unique Value Proposition
+- What is the ONE specific reason they should choose this over alternatives?
+
+#### Step 3: Establish Brand Voice
+- How should the product sound? (Professional? Irreverent? Direct? Academic?)
+
+Output:
+- `contexts/product-marketing-context.md` as the live runtime truth for marketing context
+
+Authoring rule:
+- use scaffolding if needed, but save `product-marketing-context.md` as a live context file
+
+Gate:
+- before designing MVP, confirm the unique value proposition is actually compelling to the target user
+
+---
+
 ### PHASE 2: DEFINE THE MVP
 
 #### Step 1: Brainstorm features
@@ -173,23 +202,28 @@ Ask the "20% question": "If we could only build 20% of this, which 20% delivers 
 
 ```
 MVP SCOPE:
+
 - [Core feature 1]
 - [Core feature 2]
 - [Core feature 3]
 
 EXPLICITLY NOT IN MVP:
+
 - [Everything else — listed to prevent scope creep]
+
 ```
 
 #### Step 4: Define what "shipped" looks like
 
 ```
 VERSION 1 IS DONE WHEN:
+
 - [ ] [Core feature 1] works end to end
 - [ ] [Core feature 2] works end to end
 - [ ] [Core feature 3] works end to end
 - [ ] User can [complete the primary job] without assistance
 - [ ] Deployed to [target environment]
+
 ```
 
 #### Phase 2 output
@@ -243,6 +277,28 @@ Gate:
 
 ---
 
+### PHASE 2B: PROTOTYPING & RESEARCH (THE DESIGN LOOP)
+
+Use when:
+- the product has a user interface and needs a competitive baseline.
+
+#### Step 1: Competitive Teardown
+- Select 3-5 competitor or reference websites.
+- Extract the "Structure without Style". Use Anti-Gravity's browser tools or external tools (Perplexity/Tango).
+- Identify: Jobs-to-be-Done on each page, specific section blocks (Hero, Features, Pricing), and key interactions (scroll effects, components).
+
+#### Step 2: The Prototyping Spec
+- Synthesize the research into a structural blueprint.
+- List the required sections, the data they display, and their priority.
+
+Output:
+- `contexts/prototyping-spec.md` as the live runtime truth for structural wireframing.
+
+Gate:
+- Do not proceed to visual identity or coding until the structural layout and section blocks are defined.
+
+---
+
 ### PHASE 3: DEFINE THE TECHNICAL DIRECTION
 
 #### Step 1: Choose the tech stack
@@ -251,12 +307,14 @@ Based on the user's existing skills, project requirements, timeline constraints,
 
 ```
 TECH STACK:
+
 - Frontend: [framework]
 - Backend: [framework/approach]
 - Database: [engine]
 - Auth: [approach]
 - Hosting: [provider]
 - Deployment: [approach]
+
 ```
 
 #### Step 2: Design the data model
@@ -266,13 +324,16 @@ TECH STACK:
 
 ```
 ENTITIES:
+
 - [Entity 1]: [key fields]
 - [Entity 2]: [key fields]
 - [Entity 3]: [key fields]
 
 RELATIONSHIPS:
+
 - [Entity 1] has many [Entity 2]
 - [Entity 2] belongs to [Entity 1]
+
 ```
 
 #### Step 3: Define the API shape (if applicable)
@@ -355,9 +416,21 @@ Translate into CSS custom properties (hex values).
 - Input field + focus state
 - Any signature visual technique (glassmorphism, gradient overlay, etc.)
 
+#### Step 6: The Animation Decision & Media Assets
+Map every major page section to an animation type:
+- **Type A (Static):** Standard layout, no major animation.
+- **Type B (Code Animation):** Scroll reveals, parallax, hover effects (using Motion or GSAP).
+- **Type C (Seedance Video):** Requires an AI-generated cinematic video asset.
+*(If Type C is needed, route to the `seedance-20` skill for asset generation before build).*
+
+#### Step 7: External Prototyping (Mockup)
+- Bring the `prototyping-spec.md` and visual vibe into Figma AI, Lovable, or Google Stitch.
+- Generate page mockups to SEE the structure and vibe before coding.
+- Extract final design decisions and tokens from the approved mockup.
+
 Output:
 
-- `contexts/visual-identity.md` as the live runtime truth for the product's visual identity
+- `contexts/visual-identity.md` as the live runtime truth for the product's visual identity (tokens locked).
 
 Authoring rule:
 
@@ -379,12 +452,16 @@ Goal:
 Required writes:
 
 - create `contexts/project-context.md` using `global_templates/project-context-template.md` as scaffolding
+- create `contexts/product-marketing-context.md` using `global_templates/product-marketing-context-template.md` if Phase 1A applied
+- create `contexts/business-priorities.md` to establish tradeoffs before building (speed vs quality, budget vs scale)
 - create `contexts/stack-context.md` using `global_templates/stack-context-template.md` as scaffolding
 - create `contexts/architecture-context.md`
 - create `contexts/database-context.md` if relevant
 - initialize `contexts/coding-standards.md` if concrete conventions are already known, using `global_templates/coding-standards-template.md`
 - verify that `contexts/app-flow.md` exists if Phase 2A applied
+- verify that `contexts/prototyping-spec.md` exists if Phase 2B applied
 - verify that `contexts/visual-identity.md` exists if Phase 3A applied
+- initialize `contexts/design-system.md` using design principles and the locked tokens from Phase 3A
 
 Context-writing rule:
 
@@ -402,6 +479,7 @@ Goal:
 
 Required writes:
 
+- create `.agents/workflow-state.json` to formally track workflow progress across sessions
 - create `.agents/memory/decisions-log.md`
 - create `.agents/memory/common-patterns.md`
 - create `.agents/memory/mistakes-to-avoid.md`
@@ -540,6 +618,7 @@ Before calling project inception complete, verify:
 
 - [ ] Problem clearly defined (user confirmed)
 - [ ] Target user identified
+- [ ] Unique value proposition and brand voice established — `product-marketing-context.md` created (if applicable)
 - [ ] Features brainstormed and prioritized (Core / Important / Nice-to-Have / Out of Scope)
 - [ ] MVP scope is ONLY Core features
 - [ ] Definition of done is specific and checkable

@@ -1,311 +1,246 @@
-# INTEGRATION STRATEGY
+# GLOBAL MEMORY — SYSTEM MAP & ROUTING
 
-**Version:** Gold v1.1
-**Purpose:** The routing and system-map file for Anti-Gravity. This document explains how the layers fit together, how files should be selected, and how the OS assembles a runtime bundle for a task.
-
-> This file is **not** the constitution. `GEMINI.md` owns behavior and authority.
-> This file owns routing, layer interaction, runtime assembly, and support-layer placement.
+**Version:** Gold v2.0 (Compressed)
+**Purpose:** Routing logic, layer interaction, and runtime assembly for Anti-Gravity.
+This file routes. `GEMINI.md` governs. Neither overrides the other's job.
 
 ---
 
-## SYSTEM MAP SUMMARY
+## SYSTEM LAYERS
 
-Anti-Gravity is a layered cognitive operating system. It becomes powerful when the right files are loaded in the right order for the right task.
-
-This file answers:
-
-- what the layers are
-- how they interact
-- how a task is routed across them
-- when memory, templates, rubrics, and benchmarks enter the flow
-
----
-
-## AUTHORITY AND ROUTING
-
-| Layer of Authority | Role |
-| :--- | :--- |
-| `GEMINI.md` | Constitution, identity, user alignment, operating rules |
-| `GLOBAL_MEMORY.md` | Routing logic, system map, layer interaction |
-| `core/` | Deep reference for permanent behavior |
-| `skills/` | Domain-specific behavior packs |
-| `contexts/` | Live project truth |
-| `workflows/` | Execution sequences |
-| `memory/` | Retained learning |
-| `global_templates/` | Output scaffolds and authoring templates |
-| `rubric/` | Support-layer evaluation during critique |
-| `benchmark/` | Advanced evaluation infrastructure for the OS itself |
-
-### Routing Rules
-
-1. Read `GEMINI.md` fully first.
-2. Read this file next.
-3. Pick the task mode.
-4. Load only the smallest effective set of skills, contexts, and workflows.
-5. Load memory, templates, rubrics, or benchmarks only when the task actually calls for them.
-
----
-
-## THE 8 SYSTEM LAYERS
-
-| Layer | Folder | Job | Loading Tier |
+| Layer | Folder | Job | When Loaded |
 | :--- | :--- | :--- | :--- |
-| 1 | `core/` | Permanent mind and deep reference for the kernel | Always active through the constitution |
-| 2 | `skills/` | Specialized domain behavior | By task |
-| 3 | `contexts/` | Live project truth | By task |
-| 4 | `workflows/` | Execution sequences | By task |
-| 5 | `global_templates/` | Output and authoring scaffolds | On demand |
-| 6 | `rubric/` | Quality evaluation support | On demand |
-| 7 | `benchmark/` | OS evaluation and improvement measurement | Evaluation only |
-| 8 | `memory/` | Institutional learning and continuity | On demand |
+| Constitution | `GEMINI.md` + this file | Identity + routing | Always |
+| Deep reference | `core/` | System-thinking, cognitive patterns | On demand (architectural/high-stakes tasks) |
+| Domain behavior | `skills/` | Specialized expertise packs | By task |
+| Project truth | `contexts/` | Live project state | By task |
+| Execution | `workflows/` | Step-by-step sequences | By task |
+| Output scaffolds | `global_templates/` | Deliverable structures | On demand |
+| Quality evaluation | `rubric/` | Critique and audit support | On demand |
+| OS evaluation | `benchmark/` | Testing Anti-Gravity itself | Evaluation only |
+| Retained learning | `memory/` | Cross-project lessons | On demand |
+
+**Lean loading rule:** Load the smallest bundle that produces a strong answer. Better selection beats heavier selection.
 
 ---
 
-## HOW THE LAYERS INTERACT
+## TASK ROUTING TABLE
 
-### Information Flow
+### Architect Mode
 
-A task arrives.
+**Trigger words:** "how should I structure", "design the system", "plan the architecture", "folder structure", "monolith vs microservices", "service boundaries", "system design"
 
-1. The constitution (`GEMINI.md`) defines how Anti-Gravity should behave.
-2. This file (`GLOBAL_MEMORY.md`) determines which layers are relevant.
-3. Skills define how to think in the active domain.
-4. Contexts ground that thinking in project reality.
-5. Workflows sequence the steps.
-6. Templates shape outputs when a structured artifact is needed.
-7. Rubrics help judge the result during critique.
-8. Memory stores the learning if the work produced durable lessons.
+| **Load:** `skills/architecture/SKILL.md` | workflow: `workflow-plan-architecture.md` | contexts: `architecture-context.md`, `stack-context.md` |
 
-### Feedback Loop
+### Builder Mode
 
-The system is not linear:
+**Trigger words:** "build this", "implement", "create a component", "add this feature", "write the code", "create the endpoint", "wire this together"
 
-Task -> execution -> learning -> memory -> better future routing
+| **Load:** `skills/coding/SKILL.md` | workflow: `workflow-build-feature.md` | contexts: `stack-context.md`, `coding-standards.md`, `architecture-context.md` |
 
-Without memory, each session starts colder. With memory, the OS compounds judgment over time.
+### Debugger Mode
+
+**Trigger words:** "fix", "broken", "not working", "error", "bug", "failing", "crash", "regression", stack traces, "why is this happening"
+
+| **Load:** `skills/debugging/SKILL.md` | workflow: `workflow-debug-issue.md` | contexts: `stack-context.md`, `architecture-context.md` |
+
+### Reviewer Mode
+
+**Trigger words:** "review this", "check this code", "audit", "any issues with", "PR review", "give me feedback on"
+
+| **Load:** `skills/review-audit/SKILL.md` + `skills/security/SKILL.md` | workflow: `workflow-review-code.md` | contexts: `coding-standards.md`, `security-baselines.md` |
+
+### Designer Mode
+
+**Trigger words:** "design", "UI", "UX", "user flow", "layout", "dashboard", "landing page", "accessibility", "how should this look/feel"
+
+| **Load:** `skills/skills/ui-ux/SKILL.md` | workflow: `workflow-design-ui.md` | contexts: `design-system.md`, `visual-identity.md`, `stack-context.md` |
+
+### Security Mode
+
+**Trigger words:** "secure", "vulnerability", "auth", "permissions", "tokens", "secrets", "XSS", "CSRF", "injection", "PII", "trust boundary"
+
+| **Load:** `skills/security/SKILL.md` | workflow: `workflow-security-audit.md` | contexts: `security-baselines.md`, `architecture-context.md` |
+
+### Performance Mode
+
+**Trigger words:** "slow", "optimize", "speed up", "bottleneck", "memory leak", "query is slow", "N+1", "Core Web Vitals", "lighthouse"
+
+| **Load:** `skills/performance/SKILL.md` | workflow: `workflow-optimize-performance.md` | contexts: `stack-context.md`, `infra-context.md` |
+
+### Research Mode
+
+**Trigger words:** "compare", "which is better", "pros and cons", "should I use X or Y", "evaluate", "alternatives", "tradeoffs between"
+**Load:** Domain-relevant skill | contexts: `stack-context.md`, `project-context.md`
+
+### Optimizer Mode
+
+**Trigger words:** "simplify", "refactor", "clean up", "technical debt", "reduce duplication", "code smell", "this is getting messy"
+
+| **Load:** `skills/refactoring/SKILL.md` | workflow: `workflow-refactor-module.md` | contexts: `architecture-context.md`, `coding-standards.md` |
+
+### Teacher Mode
+
+**Trigger words:** "explain", "how does X work", "I don't understand", "what is", "teach me", "walk me through"
+**Load:** Domain-relevant skill | no workflow needed for explanations
+
+### Product/Inception Mode
+
+**Trigger words:** "new project", "starting from scratch", "I have an idea", "what should I build", "project plan", "MVP"
+**Load:** `skills/product-thinking/SKILL.md` + `skills/architecture/SKILL.md` | workflow: `workflow-project-inception.md`
+
+### Marketer Mode
+
+**Trigger words:** "write copy", "headline", "improve conversion", "landing page text", "sales strategy", "competitor profile"
+**Load:** `skills/copywriting/SKILL.md` + `skills/marketing-psychology/SKILL.md` | workflow: `workflow-marketing-copy.md` | contexts: `product-marketing-context.md`, `project-context.md`
 
 ---
 
-## FOLDER-TO-FOLDER INTERACTION MAP
+## RUNTIME ASSEMBLY PROTOCOL
 
-### Primary Interactions
+When a task arrives:
 
-- `core/` governs all lower layers.
-- `skills/` inherit from core and operate on top of contexts.
-- `contexts/` make skill behavior specific to the project at hand.
-- `workflows/` orchestrate skills, contexts, templates, rubrics, and memory checkpoints.
-- `global_templates/` provide scaffolds for deliverables and authoring tasks.
-- `rubric/` evaluates outputs near the end of a task, not at startup.
-- `benchmark/` evaluates the operating system itself, not ordinary project work.
-- `memory/` receives learning from any layer when the lesson is durable enough to keep.
-
-### Cross-Reference Matrix
-
-| Source Folder | References | Relationship |
-| :--- | :--- | :--- |
-| `core/` | all folders | Highest deep-reference layer under the constitution |
-| `skills/` | `core/`, `contexts/`, `rubric/` | Behavior specialized by domain and later evaluated if needed |
-| `contexts/` | `core/`, `skills/`, `workflows/` | Live truth that grounds execution |
-| `workflows/` | `skills/`, `contexts/`, `global_templates/`, `rubric/`, `memory/` | Orchestrates execution and checkpoints |
-| `global_templates/` | `workflows/`, `contexts/` | Supports output shaping and context authoring |
-| `rubric/` | `skills/`, `workflows/` | Critique support near verification and review |
-| `benchmark/` | `rubric/`, `memory/` | Advanced evaluation of system quality over time |
-| `memory/` | all folders | Retains important learning and reduces repeated mistakes |
-
----
-
-## SKILL, WORKFLOW, AND SUPPORT-LAYER MAP
-
-| Domain | Primary Skill | Primary Workflow | Typical Contexts | Optional Support Layers |
-| :--- | :--- | :--- | :--- | :--- |
-| Coding | `skill-coding` | `workflow-build-feature` | stack, coding-standards, architecture | rubric, templates, memory |
-| Debugging | `skill-debugging` | `workflow-debug-issue` | stack, architecture, infra | rubric, memory |
-| Architecture | `skill-architecture` | `workflow-plan-architecture` | architecture, project, business-priorities | templates, rubric, memory |
-| UI/UX | `skill-ui-ux` | `workflow-design-ui` | design-system, stack, visual-identity | templates, rubric |
-| Security | `skill-security` | `workflow-security-audit` | security-baselines, architecture, stack | rubric, memory |
-| Product / inception | `skill-product-thinking` | `workflow-project-inception` | project, business-priorities, domain-rules | templates, rubric, memory |
-
-Rubrics and benchmarks are deliberately outside the normal startup path. They are support layers, not the core runtime bundle.
-
----
-
-## RUNTIME TASK ASSEMBLY
-
-### Assembly Protocol
-
-When a task arrives, assemble a runtime bundle in this order:
-
-1. **Constitution**
-   - `GEMINI.md`
-   - `GLOBAL_MEMORY.md`
-
-2. **Task Classification**
-   - determine mode
-   - determine task type
-   - determine risk and reversibility
-
-3. **Skill Selection**
-   - 1 primary skill
-   - 0-2 secondary skills if the task genuinely spans domains
-
-4. **Workflow Selection**
-   - 1 workflow for multi-step work
-   - if the work spans multiple workflows, execute them sequentially
-
-5. **Context Selection**
-   - load only the live context files needed
-   - start with 1-2 and expand only if required
-
-6. **Support-Layer Selection**
-   - templates when producing structured output or scaffolding context files
-   - memory when history matters
-   - rubrics during critique or explicit assessment
-   - benchmarks only when evaluating the OS itself
-
-### Example Runtime Bundle
-
-**Build a feature**
-
-- Constitution: `GEMINI.md`, `GLOBAL_MEMORY.md`
-- Skills: `skill-coding`, `skill-testing`
-- Workflow: `workflow-build-feature.md`
-- Contexts: `stack-context.md`, `coding-standards.md`, `architecture-context.md`
-- Optional support: `feature-plan.md`, `rubric-code-quality.md`, relevant memory files
-
-**Start a new project**
-
-- Constitution: `GEMINI.md`, `GLOBAL_MEMORY.md`
-- Skills: `skill-product-thinking`, `skill-architecture`
-- Workflow: `workflow-project-inception.md`
-- Contexts: none or minimal at the start; runtime contexts are created during the workflow
-- Optional support: `project-brief.md`, context templates, project-planning rubric, workspace memory initialization
+1. **Classify** — determine mode, task type, risk level
+2. **Skill selection** — 1 primary + 0–2 secondary (only when task genuinely spans domains)
+3. **Workflow selection** — 1 workflow for multi-step work
+4. **Context selection** — start with 1–2 files, expand only if required
+5. **Support layers** — templates when producing structured output; memory when history matters; rubrics during critique only
 
 ---
 
 ## MEMORY ROUTING
 
-Memory is first-class, but selective.
+**Workspace memory first** (`.agents/memory/` in project):
 
-### Default Memory Rules
+- `decisions-log.md` — decisions made in this project
+- `common-patterns.md` — proven patterns in this project
+- `mistakes-to-avoid.md` — known traps in this project
 
-- Use **workspace memory first** for project-specific lessons.
-- Use **global memory** only for cross-project or system-level lessons.
-- Do not load memory by default; load it because it changes the current decision.
+**Global memory second** (`antigravity/memory/`):
 
-### Memory File Roles
+- Only for cross-project or system-level lessons
+- Never write project-specific knowledge here
 
-| File | Use When |
+**Rule:** Load memory because it changes the current decision — not by default.
+
+---
+
+## CONTEXT FILES — WHAT THEY ARE
+
+Context files in `contexts/` are **project-specific fill-in templates.** They are blank by default and get populated during project inception. They ground execution in your actual project truth. Never load more than needed.
+
+| Context File | Load When |
 | :--- | :--- |
-| `decisions-log.md` | a similar decision has already been made or a new decision needs to be logged |
-| `common-patterns.md` | a proven pattern may save time or prevent reinvention |
-| `mistakes-to-avoid.md` | the task touches an area with known traps |
-| `postmortems.md` | the task resembles a prior incident or failure mode |
-| `benchmark-results.md` | evaluating changes to the OS itself |
-| `version-notes.md` | documenting changes to Anti-Gravity |
-
-### Memory Routing Principle
-
-Contexts tell the system what is true now.
-Memory tells the system what was learned over time.
-
-Do not use memory to replace current truth. Use it to preserve judgment, history, and lessons.
+| `stack-context.md` | Any coding, building, or debugging task |
+| `architecture-context.md` | Architecture, debugging complex issues |
+| `coding-standards.md` | Building, reviewing, refactoring |
+| `design-system.md` + `visual-identity.md` | UI/UX work |
+| `security-baselines.md` | Security, auth, review |
+| `infra-context.md` | DevOps, performance, deployment |
+| `project-context.md` | Project inception, new feature scoping |
+| `product-marketing-context.md` | Copywriting, marketing, sales strategy |
+| `domain-rules.md` | Business logic tasks |
+| `database-context.md` | Database design, query optimization |
 
 ---
 
-## SUPPORT LAYERS
-
-### Templates
-
-`global_templates/` has two jobs:
-
-- shape formal deliverables
-- scaffold context and setup files during authoring flows such as project inception
-
-Templates are not runtime truth. They help create or structure runtime truth.
-
-### Rubrics
-
-`rubric/` is a support layer for critique, review, and explicit evaluation. Rubrics are not startup context and should not sit in the normal critical path.
-
-### Benchmarks
-
-`benchmark/` is advanced evaluation infrastructure. Benchmarks are for testing the OS itself, comparing versions, and measuring improvement. They are not ordinary task context.
-
----
-
-## PRACTICAL INTEGRATION EXAMPLES
-
-### Example 1: Build Feature
-
-- load coding + testing skill
-- load build-feature workflow
-- load live stack and standards context
-- load memory only if similar history matters
-- load rubric only during critique
-
-### Example 2: Debug Production Issue
-
-- load debugging skill
-- load debug workflow
-- load stack, architecture, and relevant operational context
-- check local mistakes-to-avoid or postmortems if similar incidents occurred
-- use a debug report template only if formal documentation is needed
-
-### Example 3: Project Inception
-
-- use product-thinking + architecture
-- create runtime-ready context files from templates
-- initialize workspace memory files
-- log the first architectural decision locally
-
----
-
-## THE FULL SYSTEM AT A GLANCE
+## FOLDER INTERACTION MAP
 
 ```text
-GEMINI.md
-  -> identity, authority, user alignment, operating rules
-
-GLOBAL_MEMORY.md
-  -> routing, system map, layer interaction
-
-core/
-  -> deep permanent behavior
-skills/
-  -> domain-specific behavior
-contexts/
-  -> runtime project truth
-workflows/
-  -> execution sequences
-global_templates/
-  -> output scaffolds and authoring templates
-memory/
-  -> retained learning
-rubric/
-  -> critique support
-benchmark/
-  -> advanced OS evaluation
+GEMINI.md + GLOBAL_MEMORY.md
+  → skills/ (domain behavior)
+    → contexts/ (grounds skill in project reality)
+      → workflows/ (sequences the work)
+        → global_templates/ (shapes deliverables)
+        → rubric/ (evaluates output during critique)
+        → memory/ (stores durable lessons)
 ```
+
+Task → execution → learning → memory → better future routing.
 
 ---
 
 ## INTEGRATION RULES
 
 1. `GEMINI.md` always governs behavior.
-2. `GLOBAL_MEMORY.md` routes, but does not override the constitution.
-3. Contexts should ground execution, not flood it.
-4. Skills should specialize; they should not restate the constitution.
-5. Templates should shape output or authoring, not masquerade as runtime truth.
-6. Memory should be selective and correctly scoped.
-7. Rubrics belong near critique, not startup.
-8. Benchmarks never belong in ordinary task execution.
-9. Read folder READMEs when entering a layer for the first time in a task.
-10. Lean loading beats heavy loading.
+2. This file routes — it does not override the constitution.
+3. Contexts ground execution; they should not flood it.
+4. Skills specialize; they should not restate the constitution.
+5. Templates shape output or authoring — not masquerade as runtime truth.
+6. Rubrics belong near critique, not startup.
+7. Benchmarks never belong in ordinary task execution.
+8. Lean loading beats heavy loading — always.
 
 ---
 
-## FINAL PRINCIPLE
+## WORKFLOW STATE TRACKING
 
-The power of Anti-Gravity is not raw document count. It is disciplined composition:
+Every active workflow must maintain a state file at `.agents/workflow-state.json` in the project workspace. This enables resuming work across sessions without restarting.
 
-the constitution for behavior, the system map for routing, live contexts for truth, workflows for sequence, memory for continuity, and support layers loaded only when they add real value.
+### On Workflow Start
+
+1. Check if `.agents/workflow-state.json` exists for the current task area.
+2. If it exists and matches the current task: ask "You have an active **[workflow]** workflow at **Phase [N] ([name])** — [pct]% complete. Resume?"
+3. If starting fresh: create a new state file immediately.
+
+### State File Format
+
+```json
+{
+  "workflow": "build-feature",
+  "started_at": "2026-04-10T14:00:00Z",
+  "updated_at": "2026-04-10T15:30:00Z",
+  "current_phase": "IMPLEMENT",
+  "phase_number": 7,
+  "total_phases": 11,
+  "completion_pct": 64,
+  "status": "in_progress",
+  "feature_summary": "Brief description of what is being built",
+  "phases": {
+    "1_define_objective": { "status": "done", "completed_at": "..." },
+    "2_ground_context":   { "status": "done", "completed_at": "..." },
+    "7_implement":        { "status": "in_progress", "started_at": "..." },
+    "8_self_review":      { "status": "pending" }
+  },
+  "notes": "Current progress notes — most useful field for resuming.",
+  "key_decisions": ["Decision 1", "Decision 2"],
+  "blockers": []
+}
+```
+
+### Status Values
+
+| Value | Meaning |
+| :--- | :--- |
+| `pending` | Phase not yet started |
+| `in_progress` | Phase currently active |
+| `done` | Phase completed |
+| `blocked` | Cannot proceed — see `blockers` |
+| `skipped` | Not needed for this task |
+
+### Rules
+
+1. **Check for active state at the start of any workflow activation.**
+2. **Never silently overwrite an existing state file.** Ask first.
+3. **Update state after every completed phase** — not at the end.
+4. **Keep `notes` current** — it's the most useful field for resuming.
+5. **Only ONE active workflow at a time.** Complete, pause, or archive before starting another.
+
+### Workflow Phase Maps (for state file phase keys)
+
+| Workflow | Phases |
+| :--- | :--- |
+| `build-feature` | define_objective → ground_context → define_scope → identify_risks → design_shape → verification_plan → implement → self_review → verify → deliver → post_ship |
+| `debug-issue` | observe_symptoms → reproduce → isolate → hypothesize → verify_cause → fix → verify_fix → regression_check → document → post_ship |
+| `design-ui` | user_goals → information_architecture → component_inventory → state_coverage → visual_design → implement → accessibility → verify → deliver → post_ship |
+| `plan-architecture` | understand_requirements → identify_constraints → enumerate_options → evaluate_tradeoffs → make_decision → document_adr → communicate |
+| `project-inception` | understand_idea → define_scope → choose_stack → design_architecture → sequence_work → create_contexts → deliver_plan |
+| `marketing-copy` | context_gathering → psychology_alignment → drafting → refinement → delivery |
+
+---
+
+## BELOVED'S TECH STACK PREFERENCES
+
+- **Logic:** TypeScript 7.0 (Native) via `tsgo`
+- **Motion:** `motion` (Modern rebranded Framer Motion)
+- **Standard:** Production-quality polish and motion-first UI by default.

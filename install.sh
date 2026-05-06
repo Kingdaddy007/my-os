@@ -81,12 +81,30 @@ if [ ! -d "$GLOBAL_CONFIG" ]; then
     success "Created configuration directory: $GLOBAL_CONFIG"
 fi
 
-step "Cleaning target directory..."
-rm -rf "$GLOBAL_CONFIG"/*
-success "Target ready."
+step "Cleaning and syncing OS payload..."
 
-cp -R "$GLOBAL_SOURCE/"* "$GLOBAL_CONFIG/"
-success "Copied OS files successfully."
+OS_PAYLOAD=(
+    "skills" "workflows" "global_workflows" "core" "contexts" 
+    "global_templates" "rubric" "memory" "benchmark" "scripts"
+    "GEMINI.md" "GLOBAL_MEMORY.md"
+)
+
+for item in "${OS_PAYLOAD[@]}"; do
+    SOURCE_ITEM="$GLOBAL_SOURCE/$item"
+    TARGET_ITEM="$GLOBAL_CONFIG/$item"
+    
+    if [ -e "$SOURCE_ITEM" ]; then
+        # Delete the old OS item if it exists
+        if [ -e "$TARGET_ITEM" ]; then
+            rm -rf "$TARGET_ITEM"
+        fi
+        
+        # Copy the new OS item
+        cp -R "$SOURCE_ITEM" "$GLOBAL_CONFIG/"
+    fi
+done
+
+success "Safely synchronized OS payload."
 
 # ─── Step 3: Dynamic Path URI Configuration ────────────────────────────────────
 step "Configuring Absolute System Paths..."

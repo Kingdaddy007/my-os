@@ -17,6 +17,7 @@ Instead of doing it all in one long, sequential, context-bloating session, you a
 ### 1. Identify Dispatchable Tasks
 
 A task is dispatchable if:
+
 - It is highly isolated (e.g., writing tests for a pure function, styling a simple component, writing documentation).
 - It does not require deep knowledge of the entire system architecture.
 - Its inputs and expected outputs are clear.
@@ -25,8 +26,10 @@ A task is dispatchable if:
 
 For each task you intend to dispatch, generate a clear, self-contained brief for the user to hand to a new agent session.
 
-**Format:**
+### Format
+
 ```
+
 ## Task Brief: [Task Name]
 
 **Goal:** [What needs to be achieved]
@@ -45,6 +48,7 @@ Present the brief(s) to the user. Say:
 ### 4. Re-integration
 
 When the user returns from a sub-session:
+
 1. Review the changes made (using git status/diff or by reading the touched files).
 2. Verify the subagent followed the brief and didn't break adjacent behavior.
 3. Mark the task as complete in your master checklist.
