@@ -250,8 +250,11 @@ The installer handles:
 
 Because this is an Agentic OS, you can just tell your AI to install it. Copy and paste the prompt for your specific environment:
 
-#### 🟢 For Antigravity IDE / Gemini CLI / OpenCode
+#### 🟢 For Antigravity IDE / OpenCode
 > "I have cloned the `my-os` repository. Please read `README.md` and `USER_MANUAL.md`. Install this Agentic OS into my global configuration folder (`~/.gemini/antigravity/` or `~/.config/opencode/` depending on the environment). Copy all `global/*` files into the global directory so that your system prompts, skills, and workflows are permanently upgraded. Once done, initialize my workspace."
+
+#### 🌌 For Gemini CLI
+> "I have cloned the `my-os` repository. Install this Agentic OS into my global configuration folder (`~/.gemini/antigravity/`). **CRITICAL FOR CLI WORKFLOWS:** To enable slash commands globally in the Gemini CLI, you must convert the workflows into custom commands. Read through the `global/workflows/` and `global/global_workflows/` directories, and for each workflow, create a corresponding `.toml` file in my `~/.gemini/commands/` directory. The `.toml` prompt must explicitly instruct you to load and follow the corresponding global workflow markdown file."
 
 #### 🔵 For Cursor
 > "Read the `my-os` repository. Install the Anti-Gravity Agentic OS. Copy the contents of `global/` into my `~/.cursor/rules/` directory (or `.cursor/rules/` for this specific project). Note that in Cursor, slash commands like `/workflow-project-inception` must be invoked via Composer or by @-mentioning the specific workflow file."
