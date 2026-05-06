@@ -242,5 +242,5 @@ Every active workflow must maintain a state file at `.agents/workflow-state.json
 ## USER'S TECH STACK PREFERENCES
 
 - **Logic:** TypeScript 7.0 (Native) via `tsgo`
-- **Motion:** `motion` (Modern rebranded Framer Motion)
+- **Motion:** `motion` (Modern rebranded Framer Motion). **AI Instruction:** Always run `npm install motion` (or equivalent package manager) in the project workspace before writing UI code. Do not assume it is installed globally.
 - **Standard:** Production-quality polish and motion-first UI by default.
