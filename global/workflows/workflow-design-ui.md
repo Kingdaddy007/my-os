@@ -1,25 +1,158 @@
-# WORKFLOW: DESIGN UI (FULL SOURCE)
+# WORKFLOW: DESIGN UI — IMPECCABLE COMMAND CENTER
 
-**Version:** Gold v1.2 (Impeccable Integration)
+**Version:** Gold v2.0 (Impeccable Authority)
 **Layer:** 8 — Execution Workflow
 **Tier:** 2 — Loaded by task
-**File:** workflows/workflow-design-ui-SOURCE.md
+**File:** workflows/workflow-design-ui.md
 **Primary Mode:** Designer
 **Secondary Modes:** Builder, Product Thinking, Architect, Performance, Reviewer, Security
-**Purpose:** The systematic sequence for designing and implementing user interfaces — from user goal identification through component implementation with full state coverage and accessibility. Ensures UI work starts with the USER, not with the component.
+**Purpose:** The master orchestration workflow for all UI/UX design work. Routes to the correct Impeccable workflow based on the task, maps the 3-tier lifecycle, and provides UX-specific execution for flow mapping, state coverage, and accessibility.
 **Loaded When:** Building frontend components, designing user flows, creating new pages or views, improving existing UI, improving usability, or designing interaction states.
 **Inherits From:** execution-workflow.md (universal process)
 
-> [!IMPORTANT]
-> **Primary path: Use `/impeccable-craft` instead.** Impeccable is the design authority for all visual UI work. This workflow remains valuable for **UX-specific tasks** like: user flow mapping, state coverage planning, information architecture, accessibility audits, and interaction design without visual implementation. For building actual UI with visual craft, route to `/impeccable-craft` which handles shape → mock → build → verify with studio-grade quality.
+**Design Authority:** Impeccable owns all visual design, UI craft, and motion work. This workflow is the routing layer that tells Anti-Gravity WHICH Impeccable workflow to run and WHEN. The passive design knowledge (craft laws, anti-patterns) lives in `skills/ui-ux/SKILL.md`.
 
 ---
 
-## WHAT THIS WORKFLOW DOES
+## THE IMPECCABLE DESIGN LIFECYCLE
 
-This workflow ensures UI work starts with the user, not with the component. It forces state coverage — loading, empty, error, success — accessibility compliance, and responsive behavior. These are the things that get skipped when developers jump straight to the happy-path UI.
+All design work follows this 3-tier lifecycle. These workflows are not optional add-ons — they ARE the design execution system.
 
-Without this workflow, UI development produces components that work in the demo but break in production because empty states, error states, loading states, mobile views, and keyboard navigation were never considered.
+### TIER 1: CONTEXT CREATION — "Who are we designing for?"
+
+Run once per project, during **Project Inception** (Phase 3A).
+
+| Workflow | What It Creates | When |
+| :--- | :--- | :--- |
+| `/impeccable-teach` | **PRODUCT.md** — strategic design context (register, users, brand personality, anti-references, design principles) | Start of any new project with UI |
+| `/impeccable-document` | **DESIGN.md** + **DESIGN.json** — visual system (tokens, typography, colors, components, do's/don'ts) | After PRODUCT.md exists, or when the design system needs capturing |
+
+PRODUCT.md and DESIGN.md live at the project root alongside Anti-Gravity's `contexts/` files. Anti-Gravity contexts handle engineering and product truth; Impeccable contexts handle design truth.
+
+### TIER 2: BUILD — "How do we make this feature look and work?"
+
+Run during **Build Feature** (Step 7c — Client Layer) for every UI task.
+
+| Workflow | What It Does | When |
+| :--- | :--- | :--- |
+| `/impeccable-shape` | Creates a **task-specific design brief** — discovery interview, visual direction probes, confirmed brief with scope, states, hierarchy, interaction model | Before coding any UI. Produces the blueprint. |
+| `/impeccable-craft` | **Full build loop** — runs shape internally → generates visual mock → builds production code → browser verification → critique-and-fix loop | The "golden path" for building any UI feature end-to-end |
+| `/impeccable-live` | **Real-time browser editing** — select elements, pick a design action, get AI-generated variants hot-swapped via HMR | When a dev server is running and you want interactive variant exploration |
+
+**Craft is the default.** When building a new UI feature, run `/impeccable-craft`. It handles everything: shape (planning), mock (visual direction), build (implementation), and verify (browser inspection). You only run `/impeccable-shape` separately when you want the design brief without the build.
+
+### TIER 3: REFINEMENT — "How do we make it better?"
+
+Run **post-build**, any time an existing UI needs improvement.
+
+#### Review & Scoring
+
+| Workflow | What It Does | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-audit` | Technical quality scorecard (a11y, perf, responsive, theming, anti-patterns). Scores 0-20. | Post-build technical review |
+| `/impeccable-critique` | Design director review — Nielsen heuristics, AI slop detection, cognitive load assessment. Scores 0-40. | Post-build design review |
+
+#### Targeted Refinement
+
+| Workflow | What It Adjusts | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-polish` | Final detail pass — spacing, states, transitions, alignment, design system drift | "Make it production-ready" |
+| `/impeccable-bolder` | Amplifies contrast, hierarchy, atmospheric treatment, visual confidence | "It feels weak / generic / timid" |
+| `/impeccable-quieter` | Reduces visual noise, softens palette, calms motion, increases whitespace | "It feels noisy / overwhelming" |
+| `/impeccable-distill` | Simplifies — removes excess, sharpens hierarchy, reduces cognitive load | "It's cluttered / confusing" |
+| `/impeccable-clarify` | Fixes confusing wording, labels, error messages, state communication | "Users don't understand what's happening" |
+
+#### Specific Dimension Rework
+
+| Workflow | Dimension | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-colorize` | Color strategy — palette, contrast, tonal relationships | "The colors aren't working" |
+| `/impeccable-typeset` | Typography — type pairing, scale, hierarchy, weight strategy | "The typography feels off / flat" |
+| `/impeccable-layout` | Spatial structure — grid, composition, information density | "The layout doesn't feel right" |
+| `/impeccable-adapt` | Responsiveness — behavior across viewports and contexts | "It breaks on mobile / tablet" |
+| `/impeccable-animate` | Motion — adds `motion` (Framer Motion) transitions, scroll-driven effects | "It feels static / lifeless" |
+| `/impeccable-delight` | Personality — micro-interactions, easter eggs, celebration moments | "It works but has no soul" |
+| `/impeccable-overdrive` | Convention breaking — pushes past safe design into unexpected territory | "It's correct but boring — take risks" |
+
+#### Special Purpose
+
+| Workflow | Purpose | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-onboard` | Onboarding — empty states, tours, progressive disclosure, first-time flows | Building onboarding experiences |
+| `/impeccable-extract` | Extracts design tokens from existing code into structured format | Capturing an existing design system |
+| `/impeccable-optimize` | Performance optimization of UI assets and rendering | UI is slow, images too large |
+
+---
+
+## MOTION STANDARD
+
+**`motion` (modern Framer Motion) is mandatory.** Install before writing motion code: `npm install motion`.
+
+**Motion type mapping** (assign to every major page section during design):
+- **Type A (Static):** Standard layout, no major animation. Text, forms, data tables.
+- **Type B (Code Animation):** Scroll reveals, parallax, hover effects. Built with `motion`.
+- **Type C (Cinematic Video):** AI-generated video. Route to `seedance-20` skill.
+
+Map during `/impeccable-shape` or during Project Inception Phase 3A.
+
+---
+
+## HOW IMPECCABLE CONNECTS TO ANTI-GRAVITY
+
+### During Project Inception
+
+```
+Phase 1-3: Problem, MVP, Stack (Anti-Gravity owns)
+    │
+Phase 3A: Design Identity (Impeccable takes over)
+    ├── /impeccable-teach → PRODUCT.md
+    ├── /impeccable-document → DESIGN.md + DESIGN.json
+    ├── Animation mapping (Type A/B/C per section)
+    └── External prototyping (Figma AI, Stitch, Lovable)
+    │
+Phase 4-7: Contexts, Memory, Build Sequence (Anti-Gravity owns)
+```
+
+### During Build Feature
+
+```
+Steps 1-6: Define, Context, Scope, Risks, Shape, Verify (Anti-Gravity owns)
+    │
+Step 7c — Client Layer (Impeccable takes over)
+    ├── /impeccable-craft (full loop: shape → mock → build → verify)
+    │   OR
+    ├── /impeccable-shape → then manual build using SKILL.md craft laws
+    │
+Steps 8-11: Review, Verify, Deliver, Memory (Anti-Gravity owns)
+    └── During Step 8: consider /impeccable-audit or /impeccable-critique
+```
+
+### Post-Build Diagnosis
+
+```
+UI exists → identify the issue → pick the right workflow:
+    Weak?     → /impeccable-bolder
+    Noisy?    → /impeccable-quieter or /impeccable-distill
+    Static?   → /impeccable-animate
+    Generic?  → /impeccable-delight
+    Broken?   → /impeccable-audit → fix → /impeccable-polish
+```
+
+---
+
+## MOCKUPS & EXTERNAL PROTOTYPING
+
+Impeccable handles mockup generation through `/impeccable-craft` (its mock phase generates visual direction for approval before building). For external prototyping:
+
+1. **Google Stitch / Figma AI / Lovable:** During Project Inception Phase 3A Step 4, bring `DESIGN.md` tokens and `prototyping-spec.md` structure into external tools to generate high-fidelity mockups.
+2. **Quick HTML Previews:** Use `workflow-visual-brainstorm.md` Path A for fast, disposable HTML preview files to compare color palettes, typography, or layout options.
+3. **Stitch Design Briefs:** Use `workflow-visual-brainstorm.md` Path B to generate structured design briefs for Google Stitch.
+
+---
+
+## UX-SPECIFIC EXECUTION (BELOW)
+
+The sections below handle UX tasks that don't require visual craft — user flow mapping, state coverage, information architecture, accessibility audits, and interaction design. For building actual UI with visual craft, use `/impeccable-craft` above.
 
 ---
 
