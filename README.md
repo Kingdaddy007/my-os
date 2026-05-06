@@ -118,7 +118,7 @@ After installation, type `/` in your IDE to trigger structured workflows:
 | :--- | :--- |
 | `/workflow-build-feature` | Plan → code → test → ship — end to end |
 | `/workflow-debug-issue` | Symptoms → root cause → verified fix |
-| `/workflow-design-ui` | User goals → components → states → accessibility |
+| `/workflow-design-ui` | Impeccable Design Command Center — routes to the right `/impeccable-*` workflow |
 | `/workflow-design-api` | Consumer needs → contract → error handling → docs |
 | `/workflow-plan-architecture` | Requirements → options → tradeoffs → decision record |
 | `/workflow-project-inception` | Raw idea → structured plan → execution sequence |
@@ -144,7 +144,7 @@ The AI loads **domain-specific expertise** before each task — not all 15 at on
 | Writing code | `skill-coding` — patterns, error handling, naming |
 | Debugging | `skill-debugging` — systematic root-cause analysis |
 | Designing architecture | `skill-architecture` — boundaries, tradeoffs, ADRs |
-| Building UI | `skill-ui-ux` — component design, states, accessibility |
+| Building UI | `skill-ui-ux` — craft laws, register system, anti-patterns + **Impeccable design authority** |
 | Security work | `skill-security` — threat modeling, STRIDE, auth patterns |
 | Database work | `skill-database` — schema design, migrations, indexing |
 | API design | `skill-api-design` — contracts, versioning, error standards |
@@ -155,8 +155,6 @@ The AI loads **domain-specific expertise** before each task — not all 15 at on
 | Code review | `skill-review-audit` — quality checklist, security review |
 | Research | `skill-research-analysis` — comparison, evaluation, recommendations |
 | Scoping | `skill-product-thinking` — prioritization, MVP, tradeoffs |
-| Frontend polish | `skill-advanced-frontend` — animations, layout, visual quality |
-| UI/UX Masterclass | `skill-ui-ux` — Now supercharged with the **Impeccable Design Framework** for state-of-the-art visual standards, layout, and motion |
 | AI Directing | `skill-seedance` — Prompting and pipeline logic for AI video generation |
 | Session Management | `skill-context-hygiene` — Automatically prevents context bloat and saves state |
 
