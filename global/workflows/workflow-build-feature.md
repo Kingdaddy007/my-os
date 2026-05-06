@@ -91,7 +91,9 @@ If the task starts ambiguous, clarify whether the user wants architecture, imple
 
 | Condition | Context | Purpose |
 | :--- | :--- | :--- |
-| UI work | `design-system.md` | Styles |
+| UI work | `PRODUCT.md` (project root) | Strategic design context (register, brand, anti-references) |
+| UI work | `DESIGN.md` (project root) | Visual system tokens (colors, typography, spacing, components) |
+| UI work | `design-system.md` | Supplementary design patterns |
 | Schema changes | `database-context.md` | Schema |
 | API work | `api-conventions.md` | Endpoints |
 | Auth or security surfaces | `security-baselines.md` | Safety |
