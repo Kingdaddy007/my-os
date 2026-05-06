@@ -27,7 +27,7 @@ Think like a design director. Evaluate:
 
 **Holistic Design Review**: visual hierarchy (eye flow, primary action clarity), information architecture (structure, grouping, cognitive load), emotional resonance (does it match brand and audience?), discoverability (are interactive elements obvious?), composition (balance, whitespace, rhythm), typography (hierarchy, readability, font choices), color (purposeful use, cohesion, accessibility), states & edge cases (empty, loading, error, success), microcopy (clarity, tone, helpfulness).
 
-**Cognitive Load** (consult [cognitive-load](cognitive-load.md)):
+**Cognitive Load** (consult [cognitive-load](../skills/ui-ux/reference/cognitive-load.md)):
 - Run the 8-item cognitive load checklist. Report failure count: 0-1 = low (good), 2-3 = moderate, 4+ = critical.
 - Count visible options at each decision point. If >4, flag it.
 - Check for progressive disclosure: is complexity revealed only when needed?
@@ -37,7 +37,7 @@ Think like a design director. Evaluate:
 - **Peak-end rule**: Is the most intense moment positive? Does the experience end well?
 - **Emotional valleys**: Check for anxiety spikes at high-stakes moments (payment, delete, commit). Are there design interventions (progress indicators, reassurance copy, undo options)?
 
-**Nielsen's Heuristics** (consult [heuristics-scoring](heuristics-scoring.md)):
+**Nielsen's Heuristics** (consult [heuristics-scoring](../skills/ui-ux/reference/heuristics-scoring.md)):
 Score each of the 10 heuristics 0-4. This scoring will be presented in the report.
 
 Return structured findings covering: AI slop verdict, heuristic scores, cognitive load assessment, what's working (2-3 items), priority issues (3-5 with what/why/fix), minor observations, and provocative questions.
@@ -94,7 +94,7 @@ Synthesize both assessments into a single report. Do NOT simply concatenate. Wea
 Structure your feedback as a design director would:
 
 #### Design Health Score
-> *Consult [heuristics-scoring](heuristics-scoring.md)*
+> *Consult [heuristics-scoring](../skills/ui-ux/reference/heuristics-scoring.md)*
 
 Present the Nielsen's 10 heuristics scores as a table:
 
@@ -133,14 +133,14 @@ Highlight 2-3 things done well. Be specific about why they work.
 #### Priority Issues
 The 3-5 most impactful design problems, ordered by importance.
 
-For each issue, tag with **P0-P3 severity** (consult [heuristics-scoring](heuristics-scoring.md) for severity definitions):
+For each issue, tag with **P0-P3 severity** (consult [heuristics-scoring](../skills/ui-ux/reference/heuristics-scoring.md) for severity definitions):
 - **[P?] What**: Name the problem clearly
 - **Why it matters**: How this hurts users or undermines goals
 - **Fix**: What to do about it (be concrete)
 - **Suggested command**: Which command could address this (from: {{available_commands}})
 
 #### Persona Red Flags
-> *Consult [personas](personas.md)*
+> *Consult [personas](../skills/ui-ux/reference/personas.md)*
 
 Auto-select 2-3 personas most relevant to this interface type (use the selection table in the reference). If `{{config_file}}` contains a `## Design Context` section from `impeccable teach`, also generate 1-2 project-specific personas from the audience/brand info.
 
@@ -216,4 +216,5 @@ After presenting the summary, tell the user:
 > You can ask me to run these one at a time, all at once, or in any order you prefer.
 >
 > Re-run `{{command_prefix}}impeccable critique` after fixes to see your score improve.
+
 

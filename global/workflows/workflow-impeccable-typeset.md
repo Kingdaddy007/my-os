@@ -9,7 +9,7 @@ Assess and improve typography that feels generic, inconsistent, or poorly struct
 
 ## Register
 
-Brand: run the font selection procedure in [brand.md](brand.md). Pairing follows the brand's lane (display serif + sans body for editorial/luxury, one committed sans for tech, etc.). Fluid `clamp()` scale, ≥1.25 ratio between steps.
+Brand: run the font selection procedure in [brand.md](../skills/ui-ux/reference/brand.md). Pairing follows the brand's lane (display serif + sans body for editorial/luxury, one committed sans for tech, etc.). Fluid `clamp()` scale, ≥1.25 ratio between steps.
 
 Product: system fonts and familiar sans stacks are legitimate here. One well-tuned family typically carries the whole UI. Fixed `rem` scale, 1.125–1.2 ratio between more closely-spaced steps.
 
@@ -48,7 +48,7 @@ Analyze what's weak or generic about the current type:
 
 ## Plan Typography Improvements
 
-Consult the [typography reference](typography.md) for detailed guidance on scales, pairing, and loading strategies.
+Consult the [typography reference](../skills/ui-ux/reference/typography.md) for detailed guidance on scales, pairing, and loading strategies.
 
 Create a systematic plan:
 
@@ -127,4 +127,5 @@ Each variant MUST declare a `scale` param controlling the hierarchy ratio. Expre
 Where the variant riffs on a specific pairing, expose the pairing choice as a `steps` param (e.g. "serif display + sans body" vs. "mono display + sans body" vs. "all-sans"). Each branch routes through `:scope[data-p-pairing="X"]` selectors in scoped CSS.
 
 See `reference/live.md` for the full params contract.
+
 

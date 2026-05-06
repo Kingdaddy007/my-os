@@ -48,7 +48,7 @@ Analyze what's weak about the current spatial design:
 
 ## Plan Layout Improvements
 
-Consult the [spatial design reference](spatial-design.md) for detailed guidance on grids, rhythm, and container queries.
+Consult the [spatial design reference](../skills/ui-ux/reference/spatial-design.md) for detailed guidance on grids, rhythm, and container queries.
 
 Create a systematic plan:
 
@@ -144,4 +144,5 @@ For variants whose topology genuinely changes (stacked vs. side-by-side, grid vs
 ```
 
 See `reference/live.md` for the full params contract.
+
 

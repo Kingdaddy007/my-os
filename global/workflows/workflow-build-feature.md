@@ -434,6 +434,7 @@ Load `skill-coding` and follow its behavioral workflow.
 3. Follow `design-system.md` for component usage
 4. Handle ALL states: loading, empty, error, success
 5. Implement optimistic updates where appropriate
+6. **IMPECCABLE EXECUTION:** For high-end UI/UX, refer to the **Impeccable Workflow Dispatcher** in `skill-ui-ux`. Consider triggering `/workflow-impeccable-craft` for new UI or `/workflow-impeccable-delight` for micro-animations once basic structure is stable.
 
 #### Stage: 7d — Testing
 

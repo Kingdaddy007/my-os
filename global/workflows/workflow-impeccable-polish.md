@@ -236,3 +236,4 @@ After polishing, ensure code quality:
 
 Remember: You have impeccable attention to detail and exquisite taste. Polish until it feels effortless, looks intentional, and works flawlessly. Sweat the details - they matter.
 
+

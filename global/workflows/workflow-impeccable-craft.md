@@ -48,15 +48,15 @@ If the user has already run {{command_prefix}}impeccable shape and has a confirm
 
 Based on the design brief's "Recommended References" section, consult the relevant impeccable reference files. At minimum, always consult:
 
-- [spatial-design.md](spatial-design.md) for layout and spacing
-- [typography.md](typography.md) for type hierarchy
+- [spatial-design.md](../skills/ui-ux/reference/spatial-design.md) for layout and spacing
+- [typography.md](../skills/ui-ux/reference/typography.md) for type hierarchy
 
 Then add references based on the brief's needs:
-- Complex interactions or forms? Consult [interaction-design.md](interaction-design.md)
-- Animation or transitions? Consult [motion-design.md](motion-design.md)
-- Color-heavy or themed? Consult [color-and-contrast.md](color-and-contrast.md)
-- Responsive requirements? Consult [responsive-design.md](responsive-design.md)
-- Heavy on copy, labels, or errors? Consult [ux-writing.md](ux-writing.md)
+- Complex interactions or forms? Consult [interaction-design.md](../skills/ui-ux/reference/interaction-design.md)
+- Animation or transitions? Consult [motion-design.md](../skills/ui-ux/reference/motion-design.md)
+- Color-heavy or themed? Consult [color-and-contrast.md](../skills/ui-ux/reference/color-and-contrast.md)
+- Responsive requirements? Consult [responsive-design.md](../skills/ui-ux/reference/responsive-design.md)
+- Heavy on copy, labels, or errors? Consult [ux-writing.md](../skills/ui-ux/reference/ux-writing.md)
 
 ## Step 3: Land the Visual Direction (Capability-Gated)
 
@@ -196,4 +196,5 @@ Present the result to the user:
 - Ask: "What's working? What isn't?"
 
 Iterate based on feedback. Good design is rarely right on the first pass.
+
 

@@ -375,7 +375,8 @@ Use when:
 
 - the product has a meaningful user interface
 
-> **Recommended:** Before defining the visual identity in text, consider using `workflow-visual-brainstorm.md` to generate a visual preview. Making the design direction visible before writing it down prevents "that's not what I imagined" moments.
+> [!IMPORTANT]
+> **Recommended:** For production-grade UI/UX execution, refer to the **Impeccable Workflow Dispatcher** in `skill-ui-ux`. It maps project phases to specialized workflows like `/workflow-impeccable-craft`, `/workflow-impeccable-delight`, and more. Before defining the visual identity in text, consider using `workflow-visual-brainstorm.md` to generate a visual preview. 
 
 #### Step 1: Define the visual vibe
 

@@ -55,7 +55,7 @@ Create a strategy to increase impact while maintaining coherence:
 Systematically increase impact across these dimensions:
 
 ### Typography Amplification
-- **Replace generic fonts**: Swap system fonts for distinctive choices (see the parent skill's typography guidelines and [typography.md](typography.md) for inspiration)
+- **Replace generic fonts**: Swap system fonts for distinctive choices (see the parent skill's typography guidelines and [typography.md](../skills/ui-ux/reference/typography.md) for inspiration)
 - **Extreme scale**: Create dramatic size jumps (3x-5x differences, not 1.5x)
 - **Weight contrast**: Pair 900 weights with 200 weights, not 600 with 400
 - **Unexpected choices**: Variable fonts, display fonts for headlines, condensed/extended widths, monospace as intentional accent (not as lazy "dev tool" default)
@@ -116,4 +116,5 @@ Ensure amplification maintains usability and coherence:
 **The test**: If you showed this to someone and said "AI made this bolder," would they believe you immediately? If yes, you've failed. Bold means distinctive, not "more AI effects."
 
 Remember: Bold design is confident design. It takes risks, makes statements, and creates memorable experiences. But bold without strategy is just loud. Be intentional, be dramatic, be unforgettable.
+
 

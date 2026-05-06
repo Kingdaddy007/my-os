@@ -160,3 +160,4 @@ If teach was invoked as a blocker by another impeccable command (e.g. the user r
 
 Optionally {{ask_instruction}} Ask whether they'd like a brief summary of PRODUCT.md appended to {{config_file}} for easier agent reference. If yes, append a short **Design Context** pointer section there.
 
+

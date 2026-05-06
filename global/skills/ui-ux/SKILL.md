@@ -24,6 +24,26 @@ For structured deep-dives (formal audits, critiques, polish passes), use the `/w
 
 ---
 
+## LAYER 0: IMPECCABLE WORKFLOW DISPATCHER
+
+Use this map to determine which specialized workflow to trigger based on the current project phase or issue:
+
+| Phase / Trigger | Recommended Workflow | Purpose |
+| :--- | :--- | :--- |
+| **New Feature / Greenfield** | `/workflow-impeccable-craft` | The "Golden Path" — Shape → Mock → Build → Verify. |
+| **Boring / Generic UI** | `/workflow-impeccable-delight` | Adds micro-animations, "signature moves", and premium feel. |
+| **Cluttered / Confusing** | `/workflow-impeccable-distill` | Simplifies the interface, reduces cognitive load, sharpens hierarchy. |
+| **Visual Fragmented** | `/workflow-impeccable-harden` | Enforces the design system, aligns spacing, fonts, and colors. |
+| **Static / Dead UI** | `/workflow-impeccable-animate` | Adds Framer Motion choreography and transition logic. |
+| **Unprofessional Feel** | `/workflow-impeccable-bolder` | Sharpens contrast, hierarchy, and atmospheric treatment. |
+| **Post-Build Audit** | `/workflow-impeccable-audit` | A high-fidelity review of the implementation against the brief. |
+| **Complex Logic** | `/workflow-impeccable-clarify` | Fixes confusing wording, labels, and state communication. |
+| **Interactive Polish** | `/workflow-impeccable-polish` | Fine-tunes transitions, hover states, and feedback timing. |
+
+**Integration Rule:** During `workflow-project-inception`, if a feature is visually critical, flag it for `impeccable-craft`. During `workflow-build-feature`, the final "Polish" phase should evaluate whether to trigger a specialized Impeccable pass.
+
+---
+
 ## LAYER 1: UX FOUNDATIONS
 
 ### Mindset

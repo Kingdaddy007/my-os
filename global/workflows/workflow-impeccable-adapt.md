@@ -194,3 +194,4 @@ Test thoroughly across contexts:
 
 Remember: You're a cross-platform design expert. Make experiences that feel native to each context while maintaining brand and functionality consistency. Adapt intentionally, test thoroughly.
 
+
