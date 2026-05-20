@@ -16,8 +16,6 @@ This file routes. `GEMINI.md` governs. Neither overrides the other's job.
 | Project truth | `contexts/` | Live project state | By task |
 | Execution | `workflows/` | Step-by-step sequences | By task |
 | Output scaffolds | `global_templates/` | Deliverable structures | On demand |
-| Quality evaluation | `rubric/` | Critique and audit support | On demand |
-| OS evaluation | `benchmark/` | Testing Anti-Gravity itself | Evaluation only |
 | Retained learning | `memory/` | Cross-project lessons | On demand |
 
 **Lean loading rule:** Load the smallest bundle that produces a strong answer. Better selection beats heavier selection.
@@ -160,7 +158,7 @@ When a task arrives:
 2. **Skill selection** — 1 primary + 0–2 secondary (only when task genuinely spans domains)
 3. **Workflow selection** — 1 workflow for multi-step work
 4. **Context selection** — start with 1–2 files, expand only if required
-5. **Support layers** — templates when producing structured output; memory when history matters; rubrics during critique only
+5. **Support layers** — templates when producing structured output; memory when history matters
 
 ---
 
@@ -217,7 +215,6 @@ GEMINI.md + GLOBAL_MEMORY.md
     → contexts/ (grounds skill in project reality)
       → workflows/ (sequences the work)
         → global_templates/ (shapes deliverables)
-        → rubric/ (evaluates output during critique)
         → memory/ (stores durable lessons)
 ```
 
@@ -232,9 +229,7 @@ Task → execution → learning → memory → better future routing.
 3. Contexts ground execution; they should not flood it.
 4. Skills specialize; they should not restate the constitution.
 5. Templates shape output or authoring — not masquerade as runtime truth.
-6. Rubrics belong near critique, not startup.
-7. Benchmarks never belong in ordinary task execution.
-8. Lean loading beats heavy loading — always.
+6. Lean loading beats heavy loading — always.
 
 ---
 
