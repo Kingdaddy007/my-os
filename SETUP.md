@@ -20,7 +20,7 @@ Unlike project-level rules, Anti-Gravity is a **Global Operating System**. It ge
 > If you are an AI assistant reading this file because a user asked you to setup or clone the repository, follow these precise instructions:
 >
 > 1. Run the `install.ps1` (Windows) or `install.sh` (Mac/Linux) script located in this directory.
-> 2. The script will ask for the target Global Configuration directory (e.g. `~/.gemini/antigravity`). You may provide it as an argument or let the user answer the prompt.
+> 2. The script will ask for the target Global Configuration directory (e.g. `~/.gemini/config`). You may provide it as an argument or let the user answer the prompt.
 > 3. **CRITICAL:** The script will automatically copy these files AND execute a dynamic URI search-and-replace so that all absolute `file:///...` links perfectly map to the user's local operating system name. **DO NOT TRY TO MANUALLY EDIT PATHS.** The script handles it.
 > 4. Verify installation by loading the newly mapped `GEMINI.md` file from the user's global config directory.
 
@@ -31,17 +31,13 @@ Unlike project-level rules, Anti-Gravity is a **Global Operating System**. It ge
 Anti-Gravity completely replaces the generic system prompt mapping in your IDE. Once the installer finishes, your IDE config folder will look like this:
 
 ```text
-~/.gemini/antigravity/          ← (or your respective IDE path)
+~/.gemini/config/               ← (or your respective IDE path)
 ├── GEMINI.md                   ← Master system prompt (AI identity & boot sequence)
 ├── GLOBAL_MEMORY.md            ← System map (tells AI where everything lives)
-├── core/                       ← Permanent AI brain (9 principle files)
+├── core/                       ← Permanent AI brain (3 system thinking files)
 ├── skills/                     ← Domain expertise (AI reads before each task)
 ├── contexts/                   ← Project ground truth (fill these for your stack)
 ├── workflows/                  ← Full workflow source files
-├── global_workflows/           ← Global Slash-command workflows (/ menu)
-├── templates/                  ← Output scaffolds (ADRs, PRDs, debug reports)
-├── rubric/                     ← Self-assessment scorecards
-├── benchmark/                  ← Performance trackers
 ├── scripts/                    ← Utility executable tooling
 └── memory/                     ← Living institutional knowledge
     ├── decisions-log.md
@@ -91,9 +87,9 @@ Fill these first. The AI will produce far better output once they are populated.
 
 ### Google Antigravity / Gemini
 
-- Global config: `C:\Users\<Name>\.gemini\`
+- Global config: `C:\Users\<Name>\.gemini\config\`
 - The `GEMINI.md` file at the root is automatically read as the system prompt
-- Workflows are dynamically loaded from `~/.gemini/antigravity/global_workflows/`
+- Workflows are dynamically loaded from `~/.gemini/config/workflows/`
 
 ### Cursor
 

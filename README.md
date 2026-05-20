@@ -36,13 +36,11 @@ It's not a prompt. It's not a `.cursorrules` file. It's a complete system:
 
 | Layer | What It Does | Files |
 | :--- | :--- | :---: |
-| 🧠 **Core** | Defines how the AI thinks, reasons, and communicates | 9 |
-| ⚡ **Skills** | Domain expertise loaded before each task type | 15 |
-| 🔄 **Workflows** | Step-by-step execution triggered by `/` slash commands | 13 |
+| 🧠 **Core** | Defines how the AI thinks, reasons, and communicates | 3 |
+| ⚡ **Skills** | Domain expertise loaded before each task type | 29 |
+| 🔄 **Workflows** | Step-by-step execution triggered by `/` slash commands | 41 |
 | 📍 **Contexts** | Your stack, architecture, standards — no more generic advice | 12 |
 | 🧾 **Templates** | Scaffolds for PRDs, ADRs, debug reports, feature plans | 8 |
-| 📊 **Rubrics** | Self-assessment scorecards the AI uses to check its own work | 11 |
-| 🧪 **Benchmarks** | Performance trackers across task categories | 7 |
 | 💾 **Memory** | Living record of decisions, patterns, and mistakes | 6 |
 
 ---
@@ -260,7 +258,6 @@ Antigravity-OS/
     ├── skills/                 ← Folder-based skills (SKILL.md)
     ├── contexts/               ← Context templates
     ├── workflows/              ← Workflow reference files
-    ├── global_workflows/       ← Global-only workflows
     └── scripts/                ← Maintenance & verification tools
 
 ```
