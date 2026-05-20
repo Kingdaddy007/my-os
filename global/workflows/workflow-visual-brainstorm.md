@@ -1,6 +1,6 @@
 # WORKFLOW: VISUAL BRAINSTORMING
 
-**Version:** Gold v1.0
+**Version:** Gold v1.1 (Impeccable Integration)
 **Layer:** 8 — Execution Workflow
 **Tier:** 2 — Loaded by task
 **File:** workflows/workflow-visual-brainstorm.md
@@ -14,6 +14,9 @@
        and actual visual output. It uses two paths: direct HTML previews
        (fast, built-in) and Google Stitch briefs (high-fidelity, external).
 
+> [!IMPORTANT]
+> **Impeccable now handles primary visual direction.** Use `/impeccable-teach` + `/impeccable-document` to establish design context, and `/impeccable-shape` for task-specific visual direction probes. This workflow remains useful as a **supplementary brainstorming tool** for quick HTML previews (Path A) and Stitch briefs (Path B) when exploring visual options before committing to the Impeccable design system.
+
 ---
 
 ## WHAT THIS WORKFLOW DOES
@@ -24,6 +27,7 @@ expensive mistake in UI development: building something that looks
 different from what the user imagined.
 
 The output of this workflow is:
+
 1. A visual preview of the design direction (HTML file or Stitch mockup)
 2. Confirmed design tokens (colors, fonts, spacing) written to context files
 3. A clear "this is what we're building" visual reference
@@ -56,16 +60,18 @@ The output of this workflow is:
 
 | Priority | Skill | Why |
 | :--- | :--- | :--- |
-| Primary | `visual-brainstorming` | Core skill — preview generation and Stitch brief format |
-| Secondary | `skill-ui-ux` | Design principles that inform visual direction |
+| Primary | `skill-ui-ux` | Design principles that inform visual direction |
+| Primary | `skill-storytelling` | Narrative constraints from story.md |
+| Primary | `skill-cinematic-motion` | Motion vocabulary for Phase 3C exploration |
 | Conditional | `skill-product-thinking` | If visual direction needs to align with user/business goals |
 
 ### Context Files to Load
 
 | Context | When |
 | :--- | :--- |
-| `visual-identity.md` | If it exists (read existing direction before generating previews) |
-| `design-system.md` | If it exists (ensure consistency with established patterns) |
+| `PRODUCT.md` | Required (defines register, users, brand personality) |
+| `DESIGN.md` | If it exists (read existing color/typography/spacing tokens) |
+| `DESIGN.json` | If it exists (read existing design details/components) |
 | `stack-context.md` | If generating Path A previews (know what CSS framework is in use) |
 
 ---
@@ -85,8 +91,7 @@ Before generating anything, clarify:
    - Complete design direction → Both paths sequentially
 
 2. **Is there existing visual context?**
-   - Check for `contexts/visual-identity.md`
-   - Check for `contexts/design-system.md`
+   - Check for `PRODUCT.md` and `DESIGN.md` / `DESIGN.json`
    - Ask: "Are there reference products that capture your desired look?"
 
 3. **What's the decision to make?**
@@ -133,6 +138,7 @@ Recommend one. Let the user decide.
 #### Iteration Loop
 
 After presenting:
+
 - Ask: "What would you change? Colors, typography, layout, spacing?"
 - Apply the requested changes
 - Regenerate and re-present
@@ -158,14 +164,14 @@ After presenting:
 2. **Generate the design brief** using the template from the SKILL.md
 
 3. **Include context files**:
-   - If `visual-identity.md` exists, include relevant sections
-   - If `design-system.md` exists, include component patterns
+   - If `DESIGN.md` / `DESIGN.json` exists, include current design system tokens and component patterns
 
 4. **Present to user**:
    "Here's your Stitch brief. Steps:
+
    1. Go to stitch.google.com
    2. Paste this brief as your prompt
-   3. Optionally attach the visual-identity.md file for more context
+   3. Optionally attach the DESIGN.md file for more context
    4. Iterate in Stitch until you're happy
    5. Come back here and tell me 'I'm done with Stitch' — I'll extract the design tokens"
 
@@ -193,11 +199,10 @@ Regardless of which path was used:
    - Shadow/elevation tokens
 
 2. **Write to context**:
-   - Create or update `contexts/visual-identity.md` with all design tokens
-   - If a design system exists, verify consistency
-
+   - Run `/impeccable-document` or create/update `DESIGN.md` + `DESIGN.json` with all design tokens
+ 
 3. **State the decision clearly**:
-   "Visual direction locked: [1-2 sentence summary]. All tokens written to visual-identity.md."
+   "Visual direction locked: [1-2 sentence summary]. All tokens written to DESIGN.md / DESIGN.json."
 
 ---
 
@@ -206,8 +211,89 @@ Regardless of which path was used:
 #### Mode: Communicate
 
 Transition to the next phase:
-- If during project inception → return to Phase 3 (Architecture) of workflow-project-inception
+
+- If during project inception → return to `workflow-project-inception.md` Phase 3A Step 6 (External Prototyping) or Phase 4 (Runtime Contexts), whichever is next in your current position.
 - If standalone design session → summarize decisions and suggest next workflow (workflow-design-ui or workflow-build-feature)
+
+---
+
+### PHASE 3C: ANIMATED PROJECT EXPLORATION
+
+When the project involves cinematic motion (scroll animations, 3D, video),
+add this phase after visual direction is locked (Phase 4).
+
+**Load:** `skill-cinematic-motion` Section 1 (Creative Direction)
+
+#### Step 1: Motion Direction Exploration
+
+Present 2-3 motion directions based on the brand archetype:
+
+| Direction | Hero Approach | Scroll Style | Climax | Why |
+|-----------|--------------|-------------|--------|-----|
+| Direction A | [pattern] | [style] | [pattern] | [reasoning] |
+| Direction B | [pattern] | [style] | [pattern] | [reasoning] |
+| Direction C | [pattern] | [style] | [pattern] | [reasoning] |
+
+Example for a luxury wellness brand:
+| Direction | Hero Approach | Scroll Style | Climax | Why |
+|-----------|--------------|-------------|--------|-----|
+| A: Editorial | SplitText chars + pinned section | Deliberate, sparse | Video mask reveal | High-fashion feel, bold typography |
+| B: Warm | SplitText lines + gentle parallax | Smooth, breathing | Image mask expansion | Approachable, trustworthy |
+| C: Minimal | Slow image zoom + fade text | Subtle, quiet | Bento grid reveals | Clean, confident, understated |
+
+**Gate:** User picks a direction or blends elements from multiple.
+
+#### Step 2: Pattern Selection
+
+Based on the chosen direction, map specific patterns to each scroll section:
+
+```
+Hook (first section): [pattern name] — [brief description]
+Build (middle sections): [pattern name] — [brief description]
+Climax (one section): [pattern name] — [brief description]
+Resolve (final sections): [pattern name] — [brief description]
+```
+
+#### Step 3: Asset Brief
+
+For each section that needs external assets, generate a brief for the user
+to create in Figma (or other tools):
+
+**Image brief template:**
+- Subject: [what's in the image]
+- Setting: [background/environment]
+- Lighting: [warm, cool, dramatic, soft]
+- Mood: [emotional tone]
+- Color palette: [dominant colors from DESIGN.md]
+- Style: [editorial, lifestyle, product-focused, abstract]
+- Dimensions: [aspect ratio, e.g., 16:9, 1:1, 4:3]
+
+**For video assets:** Use `skill-cinematic-motion` Section 5 > AI Video
+Prompt Template.
+
+**Gate:** User confirms they can create/provide the assets, or placeholders
+are agreed upon.
+
+#### Step 4: Write Motion Direction
+
+Create `contexts/motion-direction.md` with:
+- Emotion diagnosis
+- Brand archetype
+- Motion vocabulary (easing, speed, density)
+- Scroll narrative (hook → build → climax → resolve)
+- Pattern selection per section
+- Asset requirements (images, videos, 3D models)
+- Placeholder strategy
+
+**Gate:** Motion direction locked. File created.
+
+#### Step 5: Hand Off to Animate
+
+Transition to `workflow-impeccable-animate.md`:
+- Motion direction is already established
+- Asset planning is already done
+- Pattern selection is already confirmed
+- The animate workflow starts at Step 4 (Implement)
 
 ---
 
@@ -216,7 +302,7 @@ Transition to the next phase:
 - **G1 (Clarity):** No preview generated without a clear question to answer
 - **G2 (Path):** Path A or B explicitly chosen — not assumed
 - **G3 (Approval):** User explicitly approves the visual direction before tokens are exported
-- **G4 (Export):** Design tokens written to `contexts/visual-identity.md` — not left only in the preview
+- **G4 (Export):** Design tokens written to `DESIGN.md` / `DESIGN.json` — not left only in the preview
 
 ---
 

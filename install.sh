@@ -43,7 +43,7 @@ if [ -z "$GLOBAL_CONFIG" ]; then
     if [ -z "$IDE" ]; then
         ask "Which IDE are you using?"
         echo ""
-        echo "  [1] Google AI Studio / Gemini   → ~/.gemini/antigravity/"
+        echo "  [1] Google AI Studio / Gemini   → ~/.gemini/config/"
         echo "  [2] Cursor                      → ~/.cursor/rules/"
         echo "  [3] Windsurf                    → ~/.codeium/windsurf/memories/"
         echo "  [4] VS Code (Copilot)           → .github/ in project root"
@@ -55,7 +55,7 @@ if [ -z "$GLOBAL_CONFIG" ]; then
     fi
 
     case "$IDE" in
-        1) GLOBAL_CONFIG="$HOME/.gemini/antigravity" ;;
+        1) GLOBAL_CONFIG="$HOME/.gemini/config" ;;
         2) GLOBAL_CONFIG="$HOME/.cursor/rules" ;;
         3) GLOBAL_CONFIG="$HOME/.codeium/windsurf/memories" ;;
         4) GLOBAL_CONFIG="$(pwd)/.github/antigravity" ;;

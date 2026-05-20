@@ -1,22 +1,269 @@
-# WORKFLOW: DESIGN UI (FULL SOURCE)
+# WORKFLOW: DESIGN UI — IMPECCABLE COMMAND CENTER
 
-**Version:** Gold v1.1 (Master Merge)
+**Version:** Gold v2.0 (Impeccable Authority)
 **Layer:** 8 — Execution Workflow
 **Tier:** 2 — Loaded by task
-**File:** workflows/workflow-design-ui-SOURCE.md
+**File:** workflows/workflow-design-ui.md
 **Primary Mode:** Designer
 **Secondary Modes:** Builder, Product Thinking, Architect, Performance, Reviewer, Security
-**Purpose:** The systematic sequence for designing and implementing user interfaces — from user goal identification through component implementation with full state coverage and accessibility. Ensures UI work starts with the USER, not with the component.
+**Purpose:** The master orchestration workflow for all UI/UX design work. Routes to the correct Impeccable workflow based on the task, maps the 3-tier lifecycle, and provides UX-specific execution for flow mapping, state coverage, and accessibility.
 **Loaded When:** Building frontend components, designing user flows, creating new pages or views, improving existing UI, improving usability, or designing interaction states.
 **Inherits From:** execution-workflow.md (universal process)
 
+**Design Authority:** Impeccable owns all visual design, UI craft, and motion work. This workflow is the routing layer that tells Anti-Gravity WHICH Impeccable workflow to run and WHEN. The passive design knowledge (craft laws, anti-patterns) lives in `skills/ui-ux/SKILL.md`.
+
 ---
 
-## WHAT THIS WORKFLOW DOES
+## THE IMPECCABLE DESIGN LIFECYCLE
 
-This workflow ensures UI work starts with the user, not with the component. It forces state coverage — loading, empty, error, success — accessibility compliance, and responsive behavior. These are the things that get skipped when developers jump straight to the happy-path UI.
+All design work follows this 3-tier lifecycle. These workflows are not optional add-ons — they ARE the design execution system.
 
-Without this workflow, UI development produces components that work in the demo but break in production because empty states, error states, loading states, mobile views, and keyboard navigation were never considered.
+### TIER 1: CONTEXT CREATION — "Who are we designing for?"
+
+Run once per project, during **Project Inception** (Phase 3A).
+
+| Workflow | What It Creates | When |
+| :--- | :--- | :--- |
+| `/impeccable-teach` | **PRODUCT.md** — strategic design context (register, users, brand personality, anti-references, design principles) | Start of any new project with UI |
+| Research + Story (skill-storytelling) | **contexts/research-brief.md** + **contexts/story.md** — master narrative document driving all design | After PRODUCT.md exists, before any visual system is defined |
+| `/impeccable-document` | **DESIGN.md** + **DESIGN.json** — visual system (tokens, typography, colors, components, do's/don'ts) | After story.md exists, so visual tokens serve the narrative |
+| Visual Brainstorm (incl. Phase 3C) | **contexts/motion-direction.md** — scroll motion direction | After DESIGN.md exists; Phase 3C creates motion-direction.md as single authority |
+
+PRODUCT.md and DESIGN.md live at the project root alongside Anti-Gravity's `contexts/` files. Anti-Gravity contexts handle engineering and product truth; Impeccable contexts handle design truth.
+
+**Sequence is critical:** teach → research → story → document → visual-brainstorm → prototype.
+
+### TIER 2: BUILD — "How do we make this feature look and work?"
+
+Run during **Build Feature** (Step 7c — Client Layer) for every UI task.
+
+| Workflow | What It Does | When |
+| :--- | :--- | :--- |
+| `/impeccable-shape` | Creates a **task-specific design brief** — discovery interview, visual direction probes, confirmed brief with scope, states, hierarchy, interaction model | Before coding any UI. Produces the blueprint. |
+| `/impeccable-craft` | **Full build loop** — runs shape internally → generates visual mock → builds production code → browser verification → critique-and-fix loop | The "golden path" for building any UI feature end-to-end |
+| `/impeccable-live` | **Real-time browser editing** — select elements, pick a design action, get AI-generated variants hot-swapped via HMR | When a dev server is running and you want interactive variant exploration |
+
+**Craft is the default.** When building a new UI feature, run `/impeccable-craft`. It handles everything: shape (planning), mock (visual direction), build (implementation), and verify (browser inspection). You only run `/impeccable-shape` separately when you want the design brief without the build.
+
+### TIER 3: REFINEMENT — "How do we make it better?"
+
+Run **post-build**, any time an existing UI needs improvement.
+
+#### Review & Scoring
+
+| Workflow | What It Does | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-audit` | Technical quality scorecard (a11y, perf, responsive, theming, anti-patterns). Scores 0-20. | Post-build technical review |
+| `/impeccable-critique` | Design director review — Nielsen heuristics, AI slop detection, cognitive load assessment. Scores 0-40. | Post-build design review |
+
+#### Targeted Refinement
+
+| Workflow | What It Adjusts | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-polish` | Final detail pass — spacing, states, transitions, alignment, design system drift | "Make it production-ready" |
+| `/impeccable-bolder` | Amplifies contrast, hierarchy, atmospheric treatment, visual confidence | "It feels weak / generic / timid" |
+| `/impeccable-quieter` | Reduces visual noise, softens palette, calms motion, increases whitespace | "It feels noisy / overwhelming" |
+| `/impeccable-distill` | Simplifies — removes excess, sharpens hierarchy, reduces cognitive load | "It's cluttered / confusing" |
+| `/impeccable-clarify` | Fixes confusing wording, labels, error messages, state communication | "Users don't understand what's happening" |
+
+#### Specific Dimension Rework
+
+| Workflow | Dimension | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-colorize` | Color strategy — palette, contrast, tonal relationships | "The colors aren't working" |
+| `/impeccable-typeset` | Typography — type pairing, scale, hierarchy, weight strategy | "The typography feels off / flat" |
+| `/impeccable-layout` | Spatial structure — grid, composition, information density | "The layout doesn't feel right" |
+| `/impeccable-adapt` | Responsiveness — behavior across viewports and contexts | "It breaks on mobile / tablet" |
+| `/impeccable-animate` | Motion — adds `motion` (Framer Motion) transitions, scroll-driven effects | "It feels static / lifeless" |
+| `/impeccable-delight` | Personality — micro-interactions, easter eggs, celebration moments | "It works but has no soul" |
+| `/impeccable-overdrive` | Convention breaking — pushes past safe design into unexpected territory | "It's correct but boring — take risks" |
+
+#### Special Purpose
+
+| Workflow | Purpose | Use When |
+| :--- | :--- | :--- |
+| `/impeccable-onboard` | Onboarding — empty states, tours, progressive disclosure, first-time flows | Building onboarding experiences |
+| `/impeccable-extract` | Extracts design tokens from existing code into structured format | Capturing an existing design system |
+| `/impeccable-optimize` | Performance optimization of UI assets and rendering | UI is slow, images too large |
+
+---
+
+## MOTION STANDARD
+
+Motion is planned during Project Inception (Phase 3A) and executed during
+Build (via `/impeccable-animate`). The motion direction is captured in
+`contexts/motion-direction.md` and consumed by `skill-cinematic-motion`.
+
+### Motion Type Mapping
+
+Assign to every major page section during design:
+- **Type A (Static):** Standard layout, no major animation. Text, forms, data tables.
+- **Type B (Code Animation):** Scroll reveals, parallax, hover effects. Built with GSAP or `motion`.
+- **Type C (Cinematic Video):** AI-generated video. Use `skill-cinematic-motion` Section 5 (AI Video Prompt Template).
+
+### Motion Planning (During Inception)
+
+After `/impeccable-teach` (PRODUCT.md) and `/impeccable-document` (DESIGN.md):
+
+1. **Run diagnostic walkthrough** (skill-cinematic-motion Section 1):
+   - Name the emotion (physical-object words)
+   - Select brand archetype from the matrix
+   - Choose what NOT to use
+   - Select scroll rhythm
+
+2. **Explore visual directions** (workflow-visual-brainstorm Phase 3C):
+   - Present 2-3 motion directions
+   - User picks one or blends elements
+   - Map patterns to scroll sections
+   - Generate image briefs for Figma
+
+3. **Write motion-direction.md** with:
+   - Emotion diagnosis, archetype, motion vocabulary
+   - Scroll narrative (hook → build → climax → resolve)
+   - Pattern selection per section
+   - Asset requirements
+
+### Motion Execution (During Build)
+
+Via `/impeccable-animate`:
+- Reads motion-direction.md (pre-established direction)
+- Loads skill-cinematic-motion (patterns, anti-patterns, checklists)
+- Iterates with mockup review (Step 4A)
+- Verifies with non-negotiable checklist
+
+### Register Rules
+
+**Brand register** (landing pages, portfolios, campaigns):
+- Ambitious motion allowed. Scroll-triggered transitions, typographic choreography.
+- One well-orchestrated page-load with staggered reveals.
+
+**Product register** (dashboards, apps, tools):
+- 150-250ms state-change motion only. No page-load choreography.
+- Motion conveys state — feedback, reveal, loading.
+
+---
+
+## HOW IMPECCABLE CONNECTS TO ANTI-GRAVITY
+
+### During Project Inception
+
+```
+Phase 1-3: Problem, MVP, Stack (Anti-Gravity owns)
+    │
+Phase 3A: Design Identity (Impeccable takes over)
+    ├── STEP 1: /impeccable-teach → PRODUCT.md
+    │       ↓ (when PRODUCT.md exists)
+    ├── STEP 2: Competitor profiling → competitor-profiles/_summary.md
+    │       ↓
+    ├── STEP 3: Research (skill-storytelling Section 1)
+    │   ├── Research the brand (who, what, why, how)
+    │   ├── Research the audience (needs, wants, objections)
+    │   ├── Research the competition (reference competitor-profiles/_summary.md)
+    │   └── Write contexts/research-brief.md
+    │       ↓ (when research-brief.md exists)
+    ├── STEP 3b: Story (skill-storytelling Sections 2-6)
+    │   ├── Choose narrative arc (Brand Story, Product Journey, etc.)
+    │   ├── Map emotional journey (Hook → Build → Climax → Resolve)
+    │   ├── Define copy direction (headline strategy, tone, key messages)
+    │   ├── Define visual direction (hero visual, image style, color mood)
+    │   ├── Define motion direction (hero animation, scroll behavior)
+    │   ├── Present 2-3 story directions to user
+    │   ├── User picks one or blends elements
+    │   └── Write contexts/story.md
+    │       ↓ (when story.md exists)
+    ├── STEP 4: /impeccable-document → DESIGN.md + DESIGN.json
+    │       (now informed by story.md — visual tokens serve narrative)
+    │       ↓ (when DESIGN.md exists)
+    ├── STEP 5: Visual Brainstorm (workflow-visual-brainstorm.md)
+    │   ├── Explore visual directions (2-3 options, informed by story.md)
+    │   ├── User picks direction
+    │   ├── Phase 3C (motion exploration — single authority for motion-direction.md)
+    │   │   ├── Present 2-3 motion directions (informed by story.md)
+    │   │   ├── Map patterns to scroll sections
+    │   │   ├── Generate image briefs for Figma
+    │   │   └── Write contexts/motion-direction.md
+    │   └── Lock visual direction → DESIGN.md + DESIGN.json
+    │       ↓ (when visual direction is locked)
+    ├── STEP 6: External prototyping (Figma AI, Stitch, Lovable)
+    │
+Phase 4-7: Contexts, Memory, Build Sequence (Anti-Gravity owns)
+```
+
+**Handoff rules:**
+- After `/impeccable-teach` → next is Competitor profiling
+- After Competitor profiling → next is Research (skill-storytelling Section 1)
+- After Research → next is Story (skill-storytelling Sections 2-6)
+- After Story → next is `/impeccable-document` (DESIGN.md now informed by story)
+- After `/impeccable-document` → next is Visual Brainstorm
+- After Visual Brainstorm → next is external prototyping or Build
+- Visual Brainstorm Phase 3C is the SINGLE authority for creating motion-direction.md
+- story.md is consumed by copywriting, visual brainstorm, document, and animate
+- motion-direction.md is consumed by `/impeccable-animate` and `/impeccable-craft` during Build
+
+### During Build Feature
+
+```
+Steps 1-6: Define, Context, Scope, Risks, Shape, Verify (Anti-Gravity owns)
+    │
+Step 7c — Client Layer (Impeccable takes over)
+    ├── /impeccable-craft (full loop: shape → mock → build → verify)
+    │   OR
+    ├── /impeccable-shape → then manual build using SKILL.md craft laws
+    │
+Steps 8-11: Review, Verify, Deliver, Memory (Anti-Gravity owns)
+    └── During Step 8: consider /impeccable-audit or /impeccable-critique
+```
+
+### Post-Build Diagnosis
+
+```
+UI exists → identify the issue → pick the right workflow:
+    Weak?     → /impeccable-bolder
+    Noisy?    → /impeccable-quieter or /impeccable-distill
+    Static?   → /impeccable-animate (reads motion-direction.md if it exists)
+    Generic?  → /impeccable-delight
+    Broken?   → /impeccable-audit → fix → /impeccable-polish
+```
+
+**Note:** If motion-direction.md was created during inception, `/impeccable-animate`
+already knows the brand archetype, motion vocabulary, and pattern selection.
+It skips the diagnostic and goes straight to implementation.
+
+If motion-direction.md doesn't exist (animation wasn't planned during inception),
+`/impeccable-animate` runs the diagnostic walkthrough from skill-cinematic-motion
+Section 1 to establish the direction before implementing.
+
+---
+
+## MOCKUPS & EXTERNAL PROTOTYPING
+
+### Visual Exploration (Phase 3A Step 3)
+
+Use `workflow-visual-brainstorm.md` for visual exploration BEFORE implementation:
+
+1. **Path A — HTML Previews:** Quick color/typography/spacing comparisons. 60-second previews.
+2. **Path B — Stitch Briefs:** Full page mockups via Google Stitch.
+3. **Path C — Animated Project Exploration:** For projects with animation (Phase 3C):
+   - Present 2-3 motion directions
+   - Map patterns to scroll sections
+   - Generate image briefs for Figma
+   - Write `contexts/motion-direction.md`
+
+**Handoff:** After visual direction is locked → proceed to external prototyping or Build.
+
+### External Prototyping (Phase 3A Step 4)
+
+1. **Figma AI:** Use `DESIGN.md` tokens and image briefs from Phase 3C to generate product images, lifestyle photos, hero images.
+2. **Google Stitch / Lovable:** Bring `DESIGN.md` tokens and `prototyping-spec.md` to generate high-fidelity mockups.
+3. **Quick HTML Previews:** Use `workflow-visual-brainstorm.md` Path A for fast comparisons.
+
+**Handoff:** After prototyping → proceed to Build (Phase 4-7).
+
+---
+
+## UX-SPECIFIC EXECUTION (BELOW)
+
+The sections below handle UX tasks that don't require visual craft — user flow mapping, state coverage, information architecture, accessibility audits, and interaction design. For building actual UI with visual craft, use `/impeccable-craft` above.
 
 ---
 
@@ -64,10 +311,17 @@ If the task includes both design and implementation, complete design steps first
 | UI requires new API endpoints | `skill-api-design` |
 | UI handles auth flows or sensitive data | `skill-security` |
 | Responsiveness or rendering cost matters | `skill-performance` |
+| Type B animations (scroll, parallax, 3D, video scrub) | `skill-cinematic-motion` |
+| Type B micro-interactions (hover, state transitions) | `skill-advanced-frontend-execution` |
+| Crafting the narrative for a brand surface | `skill-storytelling` |
+| Writing marketing copy (headlines, CTAs, sections) | `skill-copywriting` |
+| Researching competitors | `skill-competitor-profiling` |
 
 ### Contexts — Always Load
 
-- `design-system.md`
+- `prototyping-spec.md`
+- `PRODUCT.md`
+- `DESIGN.md`
 - `stack-context.md`
 - `coding-standards.md`
 - `architecture-context.md`
@@ -82,6 +336,9 @@ If the task includes both design and implementation, complete design steps first
 | UI enforces business rules | `domain-rules.md` |
 | Auth or permission UI | `security-baselines.md` |
 | Consuming API data | `api-conventions.md` |
+| Project involves animation | `motion-direction.md` |
+| Crafting narrative for brand surface | `story.md` |
+| Research completed for brand/audience/competition | `research-brief.md` |
 
 ---
 
@@ -123,6 +380,7 @@ Clarify the user goal before designing. Do NOT start designing components agains
    - What is the user trying to accomplish?
    - Frame as Job-to-be-Done:
      > "When [situation], the user wants to [motivation] so that [outcome]"
+
    - What does the user have BEFORE this interaction?
    - What do they have AFTER?
    - Distinguish the feature request from the actual user need
@@ -137,7 +395,7 @@ Clarify the user goal before designing. Do NOT start designing components agains
 1. **Identify constraints:**
    - What data is available to show?
    - What actions can this user take? Check role permissions
-   - What are the responsive requirements? Check `design-system.md`
+   - What are the responsive requirements? Check `DESIGN.md`
    - What are the accessibility requirements?
    - What platform or device assumptions matter?
    - Does this fit an existing screen pattern or is it more open?
@@ -170,7 +428,7 @@ For every view, screen, or component, define all of these:
 
 | State | Questions to Answer | Design Decision |
 | :--- | :--- | :--- |
-| **Loading — initial** | What does the user see while data fetches for the first time? | Skeleton placeholder matching content shape, or full-page spinner? Check `design-system.md` loading patterns |
+| **Loading — initial** | What does the user see while data fetches for the first time? | Skeleton placeholder matching content shape, or full-page spinner? Check `DESIGN.md` loading patterns |
 | **Loading — refresh** | What during background data refresh? | Show stale data with subtle indicator, or skeleton again? |
 | **Empty — first use** | No data yet because user has not created any? | Illustration + friendly message + CTA to create first item |
 | **Empty — filtered** | Filters or search return no results? | Lighter message + suggestion to adjust filters |
@@ -232,11 +490,11 @@ Action hierarchy: [primary, secondary, tertiary]
 - What is the PRIMARY action on this screen? Make it most prominent
 - What is the SECONDARY information? Supporting, less prominent
 - What is TERTIARY content? Metadata, least important
-- Apply `design-system.md` typography scale: largest equals most important
+- Apply `DESIGN.md` typography scale: largest equals most important
 
 #### Component Selection (Step 4)
 
-- What components from `design-system.md` will be used?
+- What components from `DESIGN.md` will be used?
 - Are any new components needed? Prefer existing over new
 - What variants and sizes are appropriate?
 - Avoid inventing new patterns unless existing ones are insufficient
@@ -245,7 +503,7 @@ Action hierarchy: [primary, secondary, tertiary]
 
 - What is the page layout: single column, sidebar plus content, grid?
 - How does it change at each responsive breakpoint?
-- Reference `design-system.md` responsive breakpoints
+- Reference `DESIGN.md` responsive breakpoints
 
 #### Interaction Design (Step 4)
 
@@ -287,13 +545,13 @@ Load `skill-coding` and follow its behavioral workflow.
 #### 5b — Happy Path First (Step 5)
 
 1. Build the success state — the primary, data-present view
-1. Use design system components from `design-system.md`
+1. Use design system components from `DESIGN.md`
 1. Apply Tailwind classes following spacing, typography, and color tokens
 1. Ensure correct responsive behavior at each breakpoint
 
 #### 5c — All Other States — Do NOT Skip (Step 5)
 
-1. **Loading state:** Implement skeleton or spinner per `design-system.md` patterns
+1. **Loading state:** Implement skeleton or spinner per `DESIGN.md` patterns
 1. **Empty — first use:** Implement with appropriate messaging and CTA
 1. **Empty — filtered:** Implement with filter adjustment suggestion
 1. **Error — action:** Implement toast or inline with retry
@@ -305,13 +563,13 @@ Load `skill-coding` and follow its behavioral workflow.
 
 1. Hover, focus, active states on all interactive elements
 1. Loading and disabled states on buttons during async operations
-1. Destructive action confirmation per `design-system.md` patterns
+1. Destructive action confirmation per `DESIGN.md` patterns
 1. Optimistic updates where appropriate — revert on failure
 
 #### 5e — Accessibility — Non-Negotiable (Step 5)
 
 1. All interactive elements keyboard-accessible
-1. Focus indicators visible — check `design-system.md` focus styles
+1. Focus indicators visible — check `DESIGN.md` focus styles
 1. All images have alt text — decorative images use `alt=""`
 1. Form fields have associated labels — visible or screen-reader-only
 1. Error messages connected via `aria-describedby`
@@ -322,7 +580,7 @@ Load `skill-coding` and follow its behavioral workflow.
 
 #### 5f — Responsive Behavior (Step 5)
 
-1. Test at each breakpoint from `design-system.md`
+1. Test at each breakpoint from `DESIGN.md`
 1. Mobile touch targets minimum 44 by 44 pixels
 1. Content reflows appropriately — no horizontal scrolling on mobile
 1. Navigation adapts appropriately at small breakpoints
@@ -415,16 +673,21 @@ Final UX quality check, caveats, and refinement suggestions if needed.
 #### Delivery Structure (Step 8)
 
 ```markdown
+
 ## What Was Built
+
 [1-2 sentence summary of the UI feature]
 
 ## User Goal
+
 [Job-to-be-Done statement]
 
 ## Flow Structure
+
 [Sequence of steps, entry, exits, friction points addressed]
 
 ## States Implemented
+
 - Loading: [approach]
 - Empty (first use): [approach]
 - Empty (filtered): [approach]
@@ -436,24 +699,31 @@ Final UX quality check, caveats, and refinement suggestions if needed.
 - Permission denied: [approach if applicable]
 
 ## Components Used
+
 [List of design system components used]
 
 ## Responsive Behavior
+
 [How the layout changes at each breakpoint]
 
 ## Accessibility
+
 [Summary of accessibility measures implemented]
 
 ## Key Decisions
+
 [Non-obvious design or implementation decisions and rationale]
 
 ## Tradeoffs and Constraints
+
 [Where simplicity competed with flexibility, density with readability]
 
 ## What to Test
+
 [How to manually verify each state]
 
 ## Next Steps
+
 [Deferred scope, Phase 2 items, follow-up work]
 ```
 
@@ -489,7 +759,7 @@ Before marking UI work complete:
 - [ ] Responsive behavior verified at all breakpoints
 - [ ] Touch targets adequate on mobile
 - [ ] Accessibility requirements met — keyboard, screen reader, contrast, labels, aria attributes
-- [ ] Form patterns follow `design-system.md` conventions
+- [ ] Form patterns follow `DESIGN.md` conventions
 - [ ] Destructive actions have appropriate confirmation
 - [ ] Error messages are user-friendly and actionable
 - [ ] No state results in a blank screen or raw error

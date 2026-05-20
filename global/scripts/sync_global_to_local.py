@@ -7,8 +7,8 @@ import re
 from pathlib import Path
 
 
-GLOBAL_ROOT = Path(r"C:\Users\Oviks\.gemini\antigravity")
-LOCAL_ROOT = Path(r"C:\Users\Oviks\antigravitygold")
+GLOBAL_ROOT = Path.home() / ".gemini" / "config"
+LOCAL_ROOT = Path(__file__).resolve().parent.parent
 
 
 MAPPINGS = [

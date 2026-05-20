@@ -29,7 +29,7 @@ if (-not $GlobalConfig) {
         Write-Question @"
 Which IDE are you using?
 
-  [1] Google AI Studio / Gemini   → ~/.gemini/antigravity/
+  [1] Google AI Studio / Gemini   → ~/.gemini/config/
   [2] Cursor                      → ~/.cursor/rules/
   [3] Windsurf                    → ~/.codeium/windsurf/memories/
   [4] VS Code (Copilot)           → .github/ in project root
@@ -42,7 +42,7 @@ Enter 1–6:
     }
 
     switch ($IDE.Trim()) {
-        "1" { $GlobalConfig = Join-Path $env:USERPROFILE ".gemini\antigravity" }
+        "1" { $GlobalConfig = Join-Path $env:USERPROFILE ".gemini\config" }
         "2" { $GlobalConfig = Join-Path $env:USERPROFILE ".cursor\rules" }
         "3" { $GlobalConfig = Join-Path $env:USERPROFILE ".codeium\windsurf\memories" }
         "4" {
@@ -54,8 +54,8 @@ Enter 1–6:
             $GlobalConfig = (Read-Host).Trim('"')
         }
         default {
-            Write-Warn "Unrecognised choice. Defaulting to ~/.gemini/antigravity/"
-            $GlobalConfig = Join-Path $env:USERPROFILE ".gemini\antigravity"
+            Write-Warn "Unrecognised choice. Defaulting to ~/.gemini/config/"
+            $GlobalConfig = Join-Path $env:USERPROFILE ".gemini\config"
         }
     }
 }

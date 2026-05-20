@@ -2,9 +2,9 @@
 
 ![Anti-Gravity OS — The Operating System for AI-Powered Engineering](assets/social-preview.png)
 
-![77+ Files](https://img.shields.io/badge/Files-77+-blueviolet?style=for-the-badge)
-![15 Skills](https://img.shields.io/badge/Skills-15-blue?style=for-the-badge)
-![13 Workflows](https://img.shields.io/badge/Workflows-13-green?style=for-the-badge)
+![130+ Files](https://img.shields.io/badge/Files-130+-blueviolet?style=for-the-badge)
+![29 Skills](https://img.shields.io/badge/Skills-29-blue?style=for-the-badge)
+![41 Workflows](https://img.shields.io/badge/Workflows-41-green?style=for-the-badge)
 ![6+ IDEs](https://img.shields.io/badge/IDE_Support-6+-orange?style=for-the-badge)
 
 ## The operating system for AI-powered engineering
